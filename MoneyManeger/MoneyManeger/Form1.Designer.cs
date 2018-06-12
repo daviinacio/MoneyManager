@@ -23,29 +23,29 @@
         /// o conteúdo deste método com o editor de código.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.ListViewItem listViewItem37 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
             "Jan"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem38 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
             "Feb"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem39 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
             "Mar"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
             "Apr"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
             "May"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
             "Jun"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem43 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
             "Jul"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem44 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
             "Agu"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem45 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
             "Sep"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem46 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
             "Oct"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.ScrollBar, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem47 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
             "Nov"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem48 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
             "Dec"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             this.back_tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.left_tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -93,15 +93,18 @@
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.faleConoscoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contribuaComOProjetoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gastoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mensalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gastosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mensalidadesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dinheirosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.importarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jSONFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -123,12 +126,12 @@
             this.gastosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dinheirosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mensalidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.reservasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.contribuaComOProjetoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.back_tableLayoutPanel.SuspendLayout();
             this.left_tableLayoutPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -137,7 +140,7 @@
             this.right_tableLayoutPanel.SuspendLayout();
             this.details_panel.SuspendLayout();
             this.action_menu.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // back_tableLayoutPanel
@@ -156,7 +159,7 @@
             this.back_tableLayoutPanel.Padding = new System.Windows.Forms.Padding(5, 1, 5, 22);
             this.back_tableLayoutPanel.RowCount = 1;
             this.back_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.back_tableLayoutPanel.Size = new System.Drawing.Size(945, 498);
+            this.back_tableLayoutPanel.Size = new System.Drawing.Size(956, 451);
             this.back_tableLayoutPanel.TabIndex = 5;
             // 
             // left_tableLayoutPanel
@@ -176,7 +179,7 @@
             this.left_tableLayoutPanel.Location = new System.Drawing.Point(5, 4);
             this.left_tableLayoutPanel.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.left_tableLayoutPanel.Name = "left_tableLayoutPanel";
-            this.left_tableLayoutPanel.RowCount = 15;
+            this.left_tableLayoutPanel.RowCount = 13;
             this.left_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.left_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.left_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
@@ -185,14 +188,12 @@
             this.left_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.left_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.left_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.left_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.left_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.left_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.left_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.left_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 133F));
-            this.left_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.left_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.left_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.left_tableLayoutPanel.Size = new System.Drawing.Size(194, 469);
+            this.left_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.left_tableLayoutPanel.Size = new System.Drawing.Size(194, 422);
             this.left_tableLayoutPanel.TabIndex = 0;
             // 
             // all_money_value
@@ -269,7 +270,7 @@
             this.month_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.month_label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.month_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.month_label.Location = new System.Drawing.Point(3, 189);
+            this.month_label.Location = new System.Drawing.Point(3, 212);
             this.month_label.Name = "month_label";
             this.month_label.Size = new System.Drawing.Size(188, 20);
             this.month_label.TabIndex = 1;
@@ -281,21 +282,21 @@
             this.monthNum});
             this.month_listView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.month_listView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            listViewItem46.StateImageIndex = 0;
+            listViewItem22.StateImageIndex = 0;
             this.month_listView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem37,
-            listViewItem38,
-            listViewItem39,
-            listViewItem40,
-            listViewItem41,
-            listViewItem42,
-            listViewItem43,
-            listViewItem44,
-            listViewItem45,
-            listViewItem46,
-            listViewItem47,
-            listViewItem48});
-            this.month_listView.Location = new System.Drawing.Point(3, 233);
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16,
+            listViewItem17,
+            listViewItem18,
+            listViewItem19,
+            listViewItem20,
+            listViewItem21,
+            listViewItem22,
+            listViewItem23,
+            listViewItem24});
+            this.month_listView.Location = new System.Drawing.Point(3, 256);
             this.month_listView.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.month_listView.Name = "month_listView";
             this.month_listView.Size = new System.Drawing.Size(188, 133);
@@ -313,7 +314,7 @@
             this.tableLayoutPanel1.Controls.Add(this.date_year_label, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 209);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 232);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -347,7 +348,7 @@
             // 
             // date_year_label
             // 
-            this.date_year_label.BackColor = System.Drawing.SystemColors.Control;
+            this.date_year_label.BackColor = System.Drawing.SystemColors.Window;
             this.date_year_label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.date_year_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date_year_label.Location = new System.Drawing.Point(30, 0);
@@ -364,7 +365,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(202, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(528, 469);
+            this.panel1.Size = new System.Drawing.Size(539, 422);
             this.panel1.TabIndex = 0;
             // 
             // center_tableLayoutPanel
@@ -379,7 +380,7 @@
             this.center_tableLayoutPanel.RowCount = 2;
             this.center_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.center_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.center_tableLayoutPanel.Size = new System.Drawing.Size(528, 469);
+            this.center_tableLayoutPanel.Size = new System.Drawing.Size(539, 422);
             this.center_tableLayoutPanel.TabIndex = 1;
             // 
             // expenses_listView
@@ -397,7 +398,7 @@
             this.expenses_listView.Location = new System.Drawing.Point(0, 0);
             this.expenses_listView.Margin = new System.Windows.Forms.Padding(0);
             this.expenses_listView.Name = "expenses_listView";
-            this.expenses_listView.Size = new System.Drawing.Size(528, 439);
+            this.expenses_listView.Size = new System.Drawing.Size(539, 392);
             this.expenses_listView.TabIndex = 0;
             this.expenses_listView.UseCompatibleStateImageBehavior = false;
             this.expenses_listView.View = System.Windows.Forms.View.Details;
@@ -448,10 +449,10 @@
             this.total_text_value.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.total_text_value.Dock = System.Windows.Forms.DockStyle.Fill;
             this.total_text_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.total_text_value.Location = new System.Drawing.Point(0, 442);
+            this.total_text_value.Location = new System.Drawing.Point(0, 395);
             this.total_text_value.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.total_text_value.Name = "total_text_value";
-            this.total_text_value.Size = new System.Drawing.Size(528, 27);
+            this.total_text_value.Size = new System.Drawing.Size(539, 27);
             this.total_text_value.TabIndex = 1;
             this.total_text_value.Text = "Total";
             this.total_text_value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -465,7 +466,7 @@
             this.right_tableLayoutPanel.Controls.Add(this.details_label, 0, 0);
             this.right_tableLayoutPanel.Controls.Add(this.details_panel, 0, 1);
             this.right_tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.right_tableLayoutPanel.Location = new System.Drawing.Point(733, 4);
+            this.right_tableLayoutPanel.Location = new System.Drawing.Point(744, 4);
             this.right_tableLayoutPanel.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.right_tableLayoutPanel.Name = "right_tableLayoutPanel";
             this.right_tableLayoutPanel.RowCount = 5;
@@ -476,7 +477,7 @@
             this.right_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.right_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.right_tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.right_tableLayoutPanel.Size = new System.Drawing.Size(207, 469);
+            this.right_tableLayoutPanel.Size = new System.Drawing.Size(207, 422);
             this.right_tableLayoutPanel.TabIndex = 2;
             // 
             // moneys_listView
@@ -486,10 +487,10 @@
             this.money_value,
             this.money_date});
             this.moneys_listView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.moneys_listView.Location = new System.Drawing.Point(3, 259);
+            this.moneys_listView.Location = new System.Drawing.Point(3, 236);
             this.moneys_listView.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.moneys_listView.Name = "moneys_listView";
-            this.moneys_listView.Size = new System.Drawing.Size(201, 210);
+            this.moneys_listView.Size = new System.Drawing.Size(201, 186);
             this.moneys_listView.TabIndex = 7;
             this.moneys_listView.UseCompatibleStateImageBehavior = false;
             this.moneys_listView.View = System.Windows.Forms.View.Details;
@@ -515,7 +516,7 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 239);
+            this.label1.Location = new System.Drawing.Point(3, 216);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(201, 20);
             this.label1.TabIndex = 6;
@@ -549,7 +550,7 @@
             this.details_panel.Location = new System.Drawing.Point(3, 20);
             this.details_panel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.details_panel.Name = "details_panel";
-            this.details_panel.Size = new System.Drawing.Size(201, 209);
+            this.details_panel.Size = new System.Drawing.Size(201, 186);
             this.details_panel.TabIndex = 4;
             // 
             // details_total_value
@@ -639,7 +640,7 @@
             this.históricoToolStripMenuItem});
             this.action_menu.Location = new System.Drawing.Point(0, 0);
             this.action_menu.Name = "action_menu";
-            this.action_menu.Size = new System.Drawing.Size(945, 25);
+            this.action_menu.Size = new System.Drawing.Size(956, 25);
             this.action_menu.TabIndex = 6;
             this.action_menu.Text = "menuStrip1";
             // 
@@ -654,20 +655,28 @@
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
             this.sobreToolStripMenuItem.Size = new System.Drawing.Size(55, 21);
             this.sobreToolStripMenuItem.Text = "Sobre";
+            this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
             // ajudaToolStripMenuItem
             // 
             this.ajudaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
-            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.ajudaToolStripMenuItem.Text = "Ajuda";
             // 
             // faleConoscoToolStripMenuItem
             // 
             this.faleConoscoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.faleConoscoToolStripMenuItem.Name = "faleConoscoToolStripMenuItem";
-            this.faleConoscoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.faleConoscoToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.faleConoscoToolStripMenuItem.Text = "Fale conosco";
+            // 
+            // contribuaComOProjetoToolStripMenuItem
+            // 
+            this.contribuaComOProjetoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contribuaComOProjetoToolStripMenuItem.Name = "contribuaComOProjetoToolStripMenuItem";
+            this.contribuaComOProjetoToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.contribuaComOProjetoToolStripMenuItem.Text = "Contribua com o projeto";
             // 
             // gerenciarToolStripMenuItem
             // 
@@ -691,6 +700,7 @@
             this.inserirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gastoToolStripMenuItem,
             this.mensalidadeToolStripMenuItem,
+            this.reservaToolStripMenuItem,
             this.toolStripSeparator2});
             this.inserirToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inserirToolStripMenuItem.Name = "inserirToolStripMenuItem";
@@ -709,6 +719,12 @@
             this.mensalidadeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.mensalidadeToolStripMenuItem.Text = "Mensalidade";
             // 
+            // reservaToolStripMenuItem
+            // 
+            this.reservaToolStripMenuItem.Name = "reservaToolStripMenuItem";
+            this.reservaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.reservaToolStripMenuItem.Text = "Reserva";
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -719,7 +735,8 @@
             this.visualizarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gastosToolStripMenuItem1,
             this.mensalidadesToolStripMenuItem1,
-            this.dinheirosToolStripMenuItem1});
+            this.dinheirosToolStripMenuItem1,
+            this.reservasToolStripMenuItem});
             this.visualizarToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
             this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
@@ -742,6 +759,12 @@
             this.dinheirosToolStripMenuItem1.Name = "dinheirosToolStripMenuItem1";
             this.dinheirosToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
             this.dinheirosToolStripMenuItem1.Text = "Dinheiros";
+            // 
+            // reservasToolStripMenuItem
+            // 
+            this.reservasToolStripMenuItem.Name = "reservasToolStripMenuItem";
+            this.reservasToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.reservasToolStripMenuItem.Text = "Reservas";
             // 
             // toolStripSeparator3
             // 
@@ -852,7 +875,8 @@
             this.toolStripSeparator1,
             this.gastosToolStripMenuItem,
             this.dinheirosToolStripMenuItem,
-            this.mensalidadesToolStripMenuItem});
+            this.mensalidadesToolStripMenuItem,
+            this.reservasToolStripMenuItem1});
             this.históricoToolStripMenuItem.ForeColor = System.Drawing.Color.DimGray;
             this.históricoToolStripMenuItem.Name = "históricoToolStripMenuItem";
             this.históricoToolStripMenuItem.Size = new System.Drawing.Size(76, 21);
@@ -891,38 +915,30 @@
             this.mensalidadesToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.mensalidadesToolStripMenuItem.Text = "Mensalidades";
             // 
-            // statusStrip1
+            // reservasToolStripMenuItem1
             // 
-            this.statusStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reservasToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservasToolStripMenuItem1.Name = "reservasToolStripMenuItem1";
+            this.reservasToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
+            this.reservasToolStripMenuItem1.Text = "Reservas";
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 501);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(945, 22);
-            this.statusStrip1.TabIndex = 7;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip.Location = new System.Drawing.Point(0, 454);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(956, 22);
+            this.statusStrip.TabIndex = 7;
+            this.statusStrip.Text = "statusStrip1";
             // 
-            // label2
+            // toolStripStatusLabel2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Unicode MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(720, 504);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 16);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "DaviApps © 2018";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Unicode MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(835, 504);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 16);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Versão: 1.2.0.0";
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(46, 17);
+            this.toolStripStatusLabel2.Text = "0 itens";
             // 
             // toolStripStatusLabel1
             // 
@@ -935,27 +951,36 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(152, 17);
             this.toolStripStatusLabel1.Text = "Nova versão disponivel";
             // 
-            // toolStripStatusLabel2
+            // label2
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(46, 17);
-            this.toolStripStatusLabel2.Text = "0 itens";
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Unicode MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(731, 457);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 16);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "DaviApps © 2018";
             // 
-            // contribuaComOProjetoToolStripMenuItem
+            // label3
             // 
-            this.contribuaComOProjetoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contribuaComOProjetoToolStripMenuItem.Name = "contribuaComOProjetoToolStripMenuItem";
-            this.contribuaComOProjetoToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.contribuaComOProjetoToolStripMenuItem.Text = "Contribua com o projeto";
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Unicode MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(846, 457);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 16);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Versão: 1.2.0.0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 523);
+            this.ClientSize = new System.Drawing.Size(956, 476);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.back_tableLayoutPanel);
             this.Controls.Add(this.action_menu);
             this.MainMenuStrip = this.action_menu;
@@ -971,8 +996,8 @@
             this.details_panel.PerformLayout();
             this.action_menu.ResumeLayout(false);
             this.action_menu.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1056,12 +1081,15 @@
         private System.Windows.Forms.ToolStripMenuItem fecharToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripMenuItem contribuaComOProjetoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reservaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reservasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reservasToolStripMenuItem1;
     }
 }
 

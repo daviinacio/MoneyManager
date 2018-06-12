@@ -13,5 +13,9 @@ namespace MoneyManeger {
         public Form1() {
             InitializeComponent();
         }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e) {
+            //MessageBox.Show("Teste");
+        }
     }
 }
