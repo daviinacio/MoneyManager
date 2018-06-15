@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MoneyManeger.Exceptions {
-    class ElementModifyException : Exception {
+    public class ElementModifyException : Exception {
         public ElementModifyException(string message) : base(message) {
 
         }

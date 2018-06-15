@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MoneyManeger.Utils;
 
 namespace MoneyManeger.Models {
-    class Expense {
+    public class Expense {
         // Constructors
         public Expense(int id, String description, double value, double count, DateTime date) {
             this.ID = id; this.Count = count; this.Value = value;
@@ -14,12 +15,12 @@ namespace MoneyManeger.Models {
         public Expense(int id, String description, double value, double count) {
             this.ID = id; this.Count = count; this.Value = value;
             this.Description = description;
-            this.Date = DateTime.Today;
+            this.Date = DateTime.Now;
         }
-        public Expense(int id, String description) {
+        public Expense(int id, String description) {   
             this.ID = id; this.Description = description;
             this.Count = 0; this.Value = 0;
-            this.Date = DateTime.Today;
+            this.Date = DateTime.Now;
         }
         
 

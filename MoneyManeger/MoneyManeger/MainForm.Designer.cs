@@ -1,5 +1,5 @@
 ﻿namespace MoneyManeger {
-    partial class Form1 {
+    partial class MainForm {
         /// <summary>
         /// Variável de designer necessária.
         /// </summary>
@@ -23,29 +23,29 @@
         /// o conteúdo deste método com o editor de código.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem61 = new System.Windows.Forms.ListViewItem(new string[] {
             "Jan"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem62 = new System.Windows.Forms.ListViewItem(new string[] {
             "Feb"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem63 = new System.Windows.Forms.ListViewItem(new string[] {
             "Mar"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem64 = new System.Windows.Forms.ListViewItem(new string[] {
             "Apr"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem65 = new System.Windows.Forms.ListViewItem(new string[] {
             "May"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem66 = new System.Windows.Forms.ListViewItem(new string[] {
             "Jun"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem67 = new System.Windows.Forms.ListViewItem(new string[] {
             "Jul"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem68 = new System.Windows.Forms.ListViewItem(new string[] {
             "Agu"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem69 = new System.Windows.Forms.ListViewItem(new string[] {
             "Sep"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem70 = new System.Windows.Forms.ListViewItem(new string[] {
             "Oct"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.ScrollBar, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem71 = new System.Windows.Forms.ListViewItem(new string[] {
             "Nov"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem72 = new System.Windows.Forms.ListViewItem(new string[] {
             "Dec"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             this.back_tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.left_tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -282,29 +282,31 @@
             this.monthNum});
             this.month_listView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.month_listView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            listViewItem22.StateImageIndex = 0;
+            listViewItem70.StateImageIndex = 0;
             this.month_listView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem13,
-            listViewItem14,
-            listViewItem15,
-            listViewItem16,
-            listViewItem17,
-            listViewItem18,
-            listViewItem19,
-            listViewItem20,
-            listViewItem21,
-            listViewItem22,
-            listViewItem23,
-            listViewItem24});
+            listViewItem61,
+            listViewItem62,
+            listViewItem63,
+            listViewItem64,
+            listViewItem65,
+            listViewItem66,
+            listViewItem67,
+            listViewItem68,
+            listViewItem69,
+            listViewItem70,
+            listViewItem71,
+            listViewItem72});
             this.month_listView.Location = new System.Drawing.Point(3, 256);
             this.month_listView.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.month_listView.Name = "month_listView";
             this.month_listView.Size = new System.Drawing.Size(188, 133);
             this.month_listView.TabIndex = 2;
             this.month_listView.UseCompatibleStateImageBehavior = false;
+            this.month_listView.SelectedIndexChanged += new System.EventHandler(this.month_listView_SelectedIndexChanged);
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.DimGray;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -314,47 +316,50 @@
             this.tableLayoutPanel1.Controls.Add(this.date_year_label, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 232);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 232);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(194, 24);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(188, 24);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // date_year_less_button
             // 
             this.date_year_less_button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.date_year_less_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date_year_less_button.Location = new System.Drawing.Point(2, 0);
-            this.date_year_less_button.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.date_year_less_button.Location = new System.Drawing.Point(0, 1);
+            this.date_year_less_button.Margin = new System.Windows.Forms.Padding(0);
             this.date_year_less_button.Name = "date_year_less_button";
-            this.date_year_less_button.Size = new System.Drawing.Size(28, 24);
+            this.date_year_less_button.Size = new System.Drawing.Size(30, 23);
             this.date_year_less_button.TabIndex = 0;
             this.date_year_less_button.Text = "<";
             this.date_year_less_button.UseVisualStyleBackColor = true;
+            this.date_year_less_button.Click += new System.EventHandler(this.date_year_button_Click);
             // 
             // date_year_plus_button
             // 
             this.date_year_plus_button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.date_year_plus_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date_year_plus_button.Location = new System.Drawing.Point(164, 0);
-            this.date_year_plus_button.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.date_year_plus_button.Location = new System.Drawing.Point(158, 1);
+            this.date_year_plus_button.Margin = new System.Windows.Forms.Padding(0);
             this.date_year_plus_button.Name = "date_year_plus_button";
-            this.date_year_plus_button.Size = new System.Drawing.Size(28, 24);
+            this.date_year_plus_button.Size = new System.Drawing.Size(30, 23);
             this.date_year_plus_button.TabIndex = 1;
             this.date_year_plus_button.Text = ">";
             this.date_year_plus_button.UseVisualStyleBackColor = true;
+            this.date_year_plus_button.Click += new System.EventHandler(this.date_year_button_Click);
             // 
             // date_year_label
             // 
             this.date_year_label.BackColor = System.Drawing.SystemColors.Window;
             this.date_year_label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.date_year_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date_year_label.Location = new System.Drawing.Point(30, 0);
+            this.date_year_label.Location = new System.Drawing.Point(30, 1);
             this.date_year_label.Margin = new System.Windows.Forms.Padding(0);
             this.date_year_label.Name = "date_year_label";
-            this.date_year_label.Size = new System.Drawing.Size(134, 24);
+            this.date_year_label.Size = new System.Drawing.Size(128, 23);
             this.date_year_label.TabIndex = 2;
             this.date_year_label.Text = "Year";
             this.date_year_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -402,6 +407,7 @@
             this.expenses_listView.TabIndex = 0;
             this.expenses_listView.UseCompatibleStateImageBehavior = false;
             this.expenses_listView.View = System.Windows.Forms.View.Details;
+            this.expenses_listView.SizeChanged += new System.EventHandler(this.listView_SizeChanged);
             // 
             // expenseId
             // 
@@ -973,7 +979,7 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Versão: 1.2.0.0";
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -984,8 +990,11 @@
             this.Controls.Add(this.back_tableLayoutPanel);
             this.Controls.Add(this.action_menu);
             this.MainMenuStrip = this.action_menu;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Money Manager";
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.ResizeEnd += new System.EventHandler(this.MainForm_ResizeEnd);
+            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.back_tableLayoutPanel.ResumeLayout(false);
             this.left_tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

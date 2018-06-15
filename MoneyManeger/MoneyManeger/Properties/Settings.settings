@@ -1,7 +1,23 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MoneyManeger.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="months_abr_pt_br" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;Jan&lt;/string&gt;
+  &lt;string&gt;Fev&lt;/string&gt;
+  &lt;string&gt;Mar&lt;/string&gt;
+  &lt;string&gt;Abr&lt;/string&gt;
+  &lt;string&gt;Mai&lt;/string&gt;
+  &lt;string&gt;Jun&lt;/string&gt;
+  &lt;string&gt;Jul&lt;/string&gt;
+  &lt;string&gt;Ago&lt;/string&gt;
+  &lt;string&gt;Set&lt;/string&gt;
+  &lt;string&gt;Out&lt;/string&gt;
+  &lt;string&gt;Nov&lt;/string&gt;
+  &lt;string&gt;Dez&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

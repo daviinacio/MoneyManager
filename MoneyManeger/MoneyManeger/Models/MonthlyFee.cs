@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MoneyManeger.Utils;
 
 namespace MoneyManeger.Models {
-    class MonthlyFee {
+    public class MonthlyFee {
         // Default values
         private int DefaultBusinessDay = 5;
 
@@ -30,15 +31,25 @@ namespace MoneyManeger.Models {
         }
 
         // Methods
-        public DateTime GetDate(MonthDate md) {
-            DateTime date = new DateTime(md.Year, md.Month, 1);
+        public DateTime GetDate(MonthDate current) {
+            // TODO: Improve the business day calc  **  **  **  **
 
-            while (this.BusinessDay > 0) {
+            DateTime date = new DateTime(current.Date.Year, current.Date.Month, 1);
+            int workDays = this.BusinessDay;
+
+            while (workDays > 0) {
                 date = date.AddDays(1);
-                if (date.DayOfWeek < DayOfWeek.Saturday &&
-                    date.DayOfWeek > DayOfWeek.Sunday )
-                    date.AddDays(-1);
+                if (date.DayOfWeek != DayOfWeek.Saturday &&
+                    date.DayOfWeek != DayOfWeek.Sunday)
+                    workDays--;
             }
+
+                /*while (this.BusinessDay > 0) {
+                    date = date.AddDays(1);
+                    if (date.DayOfWeek < DayOfWeek.Saturday &&
+                        date.DayOfWeek > DayOfWeek.Sunday )
+                        date.AddDays(-1);
+                }*/
 
             return date;
         }
