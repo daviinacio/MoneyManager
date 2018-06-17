@@ -8,27 +8,29 @@ using MoneyManeger.Utils;
 namespace MoneyManeger.Models {
     public class MonthlyFee {
         // Default values
-        private int DefaultBusinessDay = 5;
+        private static int DefaultBusinessDay = 5;
 
         // Constructors
         public MonthlyFee(int id, String description, double monthlyValue, DateTime monthStart, DateTime monthEnd, int businessDay) {
-            this.ID = id; this.Description = description; this.MonthlyValue = monthlyValue;
+            this.Id = id; this.Description = description; this.MonthlyValue = monthlyValue;
             this.MonthStart = MonthDate.Parse(monthStart);
             this.MonthEnd = MonthDate.Parse(monthEnd);
             this.BusinessDay = businessDay;
         }
-        public MonthlyFee(int id, String description, double monthlyValue, DateTime monthStart) {
-            this.ID = id; this.Description = description; this.MonthlyValue = monthlyValue;
-            this.MonthStart = MonthDate.Parse(monthStart);
-            this.MonthEnd = MonthDate.Infinity;
-            this.BusinessDay = DefaultBusinessDay;
-        }
-        public MonthlyFee(int id, String description, double monthlyValue) {
-            this.ID = id; this.Description = description; this.MonthlyValue = monthlyValue;
-            this.MonthStart = MonthDate.Now;
-            this.MonthEnd = MonthDate.Infinity;
-            this.BusinessDay = DefaultBusinessDay;
-        }
+        public MonthlyFee(int id, String description, double monthlyValue, DateTime monthStart) :
+            this(id, description, monthlyValue, monthStart, MonthDate.Infinity.Date, DefaultBusinessDay) { }
+
+        public MonthlyFee(int id, String description, double monthlyValue) :
+            this(id, description, monthlyValue, MonthDate.Now.Date) { }
+
+        public MonthlyFee(String description, double monthlyValue, DateTime monthStart, DateTime monthEnd, int businessDay) :
+            this(-1, description, monthlyValue, monthStart, monthEnd, businessDay) { }
+
+        public MonthlyFee(String description, double monthlyValue, DateTime monthStart) :
+            this(-1, description, monthlyValue, monthStart) { }
+
+        public MonthlyFee(String description, double monthlyValue) :
+            this(-1, description, monthlyValue) { }
 
         // Methods
         public DateTime GetDate(MonthDate current) {
@@ -44,13 +46,6 @@ namespace MoneyManeger.Models {
                     workDays--;
             }
 
-                /*while (this.BusinessDay > 0) {
-                    date = date.AddDays(1);
-                    if (date.DayOfWeek < DayOfWeek.Saturday &&
-                        date.DayOfWeek > DayOfWeek.Sunday )
-                        date.AddDays(-1);
-                }*/
-
             return date;
         }
 
@@ -59,18 +54,18 @@ namespace MoneyManeger.Models {
         }
 
         // Properties
-        public int ID { get; }
-        public String Description { get; }
-        public double MonthlyValue { get; }
-        public MonthDate MonthStart { get; }
-        public MonthDate MonthEnd { get; }
+        public int Id { get; }
+        public String Description { get; set; }
+        public double MonthlyValue { get; set; }
+        public MonthDate MonthStart { get; set; }
+        public MonthDate MonthEnd { get; set; }
         //public int Parcels { get; }
-        public int BusinessDay { get; }
+        public int BusinessDay { get; set; }
 
         
         public override String ToString() {
             return String.Format("ID:\t\t{0}\nDescription:\t{1}\nMonthlyValue:\t{2}\nMonthStart:\t{3}\nMonthEnd:\t{4}\nBusinessDay:\t{5}",
-                ID, Description, MonthlyValue, MonthStart, MonthEnd, BusinessDay);
+                Id, Description, MonthlyValue, MonthStart, MonthEnd, BusinessDay);
         }
     }
 }

@@ -45,5 +45,17 @@ namespace MoneyManeger.Properties {
                 return ((global::System.Collections.Specialized.StringCollection)(this["months_abr_pt_br"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Davi\\AppData\\Roamin" +
+            "g\\DaviApps\\Money Manager\\banco_de_dados.mdf\";Integrated Security=True;Connect Ti" +
+            "meout=30")]
+        public string db_ConnString {
+            get {
+                return ((string)(this["db_ConnString"]));
+            }
+        }
     }
 }

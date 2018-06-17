@@ -45,6 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBase\ExpensesDB.cs" />
+    <Compile Include="DataBase\MoneysDB.cs" />
+    <Compile Include="DataBase\MonthlyFeesDB.cs" />
+    <Compile Include="DataBase\DBHelper.cs" />
     <Compile Include="Exceptions\ElementModifyException.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

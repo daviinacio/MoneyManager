@@ -7,17 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using MoneyManeger.Utils;
 using MoneyManeger.Models;
+using MoneyManeger.DataBase;
 
 namespace MoneyManeger {
     public partial class MainForm : Form {
 
+        // TableData
+        private MonthlyFeesDB monthlyFees = new MonthlyFeesDB();
+        private ExpensesDB expenses = new ExpensesDB();
+        private MoneysDB moneys = new MoneysDB();
+
         // Variables
         private MonthDate currentMonth = MonthDate.Now;
         private bool resizing = false;
-
-
 
         public MainForm() {
             InitializeComponent();
@@ -26,8 +31,16 @@ namespace MoneyManeger {
         /*  *   *   *   FORM EVENTS *   FORM EVENTS *   FORM EVENTS *   FORM EVENTS *   *   *   */
 
         private void MainForm_Load(object sender, EventArgs e) {
-
             RefreshVisualContent();
+
+            // DEBUG
+            foreach(Expense ex in expenses.Select("1 = 1"))
+                MessageBox.Show(ex.ToString());
+
+            //foreach (Money ex in moneys.Select("1 = 1"))
+            //    MessageBox.Show(ex.ToString());
+
+            //MessageBox.Show(expenses.Count.ToString());
         }
 
         private void MainForm_ResizeEnd(object sender, EventArgs e) {
@@ -41,10 +54,60 @@ namespace MoneyManeger {
 
         /*  *   *   *   ELEM FUNC   *   ELEM FUNC   *   ELEM FUNC   *   ELEM FUNC   *   *   *   */
 
+        //  MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e) {
-            currentMonth.AddMonth(1);
-            RefreshVisualContent();
-            MessageBox.Show(currentMonth.ToString());
+            //currentMonth.AddMonth(1);
+            //RefreshVisualContent();
+            //MessageBox.Show(currentMonth.ToString());
+            // AUTO_INCREMENT IDENTITY(1,1)
+
+            //MessageBox.Show(moneys.Insert(new Money("Salário", 1000)).ToString());
+
+            Expense exp = expenses.SelectById(1);
+
+            MessageBox.Show(exp.ToString());
+
+            exp.Description = "Tesdfçgkmlsdçgskdlkglkdsfgte2";
+
+            expenses.Update(exp);
+
+
+            //MessageBox.Show(expenses.Insert(new Expense(0, "Teste")).ToString());
+            //for(int i = 3; i < 11; i++)
+            //    expenses.Delete(i);
+
+        }
+
+
+        //  LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW
+        private void listView_SizeChanged(object sender, EventArgs e) {
+            if (!resizing || e == null) {
+                if (e != null) resizing = true;
+
+                ListView listview = sender as ListView;
+
+                if (listview != null) {
+                    float totalColumnWidth = 0;
+                    float totalColumnFixedWidth = 1;
+
+
+                    for (int i = 0; i < listview.Columns.Count; i++) {
+                        Int32 tag = Convert.ToInt32(listview.Columns[i].Tag);
+                        if (tag >= 0)
+                            totalColumnWidth += tag;
+                        else if (tag == -1)
+                            totalColumnFixedWidth += listview.Columns[i].Width;
+                    }
+
+                    for (int i = 0; i < listview.Columns.Count; i++) {
+                        Int32 tag = Convert.ToInt32(listview.Columns[i].Tag);
+                        float colPercentage = (tag / totalColumnWidth);
+                        int width = (int) (colPercentage * (listview.ClientRectangle.Width - totalColumnFixedWidth));
+                        if (tag >= 0)
+                            listview.Columns[i].Width = width;
+                    }
+                }
+            }
         }
 
         private void month_listView_SelectedIndexChanged(object sender, EventArgs e) {
@@ -64,7 +127,7 @@ namespace MoneyManeger {
                     case "<": currentMonth.Year--; break;
                 }
 
-            } catch(ArgumentOutOfRangeException ex) {
+            } catch(ArgumentOutOfRangeException) {
                 MessageBox.Show("Você chegou na borda\nApenas values entre 1 e 9999", "Fora do limite");
             }
 
@@ -97,36 +160,6 @@ namespace MoneyManeger {
             // Update the expenses listview columns width
             listView_SizeChanged(expenses_listView, null);
 
-        }
-
-        private void listView_SizeChanged(object sender, EventArgs e) {
-            if (!resizing || e == null) {
-                if (e != null) resizing = true;
-
-                ListView listview = sender as ListView;
-
-                if (listview != null) {
-                    float totalColumnWidth = 0;
-                    float totalColumnFixedWidth = 1;
-
-
-                    for (int i = 0; i < listview.Columns.Count; i++) {
-                        Int32 tag = Convert.ToInt32(listview.Columns[i].Tag);
-                        if (tag >= 0)
-                            totalColumnWidth += tag;
-                        else if (tag == -1)
-                            totalColumnFixedWidth += listview.Columns[i].Width;
-                    }
-
-                    for (int i = 0; i < listview.Columns.Count; i++) {
-                        Int32 tag = Convert.ToInt32(listview.Columns[i].Tag);
-                        float colPercentage = (tag / totalColumnWidth);
-                        int width = (int) (colPercentage * (listview.ClientRectangle.Width - totalColumnFixedWidth));
-                        if (tag >= 0)
-                            listview.Columns[i].Width = width;
-                    }
-                }
-            }
         }
     }
 }
