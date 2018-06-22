@@ -49,7 +49,8 @@ namespace MoneyManeger {
             //return;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new GeneralForm());
+            //Application.Run(new MainForm());
         }
     }
 }

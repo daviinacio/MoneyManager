@@ -50,10 +50,23 @@
     <Compile Include="DataBase\MonthlyFeesDB.cs" />
     <Compile Include="DataBase\DBHelper.cs" />
     <Compile Include="Exceptions\ElementModifyException.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="Exceptions\RowNotFoundException.cs" />
+    <Compile Include="GeneralForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="GeneralForm.Designer.cs">
+      <DependentUpon>GeneralForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OldForms\InsertExpenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OldForms\InsertExpenseForm.Designer.cs">
+      <DependentUpon>InsertExpenseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OldForms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OldForms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Expense.cs" />
@@ -62,7 +75,14 @@
     <Compile Include="Models\MonthlyFee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainForm.resx">
+    <Compile Include="Utils\Transform.cs" />
+    <EmbeddedResource Include="GeneralForm.resx">
+      <DependentUpon>GeneralForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OldForms\InsertExpenseForm.resx">
+      <DependentUpon>InsertExpenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OldForms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -93,6 +113,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_icons8-delete-32 .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_icons8-multiply-24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

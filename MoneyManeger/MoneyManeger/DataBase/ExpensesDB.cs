@@ -45,12 +45,12 @@ namespace MoneyManeger.DataBase {
 
             try {
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO " + DBName +
-                        " (description, value, count, date) Values(@description, @value, @count, @date)", connection)) {
+                        " (description, price, count, date) Values(@description, @price, @count, @date)", connection)) {
 
                     cmd.Parameters.AddWithValue("@description", item.Description);
-                    cmd.Parameters.AddWithValue("@value", item.Value);
+                    cmd.Parameters.AddWithValue("@price", item.Price);
                     cmd.Parameters.AddWithValue("@count", item.Count);
-                    cmd.Parameters.AddWithValue("@date", item.Date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@date", item.Date);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -81,7 +81,7 @@ namespace MoneyManeger.DataBase {
                     result.Add(new Expense(
                             int.Parse(row["id"].ToString()),
                             row["description"].ToString(),
-                            Double.Parse(row["value"].ToString()),
+                            Double.Parse(row["price"].ToString()),
                             Double.Parse(row["count"].ToString()),
                             DateTime.Parse(row["date"].ToString())
                         ));
@@ -100,13 +100,13 @@ namespace MoneyManeger.DataBase {
 
             try {
                 using(SqlCommand cmd = new SqlCommand("UPDATE " + DBName + " SET" +
-                        " description = @description, value = @value, count = @count, date = @date WHERE id = @id;", connection)) {
+                        " description = @description, price = @price, count = @count, date = @date WHERE id = @id;", connection)) {
 
                     cmd.Parameters.AddWithValue("@id", item.Id);
                     cmd.Parameters.AddWithValue("@description", item.Description);
-                    cmd.Parameters.AddWithValue("@value", item.Value);
+                    cmd.Parameters.AddWithValue("@price", item.Price);
                     cmd.Parameters.AddWithValue("@count", item.Count);
-                    cmd.Parameters.AddWithValue("@date", item.Date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@date", item.Date);
 
                     cmd.ExecuteNonQuery();
                 }

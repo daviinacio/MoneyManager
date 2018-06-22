@@ -45,8 +45,8 @@ namespace MoneyManeger.DataBase {
 
                     cmd.Parameters.AddWithValue("@description", item.Description);
                     cmd.Parameters.AddWithValue("@monthlyValue", item.MonthlyValue);
-                    cmd.Parameters.AddWithValue("@monthStart", item.MonthStart.Date.ToShortDateString());
-                    cmd.Parameters.AddWithValue("@monthEnd", item.MonthEnd.Date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@monthStart", item.MonthStart.Date);
+                    cmd.Parameters.AddWithValue("@monthEnd", item.MonthEnd.Date);
                     cmd.Parameters.AddWithValue("@businessDay", item.BusinessDay);
 
                     cmd.ExecuteNonQuery();
@@ -104,8 +104,8 @@ namespace MoneyManeger.DataBase {
                     cmd.Parameters.AddWithValue("@id", item.Id);
                     cmd.Parameters.AddWithValue("@description", item.Description);
                     cmd.Parameters.AddWithValue("@monthlyValue", item.MonthlyValue);
-                    cmd.Parameters.AddWithValue("@monthStart", item.MonthStart.Date.ToShortDateString());
-                    cmd.Parameters.AddWithValue("@monthEnd", item.MonthEnd.Date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@monthStart", item.MonthStart.Date);
+                    cmd.Parameters.AddWithValue("@monthEnd", item.MonthEnd.Date);
                     cmd.Parameters.AddWithValue("@businessDay", item.BusinessDay);
 
                     cmd.ExecuteNonQuery();

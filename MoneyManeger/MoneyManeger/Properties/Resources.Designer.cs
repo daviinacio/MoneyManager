@@ -59,5 +59,25 @@ namespace MoneyManeger.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap white_icons8_delete_32_ {
+            get {
+                object obj = ResourceManager.GetObject("white_icons8-delete-32 ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap white_icons8_multiply_24 {
+            get {
+                object obj = ResourceManager.GetObject("white_icons8-multiply-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

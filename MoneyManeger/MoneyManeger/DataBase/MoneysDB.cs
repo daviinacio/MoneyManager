@@ -44,7 +44,7 @@ namespace MoneyManeger.DataBase {
 
                     cmd.Parameters.AddWithValue("@description", item.Description);
                     cmd.Parameters.AddWithValue("@value", item.Value);
-                    cmd.Parameters.AddWithValue("@date", item.Date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@date", item.Date);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -98,7 +98,7 @@ namespace MoneyManeger.DataBase {
                     cmd.Parameters.AddWithValue("@id", item.Id);
                     cmd.Parameters.AddWithValue("@description", item.Description);
                     cmd.Parameters.AddWithValue("@value", item.Value);
-                    cmd.Parameters.AddWithValue("@date", item.Date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@date", item.Date);
 
                     cmd.ExecuteNonQuery();
                 }
