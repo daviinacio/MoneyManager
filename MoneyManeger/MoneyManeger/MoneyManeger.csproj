@@ -51,12 +51,31 @@
     <Compile Include="DataBase\DBHelper.cs" />
     <Compile Include="Exceptions\ElementModifyException.cs" />
     <Compile Include="Exceptions\RowNotFoundException.cs" />
+    <Compile Include="MainTabs\ExpensesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainTabs\ExpensesUserControl.Designer.cs">
+      <DependentUpon>ExpensesUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GeneralForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GeneralForm.Designer.cs">
       <DependentUpon>GeneralForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainTabs\DashboardUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainTabs\DashboardUserControl.Designer.cs">
+      <DependentUpon>DashboardUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainTabs\MonthlyFeeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainTabs\MonthlyFeeUserControl.Designer.cs">
+      <DependentUpon>MonthlyFeeUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Theme.cs" />
     <Compile Include="OldForms\InsertExpenseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +90,7 @@
     </Compile>
     <Compile Include="Models\Expense.cs" />
     <Compile Include="Models\Money.cs" />
+    <Compile Include="Utils\ApplicationTheme.cs" />
     <Compile Include="Utils\MonthDate.cs" />
     <Compile Include="Models\MonthlyFee.cs" />
     <Compile Include="Program.cs" />
@@ -78,6 +98,15 @@
     <Compile Include="Utils\Transform.cs" />
     <EmbeddedResource Include="GeneralForm.resx">
       <DependentUpon>GeneralForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainTabs\DashboardUserControl.resx">
+      <DependentUpon>DashboardUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainTabs\ExpensesUserControl.resx">
+      <DependentUpon>ExpensesUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainTabs\MonthlyFeeUserControl.resx">
+      <DependentUpon>MonthlyFeeUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OldForms\InsertExpenseForm.resx">
       <DependentUpon>InsertExpenseForm.cs</DependentUpon>
@@ -119,6 +148,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\white_icons8-multiply-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_icons8-minimize-window-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_icons8-maximize-window-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_icons8-restore-window-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_icons8-combo-chart-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_icons8-buy-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_icons8-expensive-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

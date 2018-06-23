@@ -24,11 +24,19 @@
         /// </summary>
         private void InitializeComponent() {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panelTabs = new System.Windows.Forms.Panel();
+            this.tabMonthlyFee = new System.Windows.Forms.Button();
+            this.tabExpenses = new System.Windows.Forms.Button();
+            this.tabDashboard = new System.Windows.Forms.Button();
+            this.panelAppIcon = new System.Windows.Forms.Panel();
+            this.labelAppIcon = new System.Windows.Forms.Label();
+            this.panel_topWindow = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonMinimize = new System.Windows.Forms.Button();
+            this.buttonMaximize = new System.Windows.Forms.Button();
+            this.buttonRestore = new System.Windows.Forms.Button();
+            this.menu = new System.Windows.Forms.MenuStrip();
             this.Menu_Manage = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Manage_Insert = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Manage_Insert_Expense = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,94 +64,219 @@
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.fecharToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pb_closeForm = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
+            this.labelTabTitle = new System.Windows.Forms.Label();
+            this.dashboardUserControl = new MoneyManeger.MainTabs.DashboardUserControl();
+            this.expensesUserControl = new MoneyManeger.ExpensesUserControl();
+            this.monthlyFeeUserControl = new MoneyManeger.MainTabs.MonthlyFeeUserControl();
             this.panel1.SuspendLayout();
+            this.panelTabs.SuspendLayout();
+            this.panelAppIcon.SuspendLayout();
+            this.panel_topWindow.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_closeForm)).BeginInit();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panelTabs);
+            this.panel1.Controls.Add(this.panelAppIcon);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(68, 626);
+            this.panel1.Size = new System.Drawing.Size(68, 537);
             this.panel1.TabIndex = 0;
             // 
-            // panel4
+            // panelTabs
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.panel4.Size = new System.Drawing.Size(68, 26);
-            this.panel4.TabIndex = 7;
+            this.panelTabs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.panelTabs.Controls.Add(this.tabMonthlyFee);
+            this.panelTabs.Controls.Add(this.tabExpenses);
+            this.panelTabs.Controls.Add(this.tabDashboard);
+            this.panelTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTabs.Location = new System.Drawing.Point(0, 26);
+            this.panelTabs.Margin = new System.Windows.Forms.Padding(0);
+            this.panelTabs.Name = "panelTabs";
+            this.panelTabs.Size = new System.Drawing.Size(68, 511);
+            this.panelTabs.TabIndex = 11;
             // 
-            // label2
+            // tabMonthlyFee
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Magneto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "MM";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tabMonthlyFee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
+            this.tabMonthlyFee.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabMonthlyFee.FlatAppearance.BorderSize = 0;
+            this.tabMonthlyFee.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(167)))), ((int)(((byte)(193)))));
+            this.tabMonthlyFee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(201)))), ((int)(((byte)(232)))));
+            this.tabMonthlyFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tabMonthlyFee.ForeColor = System.Drawing.Color.White;
+            this.tabMonthlyFee.Image = global::MoneyManeger.Properties.Resources.white_icons8_expensive_32;
+            this.tabMonthlyFee.Location = new System.Drawing.Point(0, 136);
+            this.tabMonthlyFee.Name = "tabMonthlyFee";
+            this.tabMonthlyFee.Size = new System.Drawing.Size(68, 68);
+            this.tabMonthlyFee.TabIndex = 10;
+            this.tabMonthlyFee.UseVisualStyleBackColor = false;
+            this.tabMonthlyFee.Click += new System.EventHandler(this.tabMonthlyFee_Click);
+            // 
+            // tabExpenses
+            // 
+            this.tabExpenses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
+            this.tabExpenses.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabExpenses.FlatAppearance.BorderSize = 0;
+            this.tabExpenses.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(167)))), ((int)(((byte)(193)))));
+            this.tabExpenses.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(201)))), ((int)(((byte)(232)))));
+            this.tabExpenses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tabExpenses.ForeColor = System.Drawing.Color.White;
+            this.tabExpenses.Image = global::MoneyManeger.Properties.Resources.white_icons8_buy_32;
+            this.tabExpenses.Location = new System.Drawing.Point(0, 68);
+            this.tabExpenses.Name = "tabExpenses";
+            this.tabExpenses.Size = new System.Drawing.Size(68, 68);
+            this.tabExpenses.TabIndex = 9;
+            this.tabExpenses.UseVisualStyleBackColor = false;
+            this.tabExpenses.Click += new System.EventHandler(this.tabExpenses_Click);
+            // 
+            // tabDashboard
+            // 
+            this.tabDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
+            this.tabDashboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabDashboard.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.tabDashboard.FlatAppearance.BorderSize = 0;
+            this.tabDashboard.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(167)))), ((int)(((byte)(193)))));
+            this.tabDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(201)))), ((int)(((byte)(232)))));
+            this.tabDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tabDashboard.ForeColor = System.Drawing.Color.White;
+            this.tabDashboard.Image = global::MoneyManeger.Properties.Resources.white_icons8_combo_chart_32;
+            this.tabDashboard.Location = new System.Drawing.Point(0, 0);
+            this.tabDashboard.Name = "tabDashboard";
+            this.tabDashboard.Size = new System.Drawing.Size(68, 68);
+            this.tabDashboard.TabIndex = 8;
+            this.tabDashboard.UseVisualStyleBackColor = false;
+            this.tabDashboard.Click += new System.EventHandler(this.tabDashboard_Click);
+            // 
+            // panelAppIcon
+            // 
+            this.panelAppIcon.BackColor = System.Drawing.Color.Transparent;
+            this.panelAppIcon.Controls.Add(this.labelAppIcon);
+            this.panelAppIcon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAppIcon.Location = new System.Drawing.Point(0, 0);
+            this.panelAppIcon.Name = "panelAppIcon";
+            this.panelAppIcon.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.panelAppIcon.Size = new System.Drawing.Size(68, 26);
+            this.panelAppIcon.TabIndex = 7;
+            // 
+            // labelAppIcon
+            // 
+            this.labelAppIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.labelAppIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelAppIcon.Font = new System.Drawing.Font("Magneto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAppIcon.ForeColor = System.Drawing.Color.White;
+            this.labelAppIcon.Location = new System.Drawing.Point(0, 0);
+            this.labelAppIcon.Name = "labelAppIcon";
+            this.labelAppIcon.Size = new System.Drawing.Size(68, 25);
+            this.labelAppIcon.TabIndex = 0;
+            this.labelAppIcon.Text = "MM";
+            this.labelAppIcon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelAppIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveWindow_MouseDown);
+            // 
+            // panel_topWindow
+            // 
+            this.panel_topWindow.Controls.Add(this.panel2);
+            this.panel_topWindow.Controls.Add(this.panel4);
+            this.panel_topWindow.Controls.Add(this.labelTabTitle);
+            this.panel_topWindow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_topWindow.Location = new System.Drawing.Point(69, 1);
+            this.panel_topWindow.Name = "panel_topWindow";
+            this.panel_topWindow.Size = new System.Drawing.Size(836, 25);
+            this.panel_topWindow.TabIndex = 1;
+            this.panel_topWindow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveWindow_MouseDown);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.pictureBox5);
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.pictureBox6);
-            this.panel2.Controls.Add(this.menuStrip1);
-            this.panel2.Controls.Add(this.pb_closeForm);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(69, 1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(129, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1207, 25);
-            this.panel2.TabIndex = 1;
+            this.panel2.Size = new System.Drawing.Size(1, 25);
+            this.panel2.TabIndex = 12;
             // 
-            // panel5
+            // panel4
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(1117, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(25, 25);
-            this.panel5.TabIndex = 3;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.panel4.Controls.Add(this.buttonMinimize);
+            this.panel4.Controls.Add(this.buttonMaximize);
+            this.panel4.Controls.Add(this.buttonRestore);
+            this.panel4.Controls.Add(this.menu);
+            this.panel4.Controls.Add(this.buttonClose);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(129, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(707, 25);
+            this.panel4.TabIndex = 11;
+            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveWindow_MouseDown);
             // 
-            // menuStrip1
+            // buttonMinimize
             // 
-            this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonMinimize.BackgroundImage = global::MoneyManeger.Properties.Resources.white_icons8_minimize_window_32;
+            this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonMinimize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonMinimize.FlatAppearance.BorderSize = 0;
+            this.buttonMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(167)))), ((int)(((byte)(193)))));
+            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMinimize.ForeColor = System.Drawing.Color.White;
+            this.buttonMinimize.Location = new System.Drawing.Point(577, 0);
+            this.buttonMinimize.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonMinimize.Name = "buttonMinimize";
+            this.buttonMinimize.Size = new System.Drawing.Size(30, 25);
+            this.buttonMinimize.TabIndex = 4;
+            this.buttonMinimize.UseVisualStyleBackColor = true;
+            this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
+            // 
+            // buttonMaximize
+            // 
+            this.buttonMaximize.BackgroundImage = global::MoneyManeger.Properties.Resources.white_icons8_maximize_window_32;
+            this.buttonMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonMaximize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonMaximize.FlatAppearance.BorderSize = 0;
+            this.buttonMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(167)))), ((int)(((byte)(193)))));
+            this.buttonMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMaximize.ForeColor = System.Drawing.Color.White;
+            this.buttonMaximize.Location = new System.Drawing.Point(607, 0);
+            this.buttonMaximize.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonMaximize.Name = "buttonMaximize";
+            this.buttonMaximize.Size = new System.Drawing.Size(30, 25);
+            this.buttonMaximize.TabIndex = 3;
+            this.buttonMaximize.UseVisualStyleBackColor = true;
+            this.buttonMaximize.Click += new System.EventHandler(this.buttonMaximize_Click);
+            // 
+            // buttonRestore
+            // 
+            this.buttonRestore.BackgroundImage = global::MoneyManeger.Properties.Resources.white_icons8_restore_window_32;
+            this.buttonRestore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonRestore.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonRestore.FlatAppearance.BorderSize = 0;
+            this.buttonRestore.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(167)))), ((int)(((byte)(193)))));
+            this.buttonRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRestore.ForeColor = System.Drawing.Color.White;
+            this.buttonRestore.Location = new System.Drawing.Point(637, 0);
+            this.buttonRestore.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonRestore.Name = "buttonRestore";
+            this.buttonRestore.Size = new System.Drawing.Size(30, 25);
+            this.buttonRestore.TabIndex = 2;
+            this.buttonRestore.UseVisualStyleBackColor = true;
+            this.buttonRestore.Visible = false;
+            this.buttonRestore.Click += new System.EventHandler(this.buttonRestore_Click);
+            // 
+            // menu
+            // 
+            this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.menu.Dock = System.Windows.Forms.DockStyle.None;
+            this.menu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menu_Manage});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1167, 25);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menu.Location = new System.Drawing.Point(1, 0);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(86, 25);
+            this.menu.TabIndex = 0;
+            this.menu.Text = "menuStrip1";
+            this.menu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveWindow_MouseDown);
             // 
             // Menu_Manage
             // 
@@ -336,116 +469,94 @@
             // 
             // fecharToolStripMenuItem
             // 
-            this.fecharToolStripMenuItem.BackColor = System.Drawing.Color.Red;
+            this.fecharToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.fecharToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fecharToolStripMenuItem.Name = "fecharToolStripMenuItem";
             this.fecharToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.fecharToolStripMenuItem.Text = "Fechar";
             // 
-            // panel3
+            // buttonClose
             // 
-            this.panel3.Location = new System.Drawing.Point(69, 251);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1207, 376);
-            this.panel3.TabIndex = 2;
+            this.buttonClose.BackgroundImage = global::MoneyManeger.Properties.Resources.white_icons8_delete_32_;
+            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonClose.FlatAppearance.BorderSize = 0;
+            this.buttonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.ForeColor = System.Drawing.Color.White;
+            this.buttonClose.Location = new System.Drawing.Point(667, 0);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(40, 25);
+            this.buttonClose.TabIndex = 1;
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
-            // pictureBox5
+            // labelTabTitle
             // 
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox5.Location = new System.Drawing.Point(1092, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
+            this.labelTabTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.labelTabTitle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelTabTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTabTitle.ForeColor = System.Drawing.Color.White;
+            this.labelTabTitle.Location = new System.Drawing.Point(0, 0);
+            this.labelTabTitle.Name = "labelTabTitle";
+            this.labelTabTitle.Size = new System.Drawing.Size(129, 25);
+            this.labelTabTitle.TabIndex = 5;
+            this.labelTabTitle.Text = "WindowTabTitle";
+            this.labelTabTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelTabTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveWindow_MouseDown);
             // 
-            // pictureBox6
+            // dashboardUserControl
             // 
-            this.pictureBox6.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox6.Location = new System.Drawing.Point(1142, 0);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox6.TabIndex = 2;
-            this.pictureBox6.TabStop = false;
+            this.dashboardUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboardUserControl.Location = new System.Drawing.Point(69, 26);
+            this.dashboardUserControl.Name = "dashboardUserControl";
+            this.dashboardUserControl.Size = new System.Drawing.Size(836, 512);
+            this.dashboardUserControl.TabIndex = 2;
             // 
-            // pb_closeForm
+            // expensesUserControl
             // 
-            this.pb_closeForm.BackColor = System.Drawing.Color.Red;
-            this.pb_closeForm.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pb_closeForm.Image = global::MoneyManeger.Properties.Resources.white_icons8_multiply_24;
-            this.pb_closeForm.Location = new System.Drawing.Point(1167, 0);
-            this.pb_closeForm.Name = "pb_closeForm";
-            this.pb_closeForm.Size = new System.Drawing.Size(40, 25);
-            this.pb_closeForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb_closeForm.TabIndex = 0;
-            this.pb_closeForm.TabStop = false;
-            this.pb_closeForm.Click += new System.EventHandler(this.pb_closeForm_Click);
+            this.expensesUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.expensesUserControl.Location = new System.Drawing.Point(69, 26);
+            this.expensesUserControl.Name = "expensesUserControl";
+            this.expensesUserControl.Size = new System.Drawing.Size(836, 512);
+            this.expensesUserControl.TabIndex = 3;
             // 
-            // button1
+            // monthlyFeeUserControl
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(120)))), ((int)(((byte)(20)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 68);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(120)))), ((int)(((byte)(20)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 94);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(68, 68);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(120)))), ((int)(((byte)(20)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 162);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(68, 68);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.monthlyFeeUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monthlyFeeUserControl.Location = new System.Drawing.Point(69, 26);
+            this.monthlyFeeUserControl.Name = "monthlyFeeUserControl";
+            this.monthlyFeeUserControl.Size = new System.Drawing.Size(836, 512);
+            this.monthlyFeeUserControl.TabIndex = 4;
             // 
             // GeneralForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1277, 628);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(906, 539);
+            this.Controls.Add(this.monthlyFeeUserControl);
+            this.Controls.Add(this.expensesUserControl);
+            this.Controls.Add(this.dashboardUserControl);
+            this.Controls.Add(this.panel_topWindow);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menu;
             this.Name = "GeneralForm";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GeneralForm";
+            this.Load += new System.EventHandler(this.GeneralForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panelTabs.ResumeLayout(false);
+            this.panelAppIcon.ResumeLayout(false);
+            this.panel_topWindow.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_closeForm)).EndInit();
+            this.panel4.PerformLayout();
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -453,10 +564,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Panel panel_topWindow;
+        private System.Windows.Forms.Label labelAppIcon;
+        private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem Menu_Manage;
         private System.Windows.Forms.ToolStripMenuItem Menu_Manage_Insert;
         private System.Windows.Forms.ToolStripMenuItem Menu_Manage_Insert_Expense;
@@ -484,13 +594,20 @@
         private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem fecharToolStripMenuItem;
+        private System.Windows.Forms.Panel panelAppIcon;
+        private System.Windows.Forms.Button tabMonthlyFee;
+        private System.Windows.Forms.Button tabExpenses;
+        private System.Windows.Forms.Button tabDashboard;
+        private MainTabs.DashboardUserControl dashboardUserControl;
+        private ExpensesUserControl expensesUserControl;
+        private MainTabs.MonthlyFeeUserControl monthlyFeeUserControl;
+        private System.Windows.Forms.Button buttonMinimize;
+        private System.Windows.Forms.Button buttonMaximize;
+        private System.Windows.Forms.Button buttonRestore;
+        private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Label labelTabTitle;
+        private System.Windows.Forms.Panel panelTabs;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pb_closeForm;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

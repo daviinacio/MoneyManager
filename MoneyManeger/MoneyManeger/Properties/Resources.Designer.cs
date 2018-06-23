@@ -63,6 +63,26 @@ namespace MoneyManeger.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap white_icons8_buy_32 {
+            get {
+                object obj = ResourceManager.GetObject("white_icons8-buy-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap white_icons8_combo_chart_32 {
+            get {
+                object obj = ResourceManager.GetObject("white_icons8-combo-chart-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap white_icons8_delete_32_ {
             get {
                 object obj = ResourceManager.GetObject("white_icons8-delete-32 ", resourceCulture);
@@ -73,9 +93,49 @@ namespace MoneyManeger.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap white_icons8_expensive_32 {
+            get {
+                object obj = ResourceManager.GetObject("white_icons8-expensive-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap white_icons8_maximize_window_32 {
+            get {
+                object obj = ResourceManager.GetObject("white_icons8-maximize-window-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap white_icons8_minimize_window_32 {
+            get {
+                object obj = ResourceManager.GetObject("white_icons8-minimize-window-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap white_icons8_multiply_24 {
             get {
                 object obj = ResourceManager.GetObject("white_icons8-multiply-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap white_icons8_restore_window_32 {
+            get {
+                object obj = ResourceManager.GetObject("white_icons8-restore-window-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
