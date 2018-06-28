@@ -18,7 +18,7 @@ namespace MoneyManeger {
         // TableData
         private MonthlyFeesDB monthlyFees = new MonthlyFeesDB();
         private ExpensesDB expenses = new ExpensesDB();
-        private MoneysDB moneys = new MoneysDB();
+        private IncomesDB moneys = new IncomesDB();
 
         // Variables
         private MonthDate currentMonth = MonthDate.Now;
@@ -236,7 +236,7 @@ namespace MoneyManeger {
             // Moneys
             moneys_listView.Items.Clear();
 
-            foreach (Money item in moneys.SelectByMonth(currentMonth)) {
+            foreach (Income item in moneys.SelectByMonth(currentMonth)) {
                 ListViewItem row = new ListViewItem(item.Description.ToString());
                 row.SubItems.Add(item.Date.ToString().Split(' ')[0]);
                 row.SubItems.Add(String.Format("R$ {0:N}", item.Value));

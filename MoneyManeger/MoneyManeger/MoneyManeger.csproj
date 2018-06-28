@@ -32,8 +32,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.2\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.4.0.1044, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.4.0.1044\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectListView.Official.2.9.1\lib\net20\ObjectListView.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,12 +67,31 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase\ExpensesDB.cs" />
-    <Compile Include="DataBase\MoneysDB.cs" />
+    <Compile Include="DataBase\IncomesDB.cs" />
     <Compile Include="DataBase\MonthlyFeesDB.cs" />
     <Compile Include="DataBase\DBHelper.cs" />
+    <Compile Include="Utils\ModernMonthPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utils\ModernMonthPicker.Designer.cs">
+      <DependentUpon>ModernMonthPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelEditForm\EditIncomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModelEditForm\EditIncomeForm.Designer.cs">
+      <DependentUpon>EditIncomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelEditForm\EditMonthlyFeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModelEditForm\EditMonthlyFeeForm.Designer.cs">
+      <DependentUpon>EditMonthlyFeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Exceptions\ElementModifyException.cs" />
     <Compile Include="Exceptions\RowNotFoundException.cs" />
     <Compile Include="MainTabs\ExpensesUserControl.cs">
@@ -76,6 +119,12 @@
       <DependentUpon>MonthlyFeeUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Theme.cs" />
+    <Compile Include="ModelEditForm\EditExpenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModelEditForm\EditExpenseForm.Designer.cs">
+      <DependentUpon>EditExpenseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OldForms\InsertExpenseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,13 +138,32 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Expense.cs" />
-    <Compile Include="Models\Money.cs" />
+    <Compile Include="Models\Income.cs" />
+    <Compile Include="Teste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teste.Designer.cs">
+      <DependentUpon>Teste.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\ApplicationTheme.cs" />
+    <Compile Include="Utils\ListViewResizable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\ListViewResizer.cs" />
     <Compile Include="Utils\MonthDate.cs" />
     <Compile Include="Models\MonthlyFee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Transform.cs" />
+    <EmbeddedResource Include="Utils\ModernMonthPicker.resx">
+      <DependentUpon>ModernMonthPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelEditForm\EditIncomeForm.resx">
+      <DependentUpon>EditIncomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelEditForm\EditMonthlyFeeForm.resx">
+      <DependentUpon>EditMonthlyFeeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GeneralForm.resx">
       <DependentUpon>GeneralForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainTabs\MonthlyFeeUserControl.resx">
       <DependentUpon>MonthlyFeeUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelEditForm\EditExpenseForm.resx">
+      <DependentUpon>EditExpenseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OldForms\InsertExpenseForm.resx">
       <DependentUpon>InsertExpenseForm.cs</DependentUpon>
@@ -124,6 +195,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Teste.resx">
+      <DependentUpon>Teste.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

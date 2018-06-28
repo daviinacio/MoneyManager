@@ -42,7 +42,7 @@
             this.Menu_Manage_Insert_Expense = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Manage_Insert_MonthlyFee = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Manage_Insert_Reserva = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_Manage_Insert_Money = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Manage_Insert_Income = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gastosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +84,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(68, 537);
+            this.panel1.Size = new System.Drawing.Size(68, 539);
             this.panel1.TabIndex = 0;
             // 
             // panelTabs
@@ -97,7 +97,7 @@
             this.panelTabs.Location = new System.Drawing.Point(0, 26);
             this.panelTabs.Margin = new System.Windows.Forms.Padding(0);
             this.panelTabs.Name = "panelTabs";
-            this.panelTabs.Size = new System.Drawing.Size(68, 511);
+            this.panelTabs.Size = new System.Drawing.Size(68, 513);
             this.panelTabs.TabIndex = 11;
             // 
             // tabMonthlyFee
@@ -185,7 +185,7 @@
             this.panel_topWindow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_topWindow.Location = new System.Drawing.Point(69, 1);
             this.panel_topWindow.Name = "panel_topWindow";
-            this.panel_topWindow.Size = new System.Drawing.Size(836, 25);
+            this.panel_topWindow.Size = new System.Drawing.Size(909, 25);
             this.panel_topWindow.TabIndex = 1;
             this.panel_topWindow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveWindow_MouseDown);
             // 
@@ -208,7 +208,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(129, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(707, 25);
+            this.panel4.Size = new System.Drawing.Size(780, 25);
             this.panel4.TabIndex = 11;
             this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveWindow_MouseDown);
             // 
@@ -221,7 +221,7 @@
             this.buttonMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(167)))), ((int)(((byte)(193)))));
             this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMinimize.ForeColor = System.Drawing.Color.White;
-            this.buttonMinimize.Location = new System.Drawing.Point(577, 0);
+            this.buttonMinimize.Location = new System.Drawing.Point(650, 0);
             this.buttonMinimize.Margin = new System.Windows.Forms.Padding(0);
             this.buttonMinimize.Name = "buttonMinimize";
             this.buttonMinimize.Size = new System.Drawing.Size(30, 25);
@@ -238,7 +238,7 @@
             this.buttonMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(167)))), ((int)(((byte)(193)))));
             this.buttonMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMaximize.ForeColor = System.Drawing.Color.White;
-            this.buttonMaximize.Location = new System.Drawing.Point(607, 0);
+            this.buttonMaximize.Location = new System.Drawing.Point(680, 0);
             this.buttonMaximize.Margin = new System.Windows.Forms.Padding(0);
             this.buttonMaximize.Name = "buttonMaximize";
             this.buttonMaximize.Size = new System.Drawing.Size(30, 25);
@@ -255,7 +255,7 @@
             this.buttonRestore.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(167)))), ((int)(((byte)(193)))));
             this.buttonRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRestore.ForeColor = System.Drawing.Color.White;
-            this.buttonRestore.Location = new System.Drawing.Point(637, 0);
+            this.buttonRestore.Location = new System.Drawing.Point(710, 0);
             this.buttonRestore.Margin = new System.Windows.Forms.Padding(0);
             this.buttonRestore.Name = "buttonRestore";
             this.buttonRestore.Size = new System.Drawing.Size(30, 25);
@@ -301,7 +301,7 @@
             this.Menu_Manage_Insert_Expense,
             this.Menu_Manage_Insert_MonthlyFee,
             this.Menu_Manage_Insert_Reserva,
-            this.Menu_Manage_Insert_Money,
+            this.Menu_Manage_Insert_Income,
             this.toolStripSeparator2});
             this.Menu_Manage_Insert.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Menu_Manage_Insert.Name = "Menu_Manage_Insert";
@@ -311,31 +311,35 @@
             // Menu_Manage_Insert_Expense
             // 
             this.Menu_Manage_Insert_Expense.Name = "Menu_Manage_Insert_Expense";
-            this.Menu_Manage_Insert_Expense.Size = new System.Drawing.Size(151, 22);
+            this.Menu_Manage_Insert_Expense.Size = new System.Drawing.Size(152, 22);
             this.Menu_Manage_Insert_Expense.Text = "Gasto";
+            this.Menu_Manage_Insert_Expense.Click += new System.EventHandler(this.Menu_Manage_Insert_Expense_Click);
             // 
             // Menu_Manage_Insert_MonthlyFee
             // 
             this.Menu_Manage_Insert_MonthlyFee.Name = "Menu_Manage_Insert_MonthlyFee";
-            this.Menu_Manage_Insert_MonthlyFee.Size = new System.Drawing.Size(151, 22);
+            this.Menu_Manage_Insert_MonthlyFee.Size = new System.Drawing.Size(152, 22);
             this.Menu_Manage_Insert_MonthlyFee.Text = "Mensalidade";
+            this.Menu_Manage_Insert_MonthlyFee.Click += new System.EventHandler(this.Menu_Manage_Insert_MonthlyFee_Click);
             // 
             // Menu_Manage_Insert_Reserva
             // 
             this.Menu_Manage_Insert_Reserva.Name = "Menu_Manage_Insert_Reserva";
-            this.Menu_Manage_Insert_Reserva.Size = new System.Drawing.Size(151, 22);
+            this.Menu_Manage_Insert_Reserva.Size = new System.Drawing.Size(152, 22);
             this.Menu_Manage_Insert_Reserva.Text = "Reserva";
+            this.Menu_Manage_Insert_Reserva.Click += new System.EventHandler(this.Menu_Manage_Insert_Reserva_Click);
             // 
-            // Menu_Manage_Insert_Money
+            // Menu_Manage_Insert_Income
             // 
-            this.Menu_Manage_Insert_Money.Name = "Menu_Manage_Insert_Money";
-            this.Menu_Manage_Insert_Money.Size = new System.Drawing.Size(151, 22);
-            this.Menu_Manage_Insert_Money.Text = "Dinheiro";
+            this.Menu_Manage_Insert_Income.Name = "Menu_Manage_Insert_Income";
+            this.Menu_Manage_Insert_Income.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Manage_Insert_Income.Text = "Receita";
+            this.Menu_Manage_Insert_Income.Click += new System.EventHandler(this.Menu_Manage_Insert_Income_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(148, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // visualizarToolStripMenuItem
             // 
@@ -484,7 +488,7 @@
             this.buttonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.ForeColor = System.Drawing.Color.White;
-            this.buttonClose.Location = new System.Drawing.Point(667, 0);
+            this.buttonClose.Location = new System.Drawing.Point(740, 0);
             this.buttonClose.Margin = new System.Windows.Forms.Padding(0);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(40, 25);
@@ -511,7 +515,7 @@
             this.dashboardUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboardUserControl.Location = new System.Drawing.Point(69, 26);
             this.dashboardUserControl.Name = "dashboardUserControl";
-            this.dashboardUserControl.Size = new System.Drawing.Size(836, 512);
+            this.dashboardUserControl.Size = new System.Drawing.Size(909, 514);
             this.dashboardUserControl.TabIndex = 2;
             // 
             // expensesUserControl
@@ -519,7 +523,7 @@
             this.expensesUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.expensesUserControl.Location = new System.Drawing.Point(69, 26);
             this.expensesUserControl.Name = "expensesUserControl";
-            this.expensesUserControl.Size = new System.Drawing.Size(836, 512);
+            this.expensesUserControl.Size = new System.Drawing.Size(909, 514);
             this.expensesUserControl.TabIndex = 3;
             // 
             // monthlyFeeUserControl
@@ -527,15 +531,15 @@
             this.monthlyFeeUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.monthlyFeeUserControl.Location = new System.Drawing.Point(69, 26);
             this.monthlyFeeUserControl.Name = "monthlyFeeUserControl";
-            this.monthlyFeeUserControl.Size = new System.Drawing.Size(836, 512);
+            this.monthlyFeeUserControl.Size = new System.Drawing.Size(909, 514);
             this.monthlyFeeUserControl.TabIndex = 4;
             // 
             // GeneralForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(906, 539);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(979, 541);
             this.Controls.Add(this.monthlyFeeUserControl);
             this.Controls.Add(this.expensesUserControl);
             this.Controls.Add(this.dashboardUserControl);
@@ -572,7 +576,7 @@
         private System.Windows.Forms.ToolStripMenuItem Menu_Manage_Insert_Expense;
         private System.Windows.Forms.ToolStripMenuItem Menu_Manage_Insert_MonthlyFee;
         private System.Windows.Forms.ToolStripMenuItem Menu_Manage_Insert_Reserva;
-        private System.Windows.Forms.ToolStripMenuItem Menu_Manage_Insert_Money;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Manage_Insert_Income;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gastosToolStripMenuItem1;

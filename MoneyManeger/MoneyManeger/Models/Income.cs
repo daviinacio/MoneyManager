@@ -5,24 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MoneyManeger.Models {
-    class Money {
-        public Money(int id, string description, double value, DateTime date) {
+    class Income {
+        public Income(int id, string description, double value, DateTime date) {
             this.Id = id; this.Description = description;
             this.Value = value; this.Date = date;
         }
-        public Money(int id, string description, double value) :
+        public Income(int id, string description, double value) :
             this(id, description, value, DateTime.Now) { }
 
-        public Money(int id, string description) :
+        public Income(int id, string description) :
             this(id, description, 0) { }
 
-        public Money(string description, double value, DateTime date) :
+        public Income(string description, double value, DateTime date) :
             this(-1, description, value, date) { }
 
-        public Money(string description, double value) :
+        public Income(string description, double value) :
             this(-1, description, value) { }
 
-        public Money(string description) :
+        public Income(string description) :
             this(-1, description) { }
 
 

@@ -34,7 +34,7 @@ namespace MoneyManeger {
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        // Window control icons click
+        // WINDOW CONTROL BUTTON ** WINDOW CONTROL BUTTON ** WINDOW CONTROL BUTTON ** WINDOW CONTROL BUTTON ** WINDOW CONTROL BUTTON
         private void buttonClose_Click(object sender, EventArgs e) {
             Application.Exit();
         }
@@ -55,7 +55,9 @@ namespace MoneyManeger {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        // Choose tab
+        /*  *   *   *   ELEM FUNC   *   ELEM FUNC   *   ELEM FUNC   *   ELEM FUNC   *   *   *   */
+
+        //  CHOOSE TAB ** CHOOSE TAB ** CHOOSE TAB ** CHOOSE TAB ** CHOOSE TAB ** CHOOSE TAB ** CHOOSE TAB ** CHOOSE TAB ** CHOOSE TAB
         private void tabDashboard_Click(object sender, EventArgs e) {
             TabDefaultState();
             dashboardUserControl.Visible = true;
@@ -83,6 +85,28 @@ namespace MoneyManeger {
             tabDashboard.BackColor = panelTabs.BackColor;
             tabExpenses.BackColor = panelTabs.BackColor;
             tabMonthlyFee.BackColor = panelTabs.BackColor;
+        }
+
+        //  MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU
+
+        // MANAGE -> INSERIR || MANAGE -> INSERIR || MANAGE -> INSERIR || MANAGE -> INSERIR
+        private void Menu_Manage_Insert_Expense_Click(object sender, EventArgs e) {
+            new EditExpenseForm().ShowDialog();
+        }
+
+        private void Menu_Manage_Insert_MonthlyFee_Click(object sender, EventArgs e) {
+            new EditMonthlyFeeForm().ShowDialog();
+        }
+
+        private void Menu_Manage_Insert_Reserva_Click(object sender, EventArgs e) {
+
+        }
+
+        private void Menu_Manage_Insert_Income_Click(object sender, EventArgs e) {
+            new EditIncomeForm().ShowDialog();
+            /*new DataBase.IncomesDB().Insert(
+                new Models.Income("Salário", 1080, DateTime.Now)
+            );*/
         }
     }
 }

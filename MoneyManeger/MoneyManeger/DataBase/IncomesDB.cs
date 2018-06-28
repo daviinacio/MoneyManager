@@ -10,12 +10,12 @@ using MoneyManeger.Models;
 using System.Windows.Forms;
 
 namespace MoneyManeger.DataBase {
-    class MoneysDB : DBHelper<Money> {
+    class IncomesDB : DBHelper<Income> {
 
-        public MoneysDB() : base("Moneys") { }
+        public IncomesDB() : base("Incomes") { }
 
         // SQL Functions
-        public override void Delete(Money item) {
+        public override void Delete(Income item) {
             this.Delete(item.Id);
         }
 
@@ -35,7 +35,7 @@ namespace MoneyManeger.DataBase {
             } finally { connection.Close(); }
         }
 
-        public override Money Insert(Money item) {
+        public override Income Insert(Income item) {
             connection.Open();
 
             try {
@@ -59,8 +59,8 @@ namespace MoneyManeger.DataBase {
             return this.Max;
         }
 
-        public override List<Money> Select(string where) {
-            List<Money> result = new List<Money>();
+        public override List<Income> Select(string where) {
+            List<Income> result = new List<Income>();
 
             DataSet ds = new DataSet();
             SqlCommand command = new SqlCommand("SELECT * FROM " + DBName + " WHERE " + where, connection);
@@ -72,7 +72,7 @@ namespace MoneyManeger.DataBase {
                 sda.Fill(ds);
 
                 foreach (DataRow row in ds.Tables[0].Rows)
-                    result.Add(new Money(
+                    result.Add(new Income(
                             int.Parse(row["id"].ToString()),
                             row["description"].ToString(),
                             Double.Parse(row["value"].ToString()),
@@ -88,7 +88,7 @@ namespace MoneyManeger.DataBase {
             return result;
         }
 
-        public override void Update(Money item) {
+        public override void Update(Income item) {
             connection.Open();
 
             try {
