@@ -43,6 +43,7 @@
             this.bYearLess = new System.Windows.Forms.Button();
             this.bYearPlus = new System.Windows.Forms.Button();
             this.labelYear = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.horizontalCenterMonthPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -55,7 +56,7 @@
             this.horizontalCenterMonthPanel.BackColor = System.Drawing.SystemColors.Control;
             this.horizontalCenterMonthPanel.ColumnCount = 3;
             this.horizontalCenterMonthPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.horizontalCenterMonthPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 189F));
+            this.horizontalCenterMonthPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
             this.horizontalCenterMonthPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.horizontalCenterMonthPanel.Controls.Add(this.panel3, 1, 0);
             this.horizontalCenterMonthPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -71,10 +72,10 @@
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(32, 0);
+            this.panel3.Location = new System.Drawing.Point(34, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(189, 190);
+            this.panel3.Size = new System.Drawing.Size(185, 190);
             this.panel3.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -87,9 +88,9 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 143F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(189, 190);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(185, 190);
             this.tableLayoutPanel1.TabIndex = 12;
             // 
             // verticalCenterMonthPanel
@@ -107,10 +108,11 @@
             this.verticalCenterMonthPanel.Controls.Add(this.bNov);
             this.verticalCenterMonthPanel.Controls.Add(this.bDec);
             this.verticalCenterMonthPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.verticalCenterMonthPanel.Location = new System.Drawing.Point(0, 23);
+            this.verticalCenterMonthPanel.Location = new System.Drawing.Point(0, 22);
             this.verticalCenterMonthPanel.Margin = new System.Windows.Forms.Padding(0);
             this.verticalCenterMonthPanel.Name = "verticalCenterMonthPanel";
-            this.verticalCenterMonthPanel.Size = new System.Drawing.Size(189, 143);
+            this.verticalCenterMonthPanel.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
+            this.verticalCenterMonthPanel.Size = new System.Drawing.Size(185, 145);
             this.verticalCenterMonthPanel.TabIndex = 5;
             // 
             // bJan
@@ -119,7 +121,8 @@
             this.bJan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bJan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bJan.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bJan.Location = new System.Drawing.Point(3, 3);
+            this.bJan.Location = new System.Drawing.Point(3, 7);
+            this.bJan.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.bJan.Name = "bJan";
             this.bJan.Size = new System.Drawing.Size(40, 40);
             this.bJan.TabIndex = 12;
@@ -134,7 +137,8 @@
             this.bFeb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bFeb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bFeb.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bFeb.Location = new System.Drawing.Point(49, 3);
+            this.bFeb.Location = new System.Drawing.Point(49, 7);
+            this.bFeb.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.bFeb.Name = "bFeb";
             this.bFeb.Size = new System.Drawing.Size(40, 40);
             this.bFeb.TabIndex = 13;
@@ -149,7 +153,8 @@
             this.bMar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bMar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bMar.Location = new System.Drawing.Point(95, 3);
+            this.bMar.Location = new System.Drawing.Point(95, 7);
+            this.bMar.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.bMar.Name = "bMar";
             this.bMar.Size = new System.Drawing.Size(40, 40);
             this.bMar.TabIndex = 14;
@@ -164,7 +169,8 @@
             this.bApr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bApr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bApr.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bApr.Location = new System.Drawing.Point(141, 3);
+            this.bApr.Location = new System.Drawing.Point(141, 7);
+            this.bApr.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.bApr.Name = "bApr";
             this.bApr.Size = new System.Drawing.Size(40, 40);
             this.bApr.TabIndex = 15;
@@ -179,7 +185,7 @@
             this.bMai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bMai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bMai.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bMai.Location = new System.Drawing.Point(3, 49);
+            this.bMai.Location = new System.Drawing.Point(3, 53);
             this.bMai.Name = "bMai";
             this.bMai.Size = new System.Drawing.Size(40, 40);
             this.bMai.TabIndex = 16;
@@ -194,7 +200,7 @@
             this.bJun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bJun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bJun.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bJun.Location = new System.Drawing.Point(49, 49);
+            this.bJun.Location = new System.Drawing.Point(49, 53);
             this.bJun.Name = "bJun";
             this.bJun.Size = new System.Drawing.Size(40, 40);
             this.bJun.TabIndex = 17;
@@ -209,7 +215,7 @@
             this.bJul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bJul.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bJul.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bJul.Location = new System.Drawing.Point(95, 49);
+            this.bJul.Location = new System.Drawing.Point(95, 53);
             this.bJul.Name = "bJul";
             this.bJul.Size = new System.Drawing.Size(40, 40);
             this.bJul.TabIndex = 18;
@@ -224,7 +230,7 @@
             this.bAgo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bAgo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAgo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bAgo.Location = new System.Drawing.Point(141, 49);
+            this.bAgo.Location = new System.Drawing.Point(141, 53);
             this.bAgo.Name = "bAgo";
             this.bAgo.Size = new System.Drawing.Size(40, 40);
             this.bAgo.TabIndex = 19;
@@ -239,7 +245,8 @@
             this.bSep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bSep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bSep.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bSep.Location = new System.Drawing.Point(3, 95);
+            this.bSep.Location = new System.Drawing.Point(3, 99);
+            this.bSep.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.bSep.Name = "bSep";
             this.bSep.Size = new System.Drawing.Size(40, 40);
             this.bSep.TabIndex = 20;
@@ -254,7 +261,8 @@
             this.bOct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bOct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bOct.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bOct.Location = new System.Drawing.Point(49, 95);
+            this.bOct.Location = new System.Drawing.Point(49, 99);
+            this.bOct.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.bOct.Name = "bOct";
             this.bOct.Size = new System.Drawing.Size(40, 40);
             this.bOct.TabIndex = 21;
@@ -269,7 +277,8 @@
             this.bNov.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bNov.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bNov.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bNov.Location = new System.Drawing.Point(95, 95);
+            this.bNov.Location = new System.Drawing.Point(95, 99);
+            this.bNov.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.bNov.Name = "bNov";
             this.bNov.Size = new System.Drawing.Size(40, 40);
             this.bNov.TabIndex = 22;
@@ -284,7 +293,8 @@
             this.bDec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bDec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bDec.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bDec.Location = new System.Drawing.Point(141, 95);
+            this.bDec.Location = new System.Drawing.Point(141, 99);
+            this.bDec.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.bDec.Name = "bDec";
             this.bDec.Size = new System.Drawing.Size(40, 40);
             this.bDec.TabIndex = 23;
@@ -308,7 +318,6 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(253, 24);
@@ -325,7 +334,7 @@
             this.bYearLess.Location = new System.Drawing.Point(0, 0);
             this.bYearLess.Margin = new System.Windows.Forms.Padding(0);
             this.bYearLess.Name = "bYearLess";
-            this.bYearLess.Size = new System.Drawing.Size(30, 23);
+            this.bYearLess.Size = new System.Drawing.Size(30, 24);
             this.bYearLess.TabIndex = 0;
             this.bYearLess.Text = "<";
             this.bYearLess.UseVisualStyleBackColor = false;
@@ -342,7 +351,7 @@
             this.bYearPlus.Location = new System.Drawing.Point(223, 0);
             this.bYearPlus.Margin = new System.Windows.Forms.Padding(0);
             this.bYearPlus.Name = "bYearPlus";
-            this.bYearPlus.Size = new System.Drawing.Size(30, 23);
+            this.bYearPlus.Size = new System.Drawing.Size(30, 24);
             this.bYearPlus.TabIndex = 1;
             this.bYearPlus.Text = ">";
             this.bYearPlus.UseVisualStyleBackColor = false;
@@ -358,16 +367,26 @@
             this.labelYear.Location = new System.Drawing.Point(30, 0);
             this.labelYear.Margin = new System.Windows.Forms.Padding(0);
             this.labelYear.Name = "labelYear";
-            this.labelYear.Size = new System.Drawing.Size(193, 23);
+            this.labelYear.Size = new System.Drawing.Size(193, 24);
             this.labelYear.TabIndex = 2;
             this.labelYear.Text = "Year";
             this.labelYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(253, 1);
+            this.panel1.TabIndex = 6;
             // 
             // ModernMonthPicker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.horizontalCenterMonthPanel);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "ModernMonthPicker";
@@ -403,5 +422,6 @@
         private System.Windows.Forms.Button bFeb;
         private System.Windows.Forms.Button bJan;
         private System.Windows.Forms.FlowLayoutPanel verticalCenterMonthPanel;
+        private System.Windows.Forms.Panel panel1;
     }
 }

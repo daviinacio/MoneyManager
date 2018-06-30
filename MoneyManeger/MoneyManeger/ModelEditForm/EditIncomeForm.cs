@@ -18,5 +18,15 @@ namespace MoneyManeger {
         private void buttonClose_Click(object sender, EventArgs e) {
             Close();
         }
+
+        private void buttonSave_Click(object sender, EventArgs e) {
+
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e) {
+
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e) { this.Close(); }
     }
 }

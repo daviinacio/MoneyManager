@@ -31,29 +31,19 @@ namespace MoneyManeger {
         private void ExpensesUserControl_Load(object sender, EventArgs e) {
             listviewExpenses.BackColor = this.BackColor;
             listviewExpenses.ForeColor = Color.Black;
-            //listviewExpenses.ForeColor = this.ForeColor;
             listviewIncomes.BackColor = this.BackColor;
 
-            // listvewExpenses.DrawColumnHeader
-
             monthPicker.Month = MonthDate.Now;
-
-            //RefreshVisualContent();
-
-            //monthChangePointer += new MonthChange(monthPickerChange);
-            //modernMonthPicker1.MonthChange = monthChangePointer;
-
-            //monthPicker.MonthChange += new ModernMonthPicker.MonthChangeEvent(monthPickerChange);
-
-            //listviewExpenses.
-
-            //SetWindowTheme
         }
 
         private void ExpensesUserControl_SizeChanged(object sender, EventArgs e) {
             // Update the expenses listview columns width
             listView_SizeChanged(listviewExpenses, null);
             listView_SizeChanged(listviewIncomes, null);
+        }
+
+        private void ExpensesUserControl_MouseEnter(object sender, EventArgs e) {
+            monthPicker.Month = monthPicker.Month;
         }
 
         /*  *   *   *   ELEM FUNC   *   ELEM FUNC   *   ELEM FUNC   *   ELEM FUNC   *   *   *   */
@@ -98,70 +88,26 @@ namespace MoneyManeger {
             }
         }
 
-        /*  *   *   *   VISUAL FUNC *   VISUAL FUNC *   VISUAL FUNC *   VISUAL FUNC *   *   *   */
-        /*public void RefreshVisualContent() {
-            //center_tableLayoutPanel.RowStyles[1].Height = 0;
-            //selected_itens_status_label.Text = "0 itens";
+        private void listviewExpenses_SelectedIndexChanged(object sender, EventArgs e) {
+            ListView listView = sender as ListView;
 
-            //  CONTENT ** CONTENT ** CONTENT ** CONTENT ** CONTENT ** CONTENT ** CONTENT
-            double totalSpents = 0, totalMoneys = 0;
+            //listView.SelectedItems[0]
+        }
 
-            // Expenses
-            listviewExpenses.Items.Clear();
+        private void listviewExpenses_DoubleClick(object sender, EventArgs e) {
+            ListView listView = sender as ListView;
 
-            foreach (Expense item in expenses.SelectByMonth(currentMonth)) {
-                ListViewItem row = new ListViewItem(item.Id.ToString());
+            Expense item = expenses.SelectById(
+                Convert.ToInt32(listView.SelectedItems[0].SubItems[0].Text));
 
-                row.SubItems.Add(item.Description.ToString());
-                row.SubItems.Add(item.Date.ToString().Split(' ')[0]);
-                row.SubItems.Add(String.Format("{0:0.000}", item.Count));
-                row.SubItems.Add(String.Format("R$ {0:N}", item.Price));
-                row.SubItems.Add(String.Format("R$ {0:N}", item.TotalPrice));
-
-                row.ForeColor = Color.Black;
-
-                //row.
-
-                listviewExpenses.Items.Add(row);
-
-                totalSpents += item.TotalPrice;
-            }
-
-            // Update the expenses listview columns width
-            //listView_SizeChanged(listviewExpenses, null);
-
-            // Moneys
-            listviewIncomes.Items.Clear();
-
-            foreach (Income item in incomes.SelectByMonth(currentMonth)) {
-                ListViewItem row = new ListViewItem(item.Description.ToString());
-                row.SubItems.Add(item.Date.ToString().Split(' ')[0]);
-                row.SubItems.Add(String.Format("R$ {0:N}", item.Value));
-
-                listviewIncomes.Items.Add(row);
-
-                totalMoneys += item.Value;
-            }
-
-            // Refresh on form
-            //all_spents_value.Text = String.Format("R$ {0:N}", totalSpents);
-            //all_money_value.Text = String.Format("R$ {0:N}", totalMoneys);
-            //remaining_money_value.Text = String.Format("R$ {0:N}", totalMoneys - totalSpents);
-
-            // Update the imcomes listview columns width
-            //listView_SizeChanged(listviewIncomes, null);
-
-            ExpensesUserControl_SizeChanged(null, null);
-
-            //listvewExpenses.Refresh();
-
-
-        }*/
+            new EditExpenseForm(item).ShowDialog();
+        }
 
         // MONTH PICKER ** MONTH PICKER ** MONTH PICKER ** MONTH PICKER ** MONTH PICKER ** MONTH PICKER
         private void monthPicker_MonthChanged(MonthDate month) {
             //  CONTENT ** CONTENT ** CONTENT ** CONTENT ** CONTENT ** CONTENT ** CONTENT
-            double totalSpents = 0, totalMoneys = 0;
+            //double totalSpents = 0, totalMoneys = 0;
+            double totalIncomes = 0, totalExpenses = 0, totalExpenseUnit = 0, totalExpensePrice = 0;
 
             // Expenses
             listviewExpenses.Items.Clear();
@@ -177,15 +123,12 @@ namespace MoneyManeger {
 
                 row.ForeColor = Color.Black;
 
-                //row.
-
                 listviewExpenses.Items.Add(row);
 
-                totalSpents += item.TotalPrice;
+                totalExpenses++;
+                totalExpensePrice += item.TotalPrice;
+                totalExpenseUnit += item.Count;
             }
-
-            // Update the expenses listview columns width
-            //listView_SizeChanged(listviewExpenses, null);
 
             // Moneys
             listviewIncomes.Items.Clear();
@@ -197,10 +140,14 @@ namespace MoneyManeger {
 
                 listviewIncomes.Items.Add(row);
 
-                totalMoneys += item.Value;
+                totalIncomes += item.Value;
             }
 
             ExpensesUserControl_SizeChanged(null, null);
+
+            valueTotalItens.Text = String.Format("{0:0.000}", totalExpenses);
+            valueTotalPrice.Text = String.Format("R$ {0:N}", totalExpensePrice);
+            valueTotalUnit.Text = String.Format("{0}", totalExpenseUnit);
 
 
             //MessageBox.Show(month.ToString());

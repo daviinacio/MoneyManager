@@ -24,7 +24,7 @@ namespace MoneyManeger {
         private void GeneralForm_Load(object sender, EventArgs e) {
 
             // Initial tab choose
-            tabDashboard_Click(null, null);
+            tabChoose_Click(tabExpenses, null);
         }
 
         /* TOP ** TOP ** TOP ** TOP ** TOP ** TOP ** TOP ** TOP ** TOP ** TOP ** TOP ** TOP ** TOP */
@@ -41,14 +41,31 @@ namespace MoneyManeger {
 
         private void buttonRestore_Click(object sender, EventArgs e) {
             this.WindowState = FormWindowState.Normal;
+
+            //this.ControlBox = false;
+            //this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
+
             buttonRestore.Visible = false;
             buttonMaximize.Visible = true;
         }
 
         private void buttonMaximize_Click(object sender, EventArgs e) {
             this.WindowState = FormWindowState.Maximized;
+
+
+            /*var rectangle = Screen.FromControl(this).Bounds;
+            this.FormBorderStyle = FormBorderStyle.None;
+            Size = new Size(rectangle.Width, rectangle.Height);
+            Location = new Point(0, 0);
+            Rectangle workingRectangle = Screen.PrimaryScreen.WorkingArea;
+            this.Size = new Size(workingRectangle.Width, workingRectangle.Height);*/
+
             buttonMaximize.Visible = false;
             buttonRestore.Visible = true;
+        }
+
+        public Rectangle ScreenRectangle() {
+            return Screen.FromControl(this).Bounds;
         }
 
         private void buttonMinimize_Click(object sender, EventArgs e) {
@@ -58,40 +75,44 @@ namespace MoneyManeger {
         /*  *   *   *   ELEM FUNC   *   ELEM FUNC   *   ELEM FUNC   *   ELEM FUNC   *   *   *   */
 
         //  CHOOSE TAB ** CHOOSE TAB ** CHOOSE TAB ** CHOOSE TAB ** CHOOSE TAB ** CHOOSE TAB ** CHOOSE TAB ** CHOOSE TAB ** CHOOSE TAB
-        private void tabDashboard_Click(object sender, EventArgs e) {
-            TabDefaultState();
-            dashboardUserControl.Visible = true;
-            labelTabTitle.Text = dashboardUserControl.Title;
-            tabDashboard.BackColor = tabDashboard.FlatAppearance.CheckedBackColor;
-        }
-        private void tabExpenses_Click(object sender, EventArgs e) {
-            TabDefaultState();
-            expensesUserControl.Visible = true;
-            labelTabTitle.Text = expensesUserControl.Title;
-            tabExpenses.BackColor = tabExpenses.FlatAppearance.CheckedBackColor;
-        }
-        private void tabMonthlyFee_Click(object sender, EventArgs e) {
-            TabDefaultState();
-            monthlyFeeUserControl.Visible = true;
-            labelTabTitle.Text = monthlyFeeUserControl.Title;
-            tabMonthlyFee.BackColor = tabMonthlyFee.FlatAppearance.CheckedBackColor;
-        }
-
-        private void TabDefaultState() {
+        private void tabChoose_Click(object sender, EventArgs e) {
+            // Default Apparence
             dashboardUserControl.Visible = false;
             expensesUserControl.Visible = false;
             monthlyFeeUserControl.Visible = false;
-
             tabDashboard.BackColor = panelTabs.BackColor;
             tabExpenses.BackColor = panelTabs.BackColor;
             tabMonthlyFee.BackColor = panelTabs.BackColor;
+
+            // Current Apparence
+            switch((sender as Button).Name) {
+                case "tabDashboard":
+                    dashboardUserControl.Visible = true;
+                    labelTabTitle.Text = dashboardUserControl.Title;
+                    tabDashboard.BackColor = tabDashboard.FlatAppearance.CheckedBackColor;
+                    break;
+                case "tabExpenses":
+                    expensesUserControl.Visible = true;
+                    labelTabTitle.Text = expensesUserControl.Title;
+                    tabExpenses.BackColor = tabExpenses.FlatAppearance.CheckedBackColor;
+                    break;
+                case "tabMonthlyFee":
+                    monthlyFeeUserControl.Visible = true;
+                    labelTabTitle.Text = monthlyFeeUserControl.Title;
+                    tabMonthlyFee.BackColor = tabMonthlyFee.FlatAppearance.CheckedBackColor;
+                    break;
+
+                default:
+                    MessageBox.Show("[" + (sender as Button).Name + "] Não encontrado", "Erro inesperado na selecão de telas");
+                    return;
+            }
         }
 
         //  MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU ** MENU
 
         // MANAGE -> INSERIR || MANAGE -> INSERIR || MANAGE -> INSERIR || MANAGE -> INSERIR
         private void Menu_Manage_Insert_Expense_Click(object sender, EventArgs e) {
-            new EditExpenseForm().ShowDialog();
+            new EditExpenseForm(expensesUserControl.monthPicker.Month.Date).ShowDialog();
         }
 
         private void Menu_Manage_Insert_MonthlyFee_Click(object sender, EventArgs e) {

@@ -115,7 +115,7 @@
             this.tabMonthlyFee.Size = new System.Drawing.Size(68, 68);
             this.tabMonthlyFee.TabIndex = 10;
             this.tabMonthlyFee.UseVisualStyleBackColor = false;
-            this.tabMonthlyFee.Click += new System.EventHandler(this.tabMonthlyFee_Click);
+            this.tabMonthlyFee.Click += new System.EventHandler(this.tabChoose_Click);
             // 
             // tabExpenses
             // 
@@ -132,7 +132,7 @@
             this.tabExpenses.Size = new System.Drawing.Size(68, 68);
             this.tabExpenses.TabIndex = 9;
             this.tabExpenses.UseVisualStyleBackColor = false;
-            this.tabExpenses.Click += new System.EventHandler(this.tabExpenses_Click);
+            this.tabExpenses.Click += new System.EventHandler(this.tabChoose_Click);
             // 
             // tabDashboard
             // 
@@ -150,7 +150,7 @@
             this.tabDashboard.Size = new System.Drawing.Size(68, 68);
             this.tabDashboard.TabIndex = 8;
             this.tabDashboard.UseVisualStyleBackColor = false;
-            this.tabDashboard.Click += new System.EventHandler(this.tabDashboard_Click);
+            this.tabDashboard.Click += new System.EventHandler(this.tabChoose_Click);
             // 
             // panelAppIcon
             // 
@@ -311,35 +311,35 @@
             // Menu_Manage_Insert_Expense
             // 
             this.Menu_Manage_Insert_Expense.Name = "Menu_Manage_Insert_Expense";
-            this.Menu_Manage_Insert_Expense.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Manage_Insert_Expense.Size = new System.Drawing.Size(151, 22);
             this.Menu_Manage_Insert_Expense.Text = "Gasto";
             this.Menu_Manage_Insert_Expense.Click += new System.EventHandler(this.Menu_Manage_Insert_Expense_Click);
             // 
             // Menu_Manage_Insert_MonthlyFee
             // 
             this.Menu_Manage_Insert_MonthlyFee.Name = "Menu_Manage_Insert_MonthlyFee";
-            this.Menu_Manage_Insert_MonthlyFee.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Manage_Insert_MonthlyFee.Size = new System.Drawing.Size(151, 22);
             this.Menu_Manage_Insert_MonthlyFee.Text = "Mensalidade";
             this.Menu_Manage_Insert_MonthlyFee.Click += new System.EventHandler(this.Menu_Manage_Insert_MonthlyFee_Click);
             // 
             // Menu_Manage_Insert_Reserva
             // 
             this.Menu_Manage_Insert_Reserva.Name = "Menu_Manage_Insert_Reserva";
-            this.Menu_Manage_Insert_Reserva.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Manage_Insert_Reserva.Size = new System.Drawing.Size(151, 22);
             this.Menu_Manage_Insert_Reserva.Text = "Reserva";
             this.Menu_Manage_Insert_Reserva.Click += new System.EventHandler(this.Menu_Manage_Insert_Reserva_Click);
             // 
             // Menu_Manage_Insert_Income
             // 
             this.Menu_Manage_Insert_Income.Name = "Menu_Manage_Insert_Income";
-            this.Menu_Manage_Insert_Income.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Manage_Insert_Income.Size = new System.Drawing.Size(151, 22);
             this.Menu_Manage_Insert_Income.Text = "Receita";
             this.Menu_Manage_Insert_Income.Click += new System.EventHandler(this.Menu_Manage_Insert_Income_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(148, 6);
             // 
             // visualizarToolStripMenuItem
             // 

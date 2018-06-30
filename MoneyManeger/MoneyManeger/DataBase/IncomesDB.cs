@@ -59,11 +59,11 @@ namespace MoneyManeger.DataBase {
             return this.Max;
         }
 
-        public override List<Income> Select(string where) {
+        public override List<Income> Select(string where, string order) {
             List<Income> result = new List<Income>();
 
             DataSet ds = new DataSet();
-            SqlCommand command = new SqlCommand("SELECT * FROM " + DBName + " WHERE " + where, connection);
+            SqlCommand command = new SqlCommand("SELECT * FROM " + DBName + " WHERE " + where + (order != null ? " ORDER BY " + order : ""), connection);
             SqlDataAdapter sda = new SqlDataAdapter(command);
 
             try {

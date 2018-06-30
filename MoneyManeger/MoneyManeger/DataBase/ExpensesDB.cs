@@ -65,11 +65,11 @@ namespace MoneyManeger.DataBase {
             return this.Max;
         }
 
-        public override List<Expense> Select(string where) {
+        public override List<Expense> Select(string where, string order) {
             List<Expense> result = new List<Expense>();
 
             DataSet ds = new DataSet();
-            SqlCommand command = new SqlCommand("SELECT * FROM " + DBName + " WHERE " + where, connection);
+            SqlCommand command = new SqlCommand("SELECT * FROM " + DBName + " WHERE " + where + (order != null ? " ORDER BY " + order : ""), connection);
             SqlDataAdapter sda = new SqlDataAdapter(command);
 
             try {
@@ -80,7 +80,7 @@ namespace MoneyManeger.DataBase {
                 foreach (DataRow row in ds.Tables[0].Rows)
                     result.Add(new Expense(
                             int.Parse(row["id"].ToString()),
-                            row["description"].ToString(),
+                            row["description"].ToString().Trim(),
                             Double.Parse(row["price"].ToString()),
                             Double.Parse(row["count"].ToString()),
                             DateTime.Parse(row["date"].ToString())

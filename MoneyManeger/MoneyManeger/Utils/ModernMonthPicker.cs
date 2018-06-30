@@ -13,6 +13,8 @@ namespace MoneyManeger.Utils {
     public partial class ModernMonthPicker : UserControl {
         private MonthDate month;
 
+        private Button[] btnsMonths;
+
         public ModernMonthPicker() {
             InitializeComponent();
         }
@@ -20,13 +22,20 @@ namespace MoneyManeger.Utils {
         private void ModernMonthPicker_Load(object sender, EventArgs e) {
             this.month = MonthDate.Now;
 
-            RefreshMonths();
-            RefreshYears();
+            this.btnsMonths = new Button[] {
+                bJan, bFeb, bMar, bApr, bMai, bJun, bJul, bAgo, bSep, bOct, bNov, bDec
+            };
+
+
+            RefreshControls();
         }
 
         private void month_Click(object sender, EventArgs e) {
             try {
-                RefreshMonths();
+
+                Month.Month = Convert.ToInt32((sender as Button).Tag.ToString());
+
+                RefreshControls();
                 MonthChanged.DynamicInvoke(Month);
             } catch (NullReferenceException) { }
         }
@@ -38,47 +47,132 @@ namespace MoneyManeger.Utils {
                     case "<": Month.AddYear(-1); break;
                 }
 
-                RefreshYears();
+                RefreshControls();
                 MonthChanged.DynamicInvoke(Month);
             } catch (NullReferenceException) { }
         }
 
         // Functions
-        private void RefreshYears() {
+        private void RefreshControls() {
+            // Year
+            labelYear.ForeColor = YearForeColor;
+            bYearLess.ForeColor = bYearPlus.ForeColor = ChooseYearForeColor;
+            bYearLess.BackColor = bYearPlus.BackColor = ChooseYearBackColor;
+
             labelYear.Text = Month.Year.ToString();
-        }
 
-        private void RefreshMonths(){
-            Button[] months = new Button[] {
-                bJan, bFeb, bMar, bApr, bMai, bJun, bJul, bAgo, bSep, bOct, bNov, bDec
-            };
-
-            foreach(Button b in months) {
-                
+            // Month
+            for (int i = 0; i < btnsMonths.Length; i++) {
+                if ((i + 1) == MonthDate.Now.Month && Month.Year == MonthDate.Now.Year) {
+                    btnsMonths[i].BackColor = CurrentMonthBackColor;
+                    btnsMonths[i].ForeColor = CurrentMonthForeColor;
+                    btnsMonths[i].FlatAppearance.BorderSize = CurrentMonthBorderSize;
+                    btnsMonths[i].FlatAppearance.BorderColor = CurrentMonthBorderColor;
+                }
+                else if ((i + 1) == Month.Month) {
+                    btnsMonths[i].BackColor = SelectedMonthBackColor;
+                    btnsMonths[i].ForeColor = SelectedMonthForeColor;
+                    btnsMonths[i].FlatAppearance.BorderSize = SelectedMonthBorderSize;
+                    btnsMonths[i].FlatAppearance.BorderColor = SelectedMonthBorderColor;
+                }
+                else {
+                    btnsMonths[i].BackColor = MonthBackColor;
+                    btnsMonths[i].ForeColor = MonthForeColor;
+                    btnsMonths[i].FlatAppearance.BorderSize = MonthBorderSize;
+                    btnsMonths[i].FlatAppearance.BorderColor = MonthBorderColor;
+                }
             }
         }
 
         // Properties
+        [Localizable(false)]
         public MonthDate Month {
             get { return this.month; }
             set {
                 try {
                     this.month = value;
 
-                    RefreshMonths();
-                    RefreshYears();
+                    RefreshControls();
 
                     MonthChanged.DynamicInvoke(Month);
                 } catch (NullReferenceException) { }
             }
         }
 
-        public Color DefaultMonthColor { get; set; }
+        // Color
+
+        /* Month Apparence */
+        [Localizable(true)]
+        [Category("Month Apparence")]
+        public Color MonthBackColor { get; set; }
+
+        [Localizable(true)]
+        [Category("Month Apparence")]
+        public Color MonthForeColor { get; set; } = Color.DimGray;
+
+        [Localizable(true)]
+        [Category("Month Apparence")]
+        public Color MonthBorderColor { get; set; } = Color.White;
+
+        [Localizable(true)]
+        [Category("Month Apparence")]
+        public int MonthBorderSize { get; set; } = 0;
+
+
+        [Localizable(true)]
+        [Category("Month Apparence")]
+        public Color CurrentMonthBackColor { get; set; } = Color.Orange;
+
+        [Localizable(true)]
+        [Category("Month Apparence")]
+        public Color CurrentMonthForeColor { get; set; } = Color.White;
+
+        [Localizable(true)]
+        [Category("Month Apparence")]
+        public Color CurrentMonthBorderColor { get; set; } = Color.White;
+
+        [Localizable(true)]
+        [Category("Month Apparence")]
+        public int CurrentMonthBorderSize { get; set; } = 0;
+
+
+        [Localizable(true)]
+        [Category("Month Apparence")]
+        public Color SelectedMonthBackColor { get; set; } = SystemColors.Control;
+
+        [Localizable(true)]
+        [Category("Month Apparence")]
+        public Color SelectedMonthForeColor { get; set; } = Color.DimGray;
+
+        [Localizable(true)]
+        [Category("Month Apparence")]
+        public Color SelectedMonthBorderColor { get; set; } = Color.Orange;
+
+        [Localizable(true)]
+        [Category("Month Apparence")]
+        public int SelectedMonthBorderSize { get; set; } = 1;
+
+
+        [Localizable(true)]
+        [Category("Year Apparence")]
+        public Color YearForeColor { get; set; } = Color.Black;
+
+        [Localizable(true)]
+        [Category("Year Apparence")]
+        public Color ChooseYearForeColor { get; set; } = Color.Orange;
+
+        [Localizable(true)]
+        [Category("Year Apparence")]
+        public Color ChooseYearBackColor { get; set; } = SystemColors.Control;
+
+
 
         // Delegates
         public delegate void MonthChangedEvent(MonthDate month);
 
         // Events
+        [Localizable(true)]
+        [Category("Ação")]
         public event MonthChangedEvent MonthChanged;
     }
 }

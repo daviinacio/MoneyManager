@@ -27,6 +27,9 @@ namespace MoneyManeger.Models {
         public Expense(String description) :
             this(-1, description) { }
 
+        public Expense() :
+            this(-1, "") { }
+
         // Properties
         public int Id { get; }
         public double Price { get; set; }

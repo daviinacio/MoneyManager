@@ -24,17 +24,21 @@ namespace MoneyManeger.Utils {
             return this.Date >= start.Date && this.Date <= end.Date;
         }
 
-        public void AddMonth(int months) {
+        public MonthDate AddMonth(int months) {
             // Use the DateTime to calc the months increment or decrement
             DateTime temp = this.Date.AddMonths(months);
 
             this.Month = temp.Month;
             this.Year = temp.Year;
+
+            return this;
         }
 
-        public void AddYear(int years) {
+        public MonthDate AddYear(int years) {
             // Use the DateTime to calc the year increment or decrement
             this.Year = this.Date.AddYears(years).Year;
+
+            return this;
         }
 
         // Properties
@@ -64,7 +68,7 @@ namespace MoneyManeger.Utils {
 
         public DateTime Date {
             // Return a DateTime with the Year and Month values
-            get { return new DateTime(Year, Month, 1); }
+            get { return new DateTime(Year, Month, DateTime.Today.Day); }
         }
 
         // Object mthods

@@ -23,7 +23,7 @@ namespace MoneyManeger.DataBase {
                 connection.Open();
                 int id = (int) new SqlCommand("SELECT MAX(id) FROM " + DBName, connection).ExecuteScalar();
                 connection.Close();
-                return this.Select("id = " + id)[0];
+                return this.Select("id = " + id, null)[0];
             }
         }
 
@@ -32,7 +32,7 @@ namespace MoneyManeger.DataBase {
                 connection.Open();
                 int id = (int) new SqlCommand("SELECT MIN(id) FROM " + DBName, connection).ExecuteScalar();
                 connection.Close();
-                return this.Select("id = " + id)[0];
+                return this.Select("id = " + id, null)[0];
             }
         }
 
@@ -50,11 +50,11 @@ namespace MoneyManeger.DataBase {
         public abstract void Delete(E item);
         public abstract void Delete(int id);
         public abstract void Update(E item);
-        public abstract List<E> Select(String where);
+        public abstract List<E> Select(String where, String order);
 
         public E SelectById(int id) {
             try {
-                return this.Select("id = " + id)[0];
+                return this.Select("id = " + id, null)[0];
 
             } catch (System.ArgumentOutOfRangeException) {
                 throw new Exceptions.RowNotFoundException("Nunhum resultado para esse id: ['" + id + "']");
@@ -62,7 +62,7 @@ namespace MoneyManeger.DataBase {
         }
 
         public List<E> SelectByMonth(Utils.MonthDate month) {
-            return this.Select(String.Format("DATEPART(month, date) = {0} AND DATEPART(year, date) = {1}", month.Month, month.Year));
+            return this.Select(String.Format("DATEPART(month, date) = {0} AND DATEPART(year, date) = {1}", month.Month, month.Year), "date ASC, description ASC");
         }
     }
 }
