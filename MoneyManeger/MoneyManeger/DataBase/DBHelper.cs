@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using MoneyManeger.Utils;
 
 namespace MoneyManeger.DataBase {
     abstract class DBHelper<E> {
@@ -61,8 +62,16 @@ namespace MoneyManeger.DataBase {
             }
         }
 
-        public List<E> SelectByMonth(Utils.MonthDate month) {
-            return this.Select(String.Format("DATEPART(month, date) = {0} AND DATEPART(year, date) = {1}", month.Month, month.Year), "date ASC, description ASC");
+        public List<E> SelectByMonth(DateTime month) {
+            DateTime nextMonth = month.AddMonths(1);
+
+            return this.Select(String.Format("date >= '{1}/{0}/{2}' AND date < '{4}/{3}/{5}' ",
+            //return this.Select(String.Format("date >= '06/01/2018' AND date < '08/01/2018' ",
+                MonthDate.GetFifthWorkingDay(month), month.Month, month.Year,
+                MonthDate.GetFifthWorkingDay(nextMonth), nextMonth.Month, nextMonth.Year),
+                "date ASC, description ASC");
+
+            //return this.Select(String.Format("DATEPART(month, date) = {0} AND DATEPART(year, date) = {1}", month.Month, month.Year), "date ASC, description ASC");
         }
     }
 }

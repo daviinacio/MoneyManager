@@ -39,7 +39,7 @@ namespace MoneyManeger.Models {
         public double TotalPrice { get { return this.Count * this.Price; } }
 
         public override String ToString() {
-            return String.Format("ID:\t\t{0}\nDescription:\t{1}\nPrice:\t\t{2}\nCount:\t\t{3}\nDate:\t\t{4}", 
+            return String.Format((this.Id == -1 ? "" : "ID:\t\t{0}\n") + "Description:\t{1}\nPrice:\t\t{2}\nCount:\t\t{3}\nDate:\t\t{4}", 
                 Id, Description, Price, Count, Date.ToString());
         }
     }

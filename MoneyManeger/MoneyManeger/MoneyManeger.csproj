@@ -74,6 +74,12 @@
     <Compile Include="DataBase\IncomesDB.cs" />
     <Compile Include="DataBase\MonthlyFeesDB.cs" />
     <Compile Include="DataBase\DBHelper.cs" />
+    <Compile Include="ImportForms\ImportExpensesByText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportForms\ImportExpensesByText.Designer.cs">
+      <DependentUpon>ImportExpensesByText.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\ModernMonthPicker.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Transform.cs" />
+    <EmbeddedResource Include="ImportForms\ImportExpensesByText.resx">
+      <DependentUpon>ImportExpensesByText.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Utils\ModernMonthPicker.resx">
       <DependentUpon>ModernMonthPicker.cs</DependentUpon>
     </EmbeddedResource>

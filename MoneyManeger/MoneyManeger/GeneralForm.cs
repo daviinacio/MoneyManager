@@ -129,5 +129,10 @@ namespace MoneyManeger {
                 new Models.Income("Salário", 1080, DateTime.Now)
             );*/
         }
+
+        // IMPORT IMPORT IMPORT IMPORT IMPORT IMPORT IMPORT IMPORT IMPORT IMPORT IMPORT
+        private void menuItemImportByText_Click(object sender, EventArgs e) {
+            new ImportForms.ImportExpensesByText().ShowDialog();
+        }
     }
 }

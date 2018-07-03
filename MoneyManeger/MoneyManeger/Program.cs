@@ -50,8 +50,11 @@ namespace MoneyManeger {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Teste());
-            Application.Run(new GeneralForm());
+            //Application.Run(new ImportForms.ImportExpensesByText());
             //Application.Run(new MainForm());
+
+
+            Application.Run(new GeneralForm());
         }
     }
 }

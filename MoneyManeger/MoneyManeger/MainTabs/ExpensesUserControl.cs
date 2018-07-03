@@ -112,7 +112,7 @@ namespace MoneyManeger {
             // Expenses
             listviewExpenses.Items.Clear();
 
-            foreach (Expense item in expenses.SelectByMonth(month)) {
+            foreach (Expense item in expenses.SelectByMonth(month.Date)) {
                 ListViewItem row = new ListViewItem(item.Id.ToString());
 
                 row.SubItems.Add(item.Description.ToString());
@@ -133,7 +133,7 @@ namespace MoneyManeger {
             // Moneys
             listviewIncomes.Items.Clear();
 
-            foreach (Income item in incomes.SelectByMonth(month)) {
+            foreach (Income item in incomes.SelectByMonth(month.Date)) {
                 ListViewItem row = new ListViewItem(item.Description.ToString());
                 row.SubItems.Add(item.Date.ToString().Split(' ')[0]);
                 row.SubItems.Add(String.Format("R$ {0:N}", item.Value));

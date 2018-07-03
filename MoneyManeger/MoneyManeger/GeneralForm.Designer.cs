@@ -69,6 +69,7 @@
             this.dashboardUserControl = new MoneyManeger.MainTabs.DashboardUserControl();
             this.expensesUserControl = new MoneyManeger.ExpensesUserControl();
             this.monthlyFeeUserControl = new MoneyManeger.MainTabs.MonthlyFeeUserControl();
+            this.menuItemImportByText = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panelTabs.SuspendLayout();
             this.panelAppIcon.SuspendLayout();
@@ -273,7 +274,7 @@
             this.Menu_Manage});
             this.menu.Location = new System.Drawing.Point(1, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(86, 25);
+            this.menu.Size = new System.Drawing.Size(178, 25);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             this.menu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveWindow_MouseDown);
@@ -385,6 +386,7 @@
             // importarToolStripMenuItem
             // 
             this.importarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemImportByText,
             this.jSONFileToolStripMenuItem,
             this.xMLToolStripMenuItem,
             this.tabelatxtToolStripMenuItem,
@@ -534,6 +536,13 @@
             this.monthlyFeeUserControl.Size = new System.Drawing.Size(909, 514);
             this.monthlyFeeUserControl.TabIndex = 4;
             // 
+            // menuItemImportByText
+            // 
+            this.menuItemImportByText.Name = "menuItemImportByText";
+            this.menuItemImportByText.Size = new System.Drawing.Size(286, 22);
+            this.menuItemImportByText.Text = "Texto (Ctrl + v)";
+            this.menuItemImportByText.Click += new System.EventHandler(this.menuItemImportByText_Click);
+            // 
             // GeneralForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -613,5 +622,6 @@
         private System.Windows.Forms.Panel panelTabs;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ToolStripMenuItem menuItemImportByText;
     }
 }

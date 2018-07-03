@@ -31,12 +31,6 @@
             this.expenseCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.expensePrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.expenseTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tableRight = new System.Windows.Forms.TableLayoutPanel();
-            this.listviewIncomes = new System.Windows.Forms.ListView();
-            this.money_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.money_date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.money_value = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.monthPicker = new MoneyManeger.Utils.ModernMonthPicker();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.labelTotalPrice = new System.Windows.Forms.Label();
             this.labelTotalUnit = new System.Windows.Forms.Label();
@@ -46,10 +40,16 @@
             this.valueTotalItens = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tableRight = new System.Windows.Forms.TableLayoutPanel();
+            this.listviewIncomes = new System.Windows.Forms.ListView();
+            this.money_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.money_date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.money_value = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.monthPicker = new MoneyManeger.Utils.ModernMonthPicker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelTop.SuspendLayout();
-            this.tableRight.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanelTop
@@ -132,6 +132,127 @@
             this.expenseTotal.Text = "Total";
             this.expenseTotal.Width = 72;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
+            this.tableLayoutPanel2.ColumnCount = 8;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
+            this.tableLayoutPanel2.Controls.Add(this.labelTotalPrice, 6, 0);
+            this.tableLayoutPanel2.Controls.Add(this.labelTotalUnit, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.labelTotalItens, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.valueTotalPrice, 7, 0);
+            this.tableLayoutPanel2.Controls.Add(this.valueTotalUnit, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.valueTotalItens, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel2, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel3, 2, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(643, 30);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // labelTotalPrice
+            // 
+            this.labelTotalPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalPrice.Location = new System.Drawing.Point(396, 0);
+            this.labelTotalPrice.Margin = new System.Windows.Forms.Padding(0);
+            this.labelTotalPrice.Name = "labelTotalPrice";
+            this.labelTotalPrice.Size = new System.Drawing.Size(139, 30);
+            this.labelTotalPrice.TabIndex = 0;
+            this.labelTotalPrice.Text = "Valor total do mês:";
+            this.labelTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelTotalUnit
+            // 
+            this.labelTotalUnit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelTotalUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalUnit.Location = new System.Drawing.Point(204, 0);
+            this.labelTotalUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.labelTotalUnit.Name = "labelTotalUnit";
+            this.labelTotalUnit.Size = new System.Drawing.Size(102, 30);
+            this.labelTotalUnit.TabIndex = 1;
+            this.labelTotalUnit.Text = "Total de un.:";
+            this.labelTotalUnit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelTotalItens
+            // 
+            this.labelTotalItens.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelTotalItens.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalItens.Location = new System.Drawing.Point(0, 0);
+            this.labelTotalItens.Margin = new System.Windows.Forms.Padding(0);
+            this.labelTotalItens.Name = "labelTotalItens";
+            this.labelTotalItens.Size = new System.Drawing.Size(114, 30);
+            this.labelTotalItens.TabIndex = 2;
+            this.labelTotalItens.Text = "Total de itens:";
+            this.labelTotalItens.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // valueTotalPrice
+            // 
+            this.valueTotalPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valueTotalPrice.Location = new System.Drawing.Point(535, 0);
+            this.valueTotalPrice.Margin = new System.Windows.Forms.Padding(0);
+            this.valueTotalPrice.Name = "valueTotalPrice";
+            this.valueTotalPrice.Size = new System.Drawing.Size(108, 30);
+            this.valueTotalPrice.TabIndex = 3;
+            this.valueTotalPrice.Text = "R$ 0,00";
+            this.valueTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // valueTotalUnit
+            // 
+            this.valueTotalUnit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueTotalUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valueTotalUnit.Location = new System.Drawing.Point(306, 0);
+            this.valueTotalUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.valueTotalUnit.Name = "valueTotalUnit";
+            this.valueTotalUnit.Size = new System.Drawing.Size(89, 30);
+            this.valueTotalUnit.TabIndex = 4;
+            this.valueTotalUnit.Text = "0";
+            this.valueTotalUnit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // valueTotalItens
+            // 
+            this.valueTotalItens.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueTotalItens.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valueTotalItens.Location = new System.Drawing.Point(114, 0);
+            this.valueTotalItens.Margin = new System.Windows.Forms.Padding(0);
+            this.valueTotalItens.Name = "valueTotalItens";
+            this.valueTotalItens.Size = new System.Drawing.Size(89, 30);
+            this.valueTotalItens.TabIndex = 5;
+            this.valueTotalItens.Text = "0";
+            this.valueTotalItens.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(395, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1, 30);
+            this.panel2.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(203, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1, 30);
+            this.panel3.TabIndex = 8;
+            // 
             // tableRight
             // 
             this.tableRight.ColumnCount = 1;
@@ -212,128 +333,6 @@
             this.monthPicker.YearForeColor = System.Drawing.Color.Black;
             this.monthPicker.MonthChanged += new MoneyManeger.Utils.ModernMonthPicker.MonthChangedEvent(this.monthPicker_MonthChanged);
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
-            this.tableLayoutPanel2.ColumnCount = 8;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 145F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.labelTotalPrice, 6, 0);
-            this.tableLayoutPanel2.Controls.Add(this.labelTotalUnit, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.labelTotalItens, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.valueTotalPrice, 7, 0);
-            this.tableLayoutPanel2.Controls.Add(this.valueTotalUnit, 4, 0);
-            this.tableLayoutPanel2.Controls.Add(this.valueTotalItens, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel2, 5, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel3, 2, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(643, 30);
-            this.tableLayoutPanel2.TabIndex = 3;
-            // 
-            // labelTotalPrice
-            // 
-            this.labelTotalPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalPrice.Location = new System.Drawing.Point(404, 0);
-            this.labelTotalPrice.Margin = new System.Windows.Forms.Padding(0);
-            this.labelTotalPrice.Name = "labelTotalPrice";
-            this.labelTotalPrice.Size = new System.Drawing.Size(145, 30);
-            this.labelTotalPrice.TabIndex = 0;
-            this.labelTotalPrice.Text = "Valor total do mês:";
-            this.labelTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelTotalUnit
-            // 
-            this.labelTotalUnit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelTotalUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalUnit.Location = new System.Drawing.Point(208, 0);
-            this.labelTotalUnit.Margin = new System.Windows.Forms.Padding(0);
-            this.labelTotalUnit.Name = "labelTotalUnit";
-            this.labelTotalUnit.Size = new System.Drawing.Size(102, 30);
-            this.labelTotalUnit.TabIndex = 1;
-            this.labelTotalUnit.Text = "Total de un.:";
-            this.labelTotalUnit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelTotalItens
-            // 
-            this.labelTotalItens.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelTotalItens.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalItens.Location = new System.Drawing.Point(0, 0);
-            this.labelTotalItens.Margin = new System.Windows.Forms.Padding(0);
-            this.labelTotalItens.Name = "labelTotalItens";
-            this.labelTotalItens.Size = new System.Drawing.Size(114, 30);
-            this.labelTotalItens.TabIndex = 2;
-            this.labelTotalItens.Text = "Total de itens:";
-            this.labelTotalItens.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // valueTotalPrice
-            // 
-            this.valueTotalPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.valueTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valueTotalPrice.Location = new System.Drawing.Point(549, 0);
-            this.valueTotalPrice.Margin = new System.Windows.Forms.Padding(0);
-            this.valueTotalPrice.Name = "valueTotalPrice";
-            this.valueTotalPrice.Size = new System.Drawing.Size(94, 30);
-            this.valueTotalPrice.TabIndex = 3;
-            this.valueTotalPrice.Text = "R$ 0,00";
-            this.valueTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // valueTotalUnit
-            // 
-            this.valueTotalUnit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.valueTotalUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valueTotalUnit.Location = new System.Drawing.Point(310, 0);
-            this.valueTotalUnit.Margin = new System.Windows.Forms.Padding(0);
-            this.valueTotalUnit.Name = "valueTotalUnit";
-            this.valueTotalUnit.Size = new System.Drawing.Size(93, 30);
-            this.valueTotalUnit.TabIndex = 4;
-            this.valueTotalUnit.Text = "0";
-            this.valueTotalUnit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // valueTotalItens
-            // 
-            this.valueTotalItens.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.valueTotalItens.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valueTotalItens.Location = new System.Drawing.Point(114, 0);
-            this.valueTotalItens.Margin = new System.Windows.Forms.Padding(0);
-            this.valueTotalItens.Name = "valueTotalItens";
-            this.valueTotalItens.Size = new System.Drawing.Size(93, 30);
-            this.valueTotalItens.TabIndex = 5;
-            this.valueTotalItens.Text = "0";
-            this.valueTotalItens.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(403, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 30);
-            this.panel2.TabIndex = 7;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(207, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1, 30);
-            this.panel3.TabIndex = 8;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
@@ -360,8 +359,8 @@
             this.SizeChanged += new System.EventHandler(this.ExpensesUserControl_SizeChanged);
             this.MouseEnter += new System.EventHandler(this.ExpensesUserControl_MouseEnter);
             this.tableLayoutPanelTop.ResumeLayout(false);
-            this.tableRight.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableRight.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

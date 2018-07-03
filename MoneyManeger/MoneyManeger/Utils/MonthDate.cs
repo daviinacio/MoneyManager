@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MoneyManeger.Utils {
     public class MonthDate {
@@ -101,5 +102,43 @@ namespace MoneyManeger.Utils {
         public static MonthDate Infinity {
             get { return MonthDate.Parse(DateTime.MaxValue); }
         }
+
+        public static int GetFifthWorkingDay(DateTime month) {
+            month = month.AddDays(-(month.Day -1));
+
+            //MessageBox.Show(month.Day.ToString());
+
+            for (int daysCount = 0; month.Day < DateTime.MaxValue.Month; month = month.AddDays(1)) {
+
+                if (month.DayOfWeek != DayOfWeek.Sunday &&
+                    month.DayOfWeek != DayOfWeek.Saturday)
+                    daysCount++;
+
+                // If the working days reach 5, return the current count days
+                if (daysCount >= 5) return month.Day;
+            }
+
+            return 1;
+        }
+
+        /*public static int GetDiffDays(DateTime initialDate, DateTime finalDate) {
+            int days = 0;
+            int daysCount = 0;
+            days = initialDate.Subtract(finalDate).Days;
+
+            //Módulo
+            if (days < 0)
+                days = days * -1;
+
+            for (int i = 1; i <= days; i++) {
+                initialDate = initialDate.AddDays(1);
+                //Conta apenas dias da semana.
+                if (initialDate.DayOfWeek != DayOfWeek.Sunday &&
+                    initialDate.DayOfWeek != DayOfWeek.Saturday)
+                    daysCount++;
+            }
+            return daysCount;
+        }*/
+
     }
 }
