@@ -49,6 +49,8 @@ namespace MoneyManeger {
         /*  *   *   *   ELEM FUNC   *   ELEM FUNC   *   ELEM FUNC   *   ELEM FUNC   *   *   *   */
 
         //  LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW
+
+            // Expenses listview
         private void listViewExpenses_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e) {
             e.Graphics.FillRectangle(Brushes.Red, e.Bounds);
             e.DrawText();
@@ -103,6 +105,16 @@ namespace MoneyManeger {
             new EditExpenseForm(item).ShowDialog();
         }
 
+            // Year listview
+        private void listviewIncomes_DoubleClick(object sender, EventArgs e) {
+            ListView listView = sender as ListView;
+
+            Income item = incomes.SelectById(
+                Convert.ToInt32(listView.SelectedItems[0].SubItems[0].Text));
+
+            new EditIncomeForm(item).ShowDialog();
+        }
+
         // MONTH PICKER ** MONTH PICKER ** MONTH PICKER ** MONTH PICKER ** MONTH PICKER ** MONTH PICKER
         private void monthPicker_MonthChanged(MonthDate month) {
             //  CONTENT ** CONTENT ** CONTENT ** CONTENT ** CONTENT ** CONTENT ** CONTENT
@@ -134,7 +146,9 @@ namespace MoneyManeger {
             listviewIncomes.Items.Clear();
 
             foreach (Income item in incomes.SelectByMonth(month.Date)) {
-                ListViewItem row = new ListViewItem(item.Description.ToString());
+                ListViewItem row = new ListViewItem(item.Id.ToString());
+
+                row.SubItems.Add(item.Description.ToString());
                 row.SubItems.Add(item.Date.ToString().Split(' ')[0]);
                 row.SubItems.Add(String.Format("R$ {0:N}", item.Value));
 

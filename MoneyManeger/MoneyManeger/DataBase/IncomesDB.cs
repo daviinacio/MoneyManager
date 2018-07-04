@@ -108,5 +108,9 @@ namespace MoneyManeger.DataBase {
 
             } finally { connection.Close(); }
         }
+
+        /*public override List<Income> SelectByMonth(DateTime month) {
+            return this.Select(String.Format("DATEPART(month, date) = {0} AND DATEPART(year, date) = {1}", month.Month, month.Year), "date ASC, description ASC");
+        }*/
     }
 }

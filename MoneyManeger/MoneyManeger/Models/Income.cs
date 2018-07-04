@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MoneyManeger.Models {
-    class Income {
+    public class Income {
         public Income(int id, string description, double value, DateTime date) {
             this.Id = id; this.Description = description;
             this.Value = value; this.Date = date;
@@ -24,6 +24,9 @@ namespace MoneyManeger.Models {
 
         public Income(string description) :
             this(-1, description) { }
+
+        public Income() :
+            this(-1, "") { }
 
 
         // Properties

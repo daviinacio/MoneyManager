@@ -62,7 +62,7 @@ namespace MoneyManeger.DataBase {
             }
         }
 
-        public List<E> SelectByMonth(DateTime month) {
+        public virtual List<E> SelectByMonth(DateTime month) {
             DateTime nextMonth = month.AddMonths(1);
 
             return this.Select(String.Format("date >= '{1}/{0}/{2}' AND date < '{4}/{3}/{5}' ",

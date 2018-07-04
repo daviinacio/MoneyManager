@@ -47,6 +47,7 @@
             this.money_value = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.monthPicker = new MoneyManeger.Utils.ModernMonthPicker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.money_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanelTop.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableRight.SuspendLayout();
@@ -274,6 +275,7 @@
             this.listviewIncomes.BackColor = System.Drawing.SystemColors.Control;
             this.listviewIncomes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listviewIncomes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.money_id,
             this.money_name,
             this.money_date,
             this.money_value});
@@ -288,6 +290,7 @@
             this.listviewIncomes.UseCompatibleStateImageBehavior = false;
             this.listviewIncomes.View = System.Windows.Forms.View.Details;
             this.listviewIncomes.SizeChanged += new System.EventHandler(this.listView_SizeChanged);
+            this.listviewIncomes.DoubleClick += new System.EventHandler(this.listviewIncomes_DoubleClick);
             // 
             // money_name
             // 
@@ -348,6 +351,11 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(228, 30);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
+            // money_id
+            // 
+            this.money_id.Tag = "0";
+            this.money_id.Text = "Id";
+            // 
             // ExpensesUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,5 +398,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ColumnHeader money_id;
     }
 }

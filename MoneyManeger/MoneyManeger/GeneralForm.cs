@@ -124,7 +124,10 @@ namespace MoneyManeger {
         }
 
         private void Menu_Manage_Insert_Income_Click(object sender, EventArgs e) {
-            new EditIncomeForm().ShowDialog();
+            new EditIncomeForm(
+                Utils.MonthDate.GetWorkingDay(
+                    expensesUserControl.monthPicker.Month.Date, 5
+                )).ShowDialog();
             /*new DataBase.IncomesDB().Insert(
                 new Models.Income("Salário", 1080, DateTime.Now)
             );*/

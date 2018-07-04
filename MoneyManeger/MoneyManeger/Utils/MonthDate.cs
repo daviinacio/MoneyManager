@@ -104,7 +104,12 @@ namespace MoneyManeger.Utils {
         }
 
         public static int GetFifthWorkingDay(DateTime month) {
+            return GetWorkingDay(month, 5).Day;
+        }
+
+        public static DateTime GetWorkingDay(DateTime month, int day) {
             month = month.AddDays(-(month.Day -1));
+            DateTime _month = month.Date;
 
             //MessageBox.Show(month.Day.ToString());
 
@@ -115,10 +120,10 @@ namespace MoneyManeger.Utils {
                     daysCount++;
 
                 // If the working days reach 5, return the current count days
-                if (daysCount >= 5) return month.Day;
+                if (daysCount >= day) return month;
             }
 
-            return 1;
+            return _month;
         }
 
         /*public static int GetDiffDays(DateTime initialDate, DateTime finalDate) {

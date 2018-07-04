@@ -51,6 +51,7 @@
             this.reservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.importarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemImportByText = new System.Windows.Forms.ToolStripMenuItem();
             this.jSONFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabelatxtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +70,6 @@
             this.dashboardUserControl = new MoneyManeger.MainTabs.DashboardUserControl();
             this.expensesUserControl = new MoneyManeger.ExpensesUserControl();
             this.monthlyFeeUserControl = new MoneyManeger.MainTabs.MonthlyFeeUserControl();
-            this.menuItemImportByText = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panelTabs.SuspendLayout();
             this.panelAppIcon.SuspendLayout();
@@ -312,35 +312,36 @@
             // Menu_Manage_Insert_Expense
             // 
             this.Menu_Manage_Insert_Expense.Name = "Menu_Manage_Insert_Expense";
-            this.Menu_Manage_Insert_Expense.Size = new System.Drawing.Size(151, 22);
+            this.Menu_Manage_Insert_Expense.Size = new System.Drawing.Size(152, 22);
             this.Menu_Manage_Insert_Expense.Text = "Gasto";
             this.Menu_Manage_Insert_Expense.Click += new System.EventHandler(this.Menu_Manage_Insert_Expense_Click);
             // 
             // Menu_Manage_Insert_MonthlyFee
             // 
             this.Menu_Manage_Insert_MonthlyFee.Name = "Menu_Manage_Insert_MonthlyFee";
-            this.Menu_Manage_Insert_MonthlyFee.Size = new System.Drawing.Size(151, 22);
+            this.Menu_Manage_Insert_MonthlyFee.Size = new System.Drawing.Size(152, 22);
             this.Menu_Manage_Insert_MonthlyFee.Text = "Mensalidade";
             this.Menu_Manage_Insert_MonthlyFee.Click += new System.EventHandler(this.Menu_Manage_Insert_MonthlyFee_Click);
             // 
             // Menu_Manage_Insert_Reserva
             // 
             this.Menu_Manage_Insert_Reserva.Name = "Menu_Manage_Insert_Reserva";
-            this.Menu_Manage_Insert_Reserva.Size = new System.Drawing.Size(151, 22);
+            this.Menu_Manage_Insert_Reserva.Size = new System.Drawing.Size(152, 22);
             this.Menu_Manage_Insert_Reserva.Text = "Reserva";
+            this.Menu_Manage_Insert_Reserva.Visible = false;
             this.Menu_Manage_Insert_Reserva.Click += new System.EventHandler(this.Menu_Manage_Insert_Reserva_Click);
             // 
             // Menu_Manage_Insert_Income
             // 
             this.Menu_Manage_Insert_Income.Name = "Menu_Manage_Insert_Income";
-            this.Menu_Manage_Insert_Income.Size = new System.Drawing.Size(151, 22);
+            this.Menu_Manage_Insert_Income.Size = new System.Drawing.Size(152, 22);
             this.Menu_Manage_Insert_Income.Text = "Receita";
             this.Menu_Manage_Insert_Income.Click += new System.EventHandler(this.Menu_Manage_Insert_Income_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(148, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // visualizarToolStripMenuItem
             // 
@@ -396,29 +397,40 @@
             this.importarToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.importarToolStripMenuItem.Text = "Importar";
             // 
+            // menuItemImportByText
+            // 
+            this.menuItemImportByText.Name = "menuItemImportByText";
+            this.menuItemImportByText.Size = new System.Drawing.Size(286, 22);
+            this.menuItemImportByText.Text = "Texto (Ctrl + v)";
+            this.menuItemImportByText.Click += new System.EventHandler(this.menuItemImportByText_Click);
+            // 
             // jSONFileToolStripMenuItem
             // 
             this.jSONFileToolStripMenuItem.Name = "jSONFileToolStripMenuItem";
             this.jSONFileToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
             this.jSONFileToolStripMenuItem.Text = "JavaScript Object Notation (*.json)";
+            this.jSONFileToolStripMenuItem.Visible = false;
             // 
             // xMLToolStripMenuItem
             // 
             this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
             this.xMLToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
             this.xMLToolStripMenuItem.Text = "eXtensible Markup Language (*.xml)";
+            this.xMLToolStripMenuItem.Visible = false;
             // 
             // tabelatxtToolStripMenuItem
             // 
             this.tabelatxtToolStripMenuItem.Name = "tabelatxtToolStripMenuItem";
             this.tabelatxtToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
             this.tabelatxtToolStripMenuItem.Text = "Text File (*.txt)";
+            this.tabelatxtToolStripMenuItem.Visible = false;
             // 
             // tabeladdbtToolStripMenuItem
             // 
             this.tabeladdbtToolStripMenuItem.Name = "tabeladdbtToolStripMenuItem";
             this.tabeladdbtToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
             this.tabeladdbtToolStripMenuItem.Text = "DCode DataBase Table (*.ddbt)";
+            this.tabeladdbtToolStripMenuItem.Visible = false;
             // 
             // exportarToolStripMenuItem
             // 
@@ -437,24 +449,28 @@
             this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
             this.jSONToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
             this.jSONToolStripMenuItem.Text = "JavaScript Object Notation (*.json)";
+            this.jSONToolStripMenuItem.Visible = false;
             // 
             // xMLToolStripMenuItem1
             // 
             this.xMLToolStripMenuItem1.Name = "xMLToolStripMenuItem1";
             this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(286, 22);
             this.xMLToolStripMenuItem1.Text = "eXtensible Markup Language (*.xml)";
+            this.xMLToolStripMenuItem1.Visible = false;
             // 
             // tXTToolStripMenuItem
             // 
             this.tXTToolStripMenuItem.Name = "tXTToolStripMenuItem";
             this.tXTToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
             this.tXTToolStripMenuItem.Text = "Text File (*.txt)";
+            this.tXTToolStripMenuItem.Visible = false;
             // 
             // dDBtToolStripMenuItem
             // 
             this.dDBtToolStripMenuItem.Name = "dDBtToolStripMenuItem";
             this.dDBtToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
             this.dDBtToolStripMenuItem.Text = "DCode DataBase Table (*.ddbt)";
+            this.dDBtToolStripMenuItem.Visible = false;
             // 
             // toolStripSeparator4
             // 
@@ -535,13 +551,6 @@
             this.monthlyFeeUserControl.Name = "monthlyFeeUserControl";
             this.monthlyFeeUserControl.Size = new System.Drawing.Size(909, 514);
             this.monthlyFeeUserControl.TabIndex = 4;
-            // 
-            // menuItemImportByText
-            // 
-            this.menuItemImportByText.Name = "menuItemImportByText";
-            this.menuItemImportByText.Size = new System.Drawing.Size(286, 22);
-            this.menuItemImportByText.Text = "Texto (Ctrl + v)";
-            this.menuItemImportByText.Click += new System.EventHandler(this.menuItemImportByText_Click);
             // 
             // GeneralForm
             // 
