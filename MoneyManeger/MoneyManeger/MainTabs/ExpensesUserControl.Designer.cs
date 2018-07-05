@@ -42,12 +42,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableRight = new System.Windows.Forms.TableLayoutPanel();
             this.listviewIncomes = new System.Windows.Forms.ListView();
+            this.money_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.money_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.money_date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.money_value = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.monthPicker = new MoneyManeger.Utils.ModernMonthPicker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.money_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanelTop.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableRight.SuspendLayout();
@@ -96,7 +96,6 @@
             this.listviewExpenses.View = System.Windows.Forms.View.Details;
             this.listviewExpenses.SelectedIndexChanged += new System.EventHandler(this.listviewExpenses_SelectedIndexChanged);
             this.listviewExpenses.DoubleClick += new System.EventHandler(this.listviewExpenses_DoubleClick);
-            this.listviewExpenses.MouseEnter += new System.EventHandler(this.ExpensesUserControl_MouseEnter);
             // 
             // expenseId
             // 
@@ -292,6 +291,11 @@
             this.listviewIncomes.SizeChanged += new System.EventHandler(this.listView_SizeChanged);
             this.listviewIncomes.DoubleClick += new System.EventHandler(this.listviewIncomes_DoubleClick);
             // 
+            // money_id
+            // 
+            this.money_id.Tag = "0";
+            this.money_id.Text = "Id";
+            // 
             // money_name
             // 
             this.money_name.Tag = "10";
@@ -351,11 +355,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(228, 30);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
-            // money_id
-            // 
-            this.money_id.Tag = "0";
-            this.money_id.Text = "Id";
-            // 
             // ExpensesUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,7 +364,6 @@
             this.Size = new System.Drawing.Size(872, 463);
             this.Load += new System.EventHandler(this.ExpensesUserControl_Load);
             this.SizeChanged += new System.EventHandler(this.ExpensesUserControl_SizeChanged);
-            this.MouseEnter += new System.EventHandler(this.ExpensesUserControl_MouseEnter);
             this.tableLayoutPanelTop.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableRight.ResumeLayout(false);
@@ -387,7 +385,7 @@
         private System.Windows.Forms.ColumnHeader expenseCount;
         private System.Windows.Forms.ColumnHeader expensePrice;
         private System.Windows.Forms.ColumnHeader expenseTotal;
-        public Utils.ModernMonthPicker monthPicker;
+        private Utils.ModernMonthPicker monthPicker;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label labelTotalPrice;
         private System.Windows.Forms.Label labelTotalUnit;

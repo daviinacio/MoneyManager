@@ -11,7 +11,7 @@ using MoneyManeger.Utils;
 
 namespace MoneyManeger.Utils {
     public partial class ModernMonthPicker : UserControl {
-        private MonthDate month;
+        private DateTime value;
 
         private Button[] btnsMonths;
 
@@ -20,7 +20,7 @@ namespace MoneyManeger.Utils {
         }
 
         private void ModernMonthPicker_Load(object sender, EventArgs e) {
-            this.month = MonthDate.Now;
+            this.value = DateTime.Now;
 
             this.btnsMonths = new Button[] {
                 bJan, bFeb, bMar, bApr, bMai, bJun, bJul, bAgo, bSep, bOct, bNov, bDec
@@ -32,23 +32,20 @@ namespace MoneyManeger.Utils {
 
         private void month_Click(object sender, EventArgs e) {
             try {
+                // Put the month to 1 (refering the variable, to now call the event)
+                value = Value.AddMonths(-(Value.Month));
+                // Put the month value
+                Value = Value.AddMonths(Convert.ToInt32((sender as Button).Tag.ToString()));
 
-                Month.Month = Convert.ToInt32((sender as Button).Tag.ToString());
-
-                RefreshControls();
-                MonthChanged.DynamicInvoke(Month);
             } catch (NullReferenceException) { }
         }
 
         private void year_Click(object sender, EventArgs e) {
             try {
                 switch ((sender as Button).Text) {
-                    case ">": Month.AddYear(1); break;
-                    case "<": Month.AddYear(-1); break;
+                    case ">": Value = Value.AddYears(1); break;
+                    case "<": Value = Value.AddYears(-1); break;
                 }
-
-                RefreshControls();
-                MonthChanged.DynamicInvoke(Month);
             } catch (NullReferenceException) { }
         }
 
@@ -59,23 +56,21 @@ namespace MoneyManeger.Utils {
             bYearLess.ForeColor = bYearPlus.ForeColor = ChooseYearForeColor;
             bYearLess.BackColor = bYearPlus.BackColor = ChooseYearBackColor;
 
-            labelYear.Text = Month.Year.ToString();
+            labelYear.Text = Value.Year.ToString();
 
             // Month
             for (int i = 0; i < btnsMonths.Length; i++) {
-                if ((i + 1) == MonthDate.Now.Month && Month.Year == MonthDate.Now.Year) {
+                if ((i + 1) == MonthDate.Now.Month && Value.Year == MonthDate.Now.Year) {
                     btnsMonths[i].BackColor = CurrentMonthBackColor;
                     btnsMonths[i].ForeColor = CurrentMonthForeColor;
                     btnsMonths[i].FlatAppearance.BorderSize = CurrentMonthBorderSize;
                     btnsMonths[i].FlatAppearance.BorderColor = CurrentMonthBorderColor;
-                }
-                else if ((i + 1) == Month.Month) {
+                } else if ((i + 1) == Value.Month) {
                     btnsMonths[i].BackColor = SelectedMonthBackColor;
                     btnsMonths[i].ForeColor = SelectedMonthForeColor;
                     btnsMonths[i].FlatAppearance.BorderSize = SelectedMonthBorderSize;
                     btnsMonths[i].FlatAppearance.BorderColor = SelectedMonthBorderColor;
-                }
-                else {
+                } else {
                     btnsMonths[i].BackColor = MonthBackColor;
                     btnsMonths[i].ForeColor = MonthForeColor;
                     btnsMonths[i].FlatAppearance.BorderSize = MonthBorderSize;
@@ -86,15 +81,16 @@ namespace MoneyManeger.Utils {
 
         // Properties
         [Localizable(false)]
-        public MonthDate Month {
-            get { return this.month; }
+        [Category("Comportamento")]
+        public DateTime Value {
+            get { return this.value; }
             set {
                 try {
-                    this.month = value;
+                    this.value = value;
 
                     RefreshControls();
 
-                    MonthChanged.DynamicInvoke(Month);
+                    MonthChanged.DynamicInvoke(Value);
                 } catch (NullReferenceException) { }
             }
         }
@@ -168,7 +164,7 @@ namespace MoneyManeger.Utils {
 
 
         // Delegates
-        public delegate void MonthChangedEvent(MonthDate month);
+        public delegate void MonthChangedEvent(DateTime month);
 
         // Events
         [Localizable(true)]

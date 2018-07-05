@@ -13,8 +13,8 @@ namespace MoneyManeger.Models {
         // Constructors
         public MonthlyFee(int id, String description, double monthlyValue, DateTime monthStart, DateTime monthEnd, int businessDay) {
             this.Id = id; this.Description = description; this.MonthlyValue = monthlyValue;
-            this.MonthStart = MonthDate.Parse(monthStart);
-            this.MonthEnd = MonthDate.Parse(monthEnd);
+            this.MonthStart = monthStart;
+            this.MonthEnd = monthEnd;
             this.BusinessDay = businessDay;
         }
         public MonthlyFee(int id, String description, double monthlyValue, DateTime monthStart) :
@@ -49,16 +49,16 @@ namespace MoneyManeger.Models {
             return date;
         }
 
-        public bool IsOnMonth(MonthDate current) {
+        /*public bool IsOnMonth(MonthDate current) {
             return current.IsInRange(this.MonthStart, this.MonthEnd);
-        }
+        }*/
 
         // Properties
         public int Id { get; }
         public String Description { get; set; }
         public double MonthlyValue { get; set; }
-        public MonthDate MonthStart { get; set; }
-        public MonthDate MonthEnd { get; set; }
+        public DateTime MonthStart { get; set; }
+        public DateTime MonthEnd { get; set; }
         //public int Parcels { get; }
         public int BusinessDay { get; set; }
 

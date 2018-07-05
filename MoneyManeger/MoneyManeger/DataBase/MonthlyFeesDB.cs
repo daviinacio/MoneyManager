@@ -116,5 +116,17 @@ namespace MoneyManeger.DataBase {
 
             } finally { connection.Close(); }
         }
+
+        public override List<MonthlyFee> SelectByMonth(DateTime month) {
+            /*return this.Select(String.Format(
+                "MonthStart <= 06/07/2018 AND MonthEnd >= 06/07/2018",
+                month.Month, month.Year), "description ASC");*/
+
+            return this.Select(String.Format(
+                "(DATEPART(year, MonthStart) < {1} OR (DATEPART(month, MonthStart) <= {0} AND DATEPART(year, MonthStart) <= {1})) AND " +
+                "(DATEPART(year, MonthEnd)   > {1} OR (DATEPART(month, MonthEnd)   >=  {0} AND DATEPART(year, MonthEnd)  >=  {1}))",
+                month.Month, month.Year), "description ASC");
+            //return this.Select(String.Format("1 = 1"), "description ASC");
+        }
     }
 }

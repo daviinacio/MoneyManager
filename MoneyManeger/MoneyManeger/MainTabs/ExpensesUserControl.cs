@@ -33,7 +33,7 @@ namespace MoneyManeger {
             listviewExpenses.ForeColor = Color.Black;
             listviewIncomes.BackColor = this.BackColor;
 
-            monthPicker.Month = MonthDate.Now;
+            monthPicker.Value = DateTime.Now;
         }
 
         private void ExpensesUserControl_SizeChanged(object sender, EventArgs e) {
@@ -42,15 +42,11 @@ namespace MoneyManeger {
             listView_SizeChanged(listviewIncomes, null);
         }
 
-        private void ExpensesUserControl_MouseEnter(object sender, EventArgs e) {
-            monthPicker.Month = monthPicker.Month;
-        }
-
         /*  *   *   *   ELEM FUNC   *   ELEM FUNC   *   ELEM FUNC   *   ELEM FUNC   *   *   *   */
 
         //  LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW ** LISTVIEW
 
-            // Expenses listview
+        // Expenses listview
         private void listViewExpenses_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e) {
             e.Graphics.FillRectangle(Brushes.Red, e.Bounds);
             e.DrawText();
@@ -99,32 +95,75 @@ namespace MoneyManeger {
         private void listviewExpenses_DoubleClick(object sender, EventArgs e) {
             ListView listView = sender as ListView;
 
+            // Find the selected item
             Expense item = expenses.SelectById(
                 Convert.ToInt32(listView.SelectedItems[0].SubItems[0].Text));
 
+            // Open the expense editor
             new EditExpenseForm(item).ShowDialog();
+
+            // Update the content
+            monthPicker.Value = monthPicker.Value;
         }
 
-            // Year listview
+        // Year listview
         private void listviewIncomes_DoubleClick(object sender, EventArgs e) {
             ListView listView = sender as ListView;
 
+            // Find the selected item
             Income item = incomes.SelectById(
                 Convert.ToInt32(listView.SelectedItems[0].SubItems[0].Text));
 
+            // Open the income editor
             new EditIncomeForm(item).ShowDialog();
+
+            // Update the content
+            monthPicker.Value = monthPicker.Value;
         }
 
         // MONTH PICKER ** MONTH PICKER ** MONTH PICKER ** MONTH PICKER ** MONTH PICKER ** MONTH PICKER
-        private void monthPicker_MonthChanged(MonthDate month) {
+        private void monthPicker_MonthChanged(DateTime month) {
             //  CONTENT ** CONTENT ** CONTENT ** CONTENT ** CONTENT ** CONTENT ** CONTENT
             //double totalSpents = 0, totalMoneys = 0;
             double totalIncomes = 0, totalExpenses = 0, totalExpenseUnit = 0, totalExpensePrice = 0;
 
-            // Expenses
+
+            // Clear expenses listview items
             listviewExpenses.Items.Clear();
 
-            foreach (Expense item in expenses.SelectByMonth(month.Date)) {
+            // MonthlyFee
+            foreach (MonthlyFee item in monthlyFees.SelectByMonth(month)) {
+                ListViewItem row = new ListViewItem(item.Id.ToString());
+
+                DateTime workingDay = MonthDate.GetWorkingDay(month, item.BusinessDay);
+
+                row.SubItems.Add(item.Description.ToString());
+                row.SubItems.Add(workingDay.ToString().Split(' ')[0]);
+                row.SubItems.Add(String.Format("{0:0.000}", 1));
+                row.SubItems.Add(String.Format("R$ {0:N}", item.MonthlyValue));
+                //row.SubItems.Add(String.Format("Pendente"));
+
+                if (workingDay < DateTime.Now) {
+                    row.SubItems.Add(String.Format("Atrazado"));
+                    row.BackColor = Color.Red;
+                }
+                else if (true) {
+                    row.SubItems.Add(String.Format("Pendente"));
+                    row.BackColor = Color.Yellow;
+                }
+                else {
+                    row.SubItems.Add(String.Format("Pago"));
+                    row.BackColor = Color.Transparent;
+                }
+
+                row.ForeColor = Color.Black;
+
+
+                listviewExpenses.Items.Add(row);
+            }
+
+            // Expenses
+            foreach (Expense item in expenses.SelectByMonth(month)) {
                 ListViewItem row = new ListViewItem(item.Id.ToString());
 
                 row.SubItems.Add(item.Description.ToString());
@@ -145,7 +184,7 @@ namespace MoneyManeger {
             // Moneys
             listviewIncomes.Items.Clear();
 
-            foreach (Income item in incomes.SelectByMonth(month.Date)) {
+            foreach (Income item in incomes.SelectByMonth(month)) {
                 ListViewItem row = new ListViewItem(item.Id.ToString());
 
                 row.SubItems.Add(item.Description.ToString());
@@ -162,16 +201,31 @@ namespace MoneyManeger {
             valueTotalItens.Text = String.Format("{0:0.000}", totalExpenses);
             valueTotalPrice.Text = String.Format("R$ {0:N}", totalExpensePrice);
             valueTotalUnit.Text = String.Format("{0}", totalExpenseUnit);
-
-
-            //MessageBox.Show(month.ToString());
         }
-
-        // Theme
 
         // PROPERTIES ** PROPERTIES ** PROPERTIES ** PROPERTIES ** PROPERTIES ** PROPERTIES ** PROPERTIES
         public String Title {
             get { return "Despesas"; }
+        }
+
+        // Expense editor methods
+        public void AddNewExpense() {
+            // Open the expense editor
+            new EditExpenseForm(monthPicker.Value).ShowDialog();
+
+            // Update the content
+            monthPicker.Value = monthPicker.Value;
+        }
+
+        public void AddNewIncome() {
+            // Open the income editor
+            new EditIncomeForm(
+                Utils.MonthDate.GetWorkingDay(
+                    monthPicker.Value, 5
+                )).ShowDialog();
+
+            // Update the content
+            monthPicker.Value = monthPicker.Value;
         }
     }
 }

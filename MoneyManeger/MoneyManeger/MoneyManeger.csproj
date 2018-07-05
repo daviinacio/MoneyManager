@@ -234,6 +234,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Deprecateds\" />
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>

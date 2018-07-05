@@ -22,9 +22,9 @@ namespace MoneyManeger.Utils {
 
         private int minYear = 1980, maxYear = 2100;
 
-        private MonthDate month = MonthDate.Now;
+        private DateTime value;
 
-        private bool initialized = false;
+        private bool initialized = false, isSelected = true;
 
         // Constructors
         public ComboBoxMonthPicker() {
@@ -41,8 +41,10 @@ namespace MoneyManeger.Utils {
             for (int i = minYear; i < maxYear; i++)
                 cbYear.Items.Add(i.ToString());
 
+            isSelected = false;
+
             // Set default value
-            this.Month = MonthDate.Now;
+            this.Value = DateTime.Now;
 
             // Turn the initialized variable to true
             initialized = true;
@@ -52,15 +54,14 @@ namespace MoneyManeger.Utils {
         // ComboBox Click
         private void cbMonth_SelectedIndexChanged(object sender, EventArgs e) {
             try {
-                // Put month content on the object
-                this.month.Month = cbMonth.SelectedIndex + 1;
+                // Say that the value has changed by user
+                isSelected = true;
 
-                // Call event
-                if (initialized)
-                    MonthChanged.DynamicInvoke(this.Month);
-
+                // Put the month to 1 (refering the variable, to now call the event)
+                value = Value.AddMonths(-(Value.Month));
+                // Put the month value
+                Value = Value.AddMonths(cbMonth.SelectedIndex + 1);
             }
-            catch (NullReferenceException) { }
             catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Select month error");
             }
@@ -68,13 +69,13 @@ namespace MoneyManeger.Utils {
 
         private void cbYear_SelectedIndexChanged(object sender, EventArgs e) {
             try {
-                // Put year content on the object
-                this.month.Year = Convert.ToInt32(cbYear.Items[cbYear.SelectedIndex]);
+                // Say that the value has changed by user
+                isSelected = true;
 
-                // Call event
-                if(initialized)
-                    MonthChanged.DynamicInvoke(this.Month);
-
+                // Put the month to 1 (refering the variable, to now call the event)
+                value = Value.AddYears(-(Value.Year - 1));
+                // Put the month value
+                Value = Value.AddYears(Convert.ToInt32(cbYear.Items[cbYear.SelectedIndex]) - 1);
             } 
             catch (NullReferenceException) {}
             catch (Exception ex) {
@@ -88,18 +89,27 @@ namespace MoneyManeger.Utils {
         public bool ShortMonthText { get; set; } = true;
 
         [Localizable(false)]
-        public MonthDate Month {
-            get { return this.month; }
+        public DateTime Value {
+            get { return this.value; }
             set {
-                this.month = value;
+                this.value = value;
 
-                cbMonth.SelectedIndex = this.month.Month - 1;
-                cbYear.SelectedItem = this.month.Year.ToString();
+                // This avoid infinity lood
+                if (!isSelected) {
+                    cbMonth.SelectedIndex = this.Value.Month;
+                    cbYear.SelectedItem = this.Value.Year.ToString();
+
+                    isSelected = false;
+                }
+
+                // Call event
+                if (initialized)
+                    MonthChanged.DynamicInvoke(this.Value);
             }
         }
 
         // Delegates
-        public delegate void MonthChangedEvent(MonthDate month);
+        public delegate void MonthChangedEvent(DateTime month);
 
         // Events
         [Localizable(true)]

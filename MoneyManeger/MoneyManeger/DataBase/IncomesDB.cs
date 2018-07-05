@@ -30,7 +30,7 @@ namespace MoneyManeger.DataBase {
                 }
 
             } catch (Exception e) {
-                MessageBox.Show(e.Message, "MoneysDB.Delete('" + id + "') Exception");
+                MessageBox.Show(e.Message, "IncomesDB.Delete('" + id + "') Exception");
 
             } finally { connection.Close(); }
         }
@@ -50,7 +50,7 @@ namespace MoneyManeger.DataBase {
                 }
 
             } catch (Exception e) {
-                MessageBox.Show(e.Message, "MoneysDB.Insert('" + item.Id + "') Exception");
+                MessageBox.Show(e.Message, "IncomesDB.Insert('" + item.Id + "') Exception");
                 return null;
 
             } finally { connection.Close(); }
@@ -81,7 +81,7 @@ namespace MoneyManeger.DataBase {
 
 
             } catch (Exception e) {
-                MessageBox.Show(e.Message, "MoneysDB.Select('" + where + "') Exception");
+                MessageBox.Show(e.Message, "IncomesDB.Select('" + where + "') Exception");
 
             } finally { connection.Close(); }
 
@@ -104,7 +104,7 @@ namespace MoneyManeger.DataBase {
                 }
 
             } catch (Exception e) {
-                MessageBox.Show(e.Message, "MoneysDB.Update('" + item.Id + "') Exception");
+                MessageBox.Show(e.Message, "IncomesDB.Update('" + item.Id + "') Exception");
 
             } finally { connection.Close(); }
         }

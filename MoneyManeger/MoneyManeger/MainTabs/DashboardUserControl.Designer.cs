@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.label1 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -38,6 +39,10 @@
             this.label1.Text = "Dashboard";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // DashboardUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -51,5 +56,7 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
+        private Utils.ComboBoxMonthPicker comboBoxMonthPicker1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

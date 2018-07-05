@@ -39,7 +39,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(1, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(744, 419);
+            this.panel1.Size = new System.Drawing.Size(713, 357);
             this.panel1.TabIndex = 9;
             // 
             // buttonClose
@@ -51,7 +51,7 @@
             this.buttonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.ForeColor = System.Drawing.Color.White;
-            this.buttonClose.Location = new System.Drawing.Point(575, 0);
+            this.buttonClose.Location = new System.Drawing.Point(544, 0);
             this.buttonClose.Margin = new System.Windows.Forms.Padding(0);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(40, 25);
@@ -81,7 +81,7 @@
             this.panel_topWindow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_topWindow.Location = new System.Drawing.Point(1, 1);
             this.panel_topWindow.Name = "panel_topWindow";
-            this.panel_topWindow.Size = new System.Drawing.Size(744, 25);
+            this.panel_topWindow.Size = new System.Drawing.Size(713, 25);
             this.panel_topWindow.TabIndex = 8;
             // 
             // panel2
@@ -99,7 +99,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(129, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(615, 25);
+            this.panel4.Size = new System.Drawing.Size(584, 25);
             this.panel4.TabIndex = 11;
             // 
             // EditMonthlyFeeForm
@@ -107,7 +107,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(746, 446);
+            this.ClientSize = new System.Drawing.Size(715, 384);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_topWindow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

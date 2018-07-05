@@ -112,7 +112,7 @@ namespace MoneyManeger {
 
         // MANAGE -> INSERIR || MANAGE -> INSERIR || MANAGE -> INSERIR || MANAGE -> INSERIR
         private void Menu_Manage_Insert_Expense_Click(object sender, EventArgs e) {
-            new EditExpenseForm(expensesUserControl.monthPicker.Month.Date).ShowDialog();
+            expensesUserControl.AddNewExpense();
         }
 
         private void Menu_Manage_Insert_MonthlyFee_Click(object sender, EventArgs e) {
@@ -124,13 +124,7 @@ namespace MoneyManeger {
         }
 
         private void Menu_Manage_Insert_Income_Click(object sender, EventArgs e) {
-            new EditIncomeForm(
-                Utils.MonthDate.GetWorkingDay(
-                    expensesUserControl.monthPicker.Month.Date, 5
-                )).ShowDialog();
-            /*new DataBase.IncomesDB().Insert(
-                new Models.Income("Salário", 1080, DateTime.Now)
-            );*/
+            expensesUserControl.AddNewIncome();
         }
 
         // IMPORT IMPORT IMPORT IMPORT IMPORT IMPORT IMPORT IMPORT IMPORT IMPORT IMPORT
