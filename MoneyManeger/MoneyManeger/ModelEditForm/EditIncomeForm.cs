@@ -64,7 +64,7 @@ namespace MoneyManeger {
 
                 item.Description = textboxDescription.Text;
                 item.Value = Double.Parse(textboxValue.Text);
-                item.Date = dpDate.Value;
+                item.Date = dpDate.Value.Date;
 
                 // Case if a new item
                 if (item.Id == -1) db.Insert(item);

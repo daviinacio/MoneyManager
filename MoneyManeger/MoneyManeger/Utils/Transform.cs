@@ -40,6 +40,33 @@ namespace MoneyManeger.Utils {
                 if (tb.SelectionStart > tb.Text.IndexOf(separator) && e.KeyChar != '\b')
                     e.Handled = true;
         }
+
+        public static void TextBox_Integer_KeyPress(TextBoxBase tb, KeyPressEventArgs e) {
+            // Check if is number or [separator]
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                e.Handled = true;
+        }
+
+        public static void TextBox_Integer_Limited_KeyUp(TextBoxBase tb, KeyEventArgs e, int min, int max) {
+            try {
+                if (tb.Text == "" || Int32.Parse(tb.Text) < min)
+                    tb.Text = min.ToString();
+
+                else if (Int32.Parse(tb.Text) > max)
+                    tb.Text = max.ToString();
+
+                else return;
+
+            } catch (Exception ex) {
+
+                if (ex is FormatException || ex is System.OverflowException)
+                    tb.Text = max.ToString();
+
+                else throw;
+            }
+
+            tb.SelectionStart = tb.TextLength;
+        }
     }
 }
 

@@ -28,6 +28,8 @@ namespace MoneyManeger.MainTabs {
 
         // Content methods
         private void RefreshContent() {
+            listviewMonthlyFee.Items.Clear();
+
             foreach (Models.MonthlyFee item in db.Select("1 = 1", null)) {
                 ListViewItem row = new ListViewItem(item.Id.ToString());
 
@@ -35,6 +37,9 @@ namespace MoneyManeger.MainTabs {
                 row.SubItems.Add(item.MonthStart.ToString().Split(' ')[0].Substring(3));
                 row.SubItems.Add(item.MonthEnd.ToString().Split(' ')[0].Substring(3));
                 row.SubItems.Add(String.Format("R$ {0:N}", item.MonthlyValue));
+                row.SubItems.Add(String.Format("{0}", item.DayType.ToString()));
+                row.SubItems.Add(String.Format("{0}", item.Day));
+
 
                 row.ForeColor = Color.Black;
 
@@ -45,6 +50,22 @@ namespace MoneyManeger.MainTabs {
         // Properties
         public String Title {
             get { return "Mensalidades"; }
+        }
+
+        private void listviewMonthlyFee_DoubleClick(object sender, EventArgs e) {
+            new EditMonthlyFeeForm(
+                db.SelectById(Convert.ToInt32(listviewMonthlyFee.SelectedItems[0].SubItems[0].Text))
+                ).ShowDialog();
+
+            RefreshContent();
+        }
+
+        public void AddMonthlyFee() {
+            // Show the edit form dialog
+            new EditMonthlyFeeForm().ShowDialog();
+
+            // Refresh the form content
+            RefreshContent();
         }
     }
 }

@@ -27,8 +27,10 @@
             this.monthlyFeeId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.monthlyFeeDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.monthlyFeeMonthStart = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.monthlyFeeValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.monthlyFeeMonthEnd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.monthlyFeeValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.monthlyFeeDayType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.monthlyFeeDay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listviewMonthlyFee
@@ -40,7 +42,9 @@
             this.monthlyFeeDescription,
             this.monthlyFeeMonthStart,
             this.monthlyFeeMonthEnd,
-            this.monthlyFeeValue});
+            this.monthlyFeeValue,
+            this.monthlyFeeDayType,
+            this.monthlyFeeDay});
             this.listviewMonthlyFee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listviewMonthlyFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listviewMonthlyFee.FullRowSelect = true;
@@ -48,10 +52,11 @@
             this.listviewMonthlyFee.Location = new System.Drawing.Point(0, 0);
             this.listviewMonthlyFee.Margin = new System.Windows.Forms.Padding(0);
             this.listviewMonthlyFee.Name = "listviewMonthlyFee";
-            this.listviewMonthlyFee.Size = new System.Drawing.Size(600, 412);
+            this.listviewMonthlyFee.Size = new System.Drawing.Size(871, 412);
             this.listviewMonthlyFee.TabIndex = 4;
             this.listviewMonthlyFee.UseCompatibleStateImageBehavior = false;
             this.listviewMonthlyFee.View = System.Windows.Forms.View.Details;
+            this.listviewMonthlyFee.DoubleClick += new System.EventHandler(this.listviewMonthlyFee_DoubleClick);
             // 
             // monthlyFeeId
             // 
@@ -70,17 +75,26 @@
             this.monthlyFeeMonthStart.Text = "Inicio";
             this.monthlyFeeMonthStart.Width = 90;
             // 
+            // monthlyFeeMonthEnd
+            // 
+            this.monthlyFeeMonthEnd.Tag = "10";
+            this.monthlyFeeMonthEnd.Text = "Fim";
+            this.monthlyFeeMonthEnd.Width = 103;
+            // 
             // monthlyFeeValue
             // 
             this.monthlyFeeValue.Tag = "5";
             this.monthlyFeeValue.Text = "Valor";
             this.monthlyFeeValue.Width = 97;
             // 
-            // monthlyFeeMonthEnd
+            // monthlyFeeDayType
             // 
-            this.monthlyFeeMonthEnd.Tag = "10";
-            this.monthlyFeeMonthEnd.Text = "Fim";
-            this.monthlyFeeMonthEnd.Width = 119;
+            this.monthlyFeeDayType.Text = "Tipo de dia";
+            this.monthlyFeeDayType.Width = 134;
+            // 
+            // monthlyFeeDay
+            // 
+            this.monthlyFeeDay.Text = "Dia";
             // 
             // MonthlyFeeUserControl
             // 
@@ -88,7 +102,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.listviewMonthlyFee);
             this.Name = "MonthlyFeeUserControl";
-            this.Size = new System.Drawing.Size(600, 412);
+            this.Size = new System.Drawing.Size(871, 412);
             this.Load += new System.EventHandler(this.MonthlyFeeUserControl_Load);
             this.ResumeLayout(false);
 
@@ -102,5 +116,7 @@
         private System.Windows.Forms.ColumnHeader monthlyFeeValue;
         private System.Windows.Forms.ColumnHeader monthlyFeeMonthStart;
         private System.Windows.Forms.ColumnHeader monthlyFeeMonthEnd;
+        private System.Windows.Forms.ColumnHeader monthlyFeeDayType;
+        private System.Windows.Forms.ColumnHeader monthlyFeeDay;
     }
 }

@@ -12,7 +12,7 @@ namespace MoneyManeger {
     public partial class EditExpenseForm : Form {
         // Variables
         private DataBase.ExpensesDB db = new DataBase.ExpensesDB();
-        private DateTime currentDate = DateTime.Now;
+        private DateTime currentDate = DateTime.Today;
         private Models.Expense item = null;
 
         // Contructors
@@ -56,7 +56,7 @@ namespace MoneyManeger {
                 item.Description = tbDescription.Text;
                 item.Price = Double.Parse(tbPrice.Text);
                 item.Count = Double.Parse(tbCount.Text);
-                item.Date = dpDate.Value;
+                item.Date = dpDate.Value.Date;
 
                 // Case if a new item
                 if (item.Id == -1)  db.Insert(item);
@@ -86,7 +86,7 @@ namespace MoneyManeger {
                 }
 
             } catch (System.FormatException ex) {
-                MessageBox.Show(ex.Message, "Confira os dados inseridos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Erro ao deletar", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             } finally { }
         }

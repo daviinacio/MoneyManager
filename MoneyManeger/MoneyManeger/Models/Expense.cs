@@ -13,7 +13,7 @@ namespace MoneyManeger.Models {
             this.Description = description; this.Date = date;
         }
         public Expense(int id, String description, double price, double count) :
-            this(id, description, price, count, DateTime.Now) { }
+            this(id, description, price, count, DateTime.Today) { }
 
         public Expense(int id, String description) :
             this(id, description, 0, 0) { }

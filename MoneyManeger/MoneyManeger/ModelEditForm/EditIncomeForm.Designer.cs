@@ -28,7 +28,7 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.labelInitDate = new System.Windows.Forms.Label();
+            this.labelDate = new System.Windows.Forms.Label();
             this.labelValue = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
             this.textboxValue = new System.Windows.Forms.MaskedTextBox();
@@ -50,7 +50,7 @@
             this.panel1.Controls.Add(this.buttonDelete);
             this.panel1.Controls.Add(this.buttonCancel);
             this.panel1.Controls.Add(this.buttonSave);
-            this.panel1.Controls.Add(this.labelInitDate);
+            this.panel1.Controls.Add(this.labelDate);
             this.panel1.Controls.Add(this.labelValue);
             this.panel1.Controls.Add(this.labelDescription);
             this.panel1.Controls.Add(this.textboxValue);
@@ -118,16 +118,16 @@
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
-            // labelInitDate
+            // labelDate
             // 
-            this.labelInitDate.AutoSize = true;
-            this.labelInitDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInitDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelInitDate.Location = new System.Drawing.Point(13, 60);
-            this.labelInitDate.Name = "labelInitDate";
-            this.labelInitDate.Size = new System.Drawing.Size(37, 16);
-            this.labelInitDate.TabIndex = 8;
-            this.labelInitDate.Text = "Mês";
+            this.labelDate.AutoSize = true;
+            this.labelDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelDate.Location = new System.Drawing.Point(13, 60);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(37, 16);
+            this.labelDate.TabIndex = 8;
+            this.labelDate.Text = "Mês";
             // 
             // labelValue
             // 
@@ -264,7 +264,7 @@
         private System.Windows.Forms.Panel panel_topWindow;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label labelInitDate;
+        private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Label labelValue;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.MaskedTextBox textboxValue;

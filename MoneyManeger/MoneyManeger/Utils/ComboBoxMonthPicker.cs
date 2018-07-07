@@ -22,45 +22,39 @@ namespace MoneyManeger.Utils {
 
         private int minYear = 1980, maxYear = 2100;
 
-        private DateTime value;
+        private DateTime value = DateTime.Now;
 
-        private bool initialized = false, isSelected = true;
+        private bool /*initialized = false,*/ isSelected = true;
 
         // Constructors
         public ComboBoxMonthPicker() {
             InitializeComponent();
-        }
 
-        // Form Events
-        private void ListboxMonthPicker_Load(object sender, EventArgs e) {
             // Fill months
-            foreach(String m in (ShortMonthText ? shortMonthList : monthList))
+            foreach (String m in (ShortMonthText ? shortMonthList : monthList))
                 cbMonth.Items.Add(m);
 
             // Fill years
             for (int i = minYear; i < maxYear; i++)
                 cbYear.Items.Add(i.ToString());
 
-            isSelected = false;
-
-            // Set default value
             this.Value = DateTime.Now;
+        }
 
-            // Turn the initialized variable to true
-            initialized = true;
+        // Form Events
+        private void ListboxMonthPicker_Load(object sender, EventArgs e) {
 
         }
 
         // ComboBox Click
         private void cbMonth_SelectedIndexChanged(object sender, EventArgs e) {
             try {
-                // Say that the value has changed by user
-                isSelected = true;
-
-                // Put the month to 1 (refering the variable, to now call the event)
-                value = Value.AddMonths(-(Value.Month));
-                // Put the month value
-                Value = Value.AddMonths(cbMonth.SelectedIndex + 1);
+                if (isSelected) {
+                    // Put the month to 1 (refering the variable, to now call the event)
+                    value = Value.AddMonths(-Value.Month);
+                    // Put the month value
+                    Value = Value.AddMonths(cbMonth.SelectedIndex + 1);
+                }
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Select month error");
@@ -69,13 +63,12 @@ namespace MoneyManeger.Utils {
 
         private void cbYear_SelectedIndexChanged(object sender, EventArgs e) {
             try {
-                // Say that the value has changed by user
-                isSelected = true;
-
-                // Put the month to 1 (refering the variable, to now call the event)
-                value = Value.AddYears(-(Value.Year - 1));
-                // Put the month value
-                Value = Value.AddYears(Convert.ToInt32(cbYear.Items[cbYear.SelectedIndex]) - 1);
+                if (isSelected) {
+                    // Put the month to 1 (refering the variable, to now call the event)
+                    value = Value.AddYears(-(Value.Year - 1));
+                    // Put the month value
+                    Value = Value.AddYears(Convert.ToInt32(cbYear.Items[cbYear.SelectedIndex]) - 1);
+                }
             } 
             catch (NullReferenceException) {}
             catch (Exception ex) {
@@ -94,17 +87,17 @@ namespace MoneyManeger.Utils {
             set {
                 this.value = value;
 
-                // This avoid infinity lood
-                if (!isSelected) {
-                    cbMonth.SelectedIndex = this.Value.Month;
-                    cbYear.SelectedItem = this.Value.Year.ToString();
+                isSelected = false;
 
-                    isSelected = false;
-                }
+                cbMonth.SelectedIndex = this.Value.Month - 1;
+                cbYear.SelectedItem = this.Value.Year.ToString();
+
+                isSelected = true;
 
                 // Call event
-                if (initialized)
+                try {
                     MonthChanged.DynamicInvoke(this.Value);
+                } catch (NullReferenceException) { }
             }
         }
 

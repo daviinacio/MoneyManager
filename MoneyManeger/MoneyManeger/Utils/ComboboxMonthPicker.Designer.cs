@@ -44,7 +44,7 @@
             this.tlpBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpBack.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpBack.Size = new System.Drawing.Size(275, 81);
+            this.tlpBack.Size = new System.Drawing.Size(275, 30);
             this.tlpBack.TabIndex = 0;
             // 
             // cbMonth
@@ -55,7 +55,7 @@
             this.cbMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMonth.FormattingEnabled = true;
             this.cbMonth.IntegralHeight = false;
-            this.cbMonth.Location = new System.Drawing.Point(0, 26);
+            this.cbMonth.Location = new System.Drawing.Point(0, 1);
             this.cbMonth.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.cbMonth.Name = "cbMonth";
             this.cbMonth.Size = new System.Drawing.Size(107, 28);
@@ -70,7 +70,7 @@
             this.cbYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbYear.FormattingEnabled = true;
             this.cbYear.IntegralHeight = false;
-            this.cbYear.Location = new System.Drawing.Point(113, 26);
+            this.cbYear.Location = new System.Drawing.Point(113, 1);
             this.cbYear.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.cbYear.Name = "cbYear";
             this.cbYear.Size = new System.Drawing.Size(162, 28);
@@ -83,7 +83,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tlpBack);
             this.Name = "ComboBoxMonthPicker";
-            this.Size = new System.Drawing.Size(275, 81);
+            this.Size = new System.Drawing.Size(275, 30);
             this.Load += new System.EventHandler(this.ListboxMonthPicker_Load);
             this.tlpBack.ResumeLayout(false);
             this.ResumeLayout(false);

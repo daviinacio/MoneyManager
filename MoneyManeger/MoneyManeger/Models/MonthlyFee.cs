@@ -7,65 +7,48 @@ using MoneyManeger.Utils;
 
 namespace MoneyManeger.Models {
     public class MonthlyFee {
-        // Default values
-        private static int DefaultBusinessDay = 5;
+        public enum eDayType { WorkingDays = 0, FixedDays = 1 }
+        public enum eStatus { NaoPago = 0, Pago = 1 }
 
         // Constructors
-        public MonthlyFee(int id, String description, double monthlyValue, DateTime monthStart, DateTime monthEnd, int businessDay) {
-            this.Id = id; this.Description = description; this.MonthlyValue = monthlyValue;
+
+        public MonthlyFee(int id, String description, double monthlyValue, DateTime monthStart, DateTime monthEnd, eDayType dayType, int day) {
+            this.Id = id;
+            this.Description = description;
+            this.MonthlyValue = monthlyValue;
             this.MonthStart = monthStart;
             this.MonthEnd = monthEnd;
-            this.BusinessDay = businessDay;
-        }
-        public MonthlyFee(int id, String description, double monthlyValue, DateTime monthStart) :
-            this(id, description, monthlyValue, monthStart, MonthDate.Infinity.Date, DefaultBusinessDay) { }
-
-        public MonthlyFee(int id, String description, double monthlyValue) :
-            this(id, description, monthlyValue, MonthDate.Now.Date) { }
-
-        public MonthlyFee(String description, double monthlyValue, DateTime monthStart, DateTime monthEnd, int businessDay) :
-            this(-1, description, monthlyValue, monthStart, monthEnd, businessDay) { }
-
-        public MonthlyFee(String description, double monthlyValue, DateTime monthStart) :
-            this(-1, description, monthlyValue, monthStart) { }
-
-        public MonthlyFee(String description, double monthlyValue) :
-            this(-1, description, monthlyValue) { }
-
-        // Methods
-        public DateTime GetDate(MonthDate current) {
-            // TODO: Improve the business day calc  **  **  **  **
-
-            DateTime date = new DateTime(current.Date.Year, current.Date.Month, 1);
-            int workDays = this.BusinessDay;
-
-            while (workDays > 0) {
-                date = date.AddDays(1);
-                if (date.DayOfWeek != DayOfWeek.Saturday &&
-                    date.DayOfWeek != DayOfWeek.Sunday)
-                    workDays--;
-            }
-
-            return date;
+            this.DayType = dayType;
+            this.Day = day;
         }
 
-        /*public bool IsOnMonth(MonthDate current) {
-            return current.IsInRange(this.MonthStart, this.MonthEnd);
-        }*/
+        public MonthlyFee() { this.Id = -1; }
+
 
         // Properties
-        public int Id { get; }
-        public String Description { get; set; }
-        public double MonthlyValue { get; set; }
-        public DateTime MonthStart { get; set; }
-        public DateTime MonthEnd { get; set; }
-        //public int Parcels { get; }
-        public int BusinessDay { get; set; }
+        public int Id { get; } = -1;
+        public String Description { get; set; } = "";
+        public double MonthlyValue { get; set; } = 0;
+        public DateTime MonthStart { get; set; } = DateTime.Now;
+        public DateTime MonthEnd { get; set; } = DateTime.MaxValue;
+        public eDayType DayType { get; set; } = eDayType.WorkingDays;
+        public int Day { get; set; } = 5;
 
+        public DateTime Date (DateTime currentDate) {
+
+            switch (DayType) {
+                case eDayType.WorkingDays:
+                    return MonthDate.GetWorkingDay(currentDate, this.Day);
+                case eDayType.FixedDays:
+                    return currentDate.AddDays(-currentDate.Day).AddDays(this.Day);
+            }
+
+            return currentDate;
+        }
         
         public override String ToString() {
-            return String.Format("ID:\t\t{0}\nDescription:\t{1}\nMonthlyValue:\t{2}\nMonthStart:\t{3}\nMonthEnd:\t{4}\nBusinessDay:\t{5}",
-                Id, Description, MonthlyValue, MonthStart, MonthEnd, BusinessDay);
+            return String.Format("ID:\t\t{0}\nDescription:\t{1}\nMonthlyValue:\t{2}\nMonthStart:\t{3}\nMonthEnd:\t{4}\nDay:\t{5}\nDayType:\t{6}",
+                Id, Description, MonthlyValue, MonthStart, MonthEnd, Day, DayType);
         }
     }
 }

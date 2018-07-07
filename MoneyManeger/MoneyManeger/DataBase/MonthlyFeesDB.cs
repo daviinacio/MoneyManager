@@ -40,14 +40,15 @@ namespace MoneyManeger.DataBase {
 
             try {
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO " + DBName +
-                        " (description, monthlyValue, monthStart, monthEnd, businessDay)" + 
-                        " Values(@description, @monthlyValue, @monthStart, @monthEnd, @businessDay)", connection)) {
+                        " (description, monthlyValue, monthStart, monthEnd, dayType, day, status)" +
+                        " Values(@description, @monthlyValue, @monthStart, @monthEnd, @dayType, @day)", connection)) {
 
                     cmd.Parameters.AddWithValue("@description", item.Description);
                     cmd.Parameters.AddWithValue("@monthlyValue", item.MonthlyValue);
                     cmd.Parameters.AddWithValue("@monthStart", item.MonthStart.Date);
                     cmd.Parameters.AddWithValue("@monthEnd", item.MonthEnd.Date);
-                    cmd.Parameters.AddWithValue("@businessDay", item.BusinessDay);
+                    cmd.Parameters.AddWithValue("@dayType", item.DayType);
+                    cmd.Parameters.AddWithValue("@day", item.Day);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -81,7 +82,8 @@ namespace MoneyManeger.DataBase {
                             Double.Parse(row["monthlyValue"].ToString()),
                             DateTime.Parse(row["monthStart"].ToString()),
                             DateTime.Parse(row["monthEnd"].ToString()),
-                            int.Parse(row["businessDay"].ToString())
+                            (MonthlyFee.eDayType) int.Parse(row["dayType"].ToString()),
+                            int.Parse(row["day"].ToString())
                         ));
 
 
@@ -99,14 +101,15 @@ namespace MoneyManeger.DataBase {
             try {
                 using (SqlCommand cmd = new SqlCommand("UPDATE " + DBName + " SET" +
                         " description = @description, monthlyValue = @monthlyValue, monthStart = @monthStart," +
-                        " monthEnd = @monthEnd, businessDay = @businessDay WHERE id = @id;", connection)) {
+                        " monthEnd = @monthEnd, dayType = @dayType, day = @day WHERE id = @id;", connection)) {
 
                     cmd.Parameters.AddWithValue("@id", item.Id);
                     cmd.Parameters.AddWithValue("@description", item.Description);
                     cmd.Parameters.AddWithValue("@monthlyValue", item.MonthlyValue);
                     cmd.Parameters.AddWithValue("@monthStart", item.MonthStart.Date);
                     cmd.Parameters.AddWithValue("@monthEnd", item.MonthEnd.Date);
-                    cmd.Parameters.AddWithValue("@businessDay", item.BusinessDay);
+                    cmd.Parameters.AddWithValue("@dayType", item.DayType);
+                    cmd.Parameters.AddWithValue("@day", item.Day);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -125,7 +128,7 @@ namespace MoneyManeger.DataBase {
             return this.Select(String.Format(
                 "(DATEPART(year, MonthStart) < {1} OR (DATEPART(month, MonthStart) <= {0} AND DATEPART(year, MonthStart) <= {1})) AND " +
                 "(DATEPART(year, MonthEnd)   > {1} OR (DATEPART(month, MonthEnd)   >=  {0} AND DATEPART(year, MonthEnd)  >=  {1}))",
-                month.Month, month.Year), "description ASC");
+                month.Month, month.Year), "day ASC, description ASC");
             //return this.Select(String.Format("1 = 1"), "description ASC");
         }
     }

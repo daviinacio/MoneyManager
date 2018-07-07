@@ -116,7 +116,7 @@ namespace MoneyManeger {
         }
 
         private void Menu_Manage_Insert_MonthlyFee_Click(object sender, EventArgs e) {
-            new EditMonthlyFeeForm().ShowDialog();
+            monthlyFeeUserControl.AddMonthlyFee();
         }
 
         private void Menu_Manage_Insert_Reserva_Click(object sender, EventArgs e) {
