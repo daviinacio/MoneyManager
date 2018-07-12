@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MoneyManeger.Models;
 using MoneyManeger.DataBase;
 using MoneyManeger.Utils;
+using MoneyManeger.ModelEditForm;
 
 namespace MoneyManeger {
     public partial class ExpensesUserControl : UserControl {
@@ -95,12 +96,22 @@ namespace MoneyManeger {
         private void listviewExpenses_DoubleClick(object sender, EventArgs e) {
             ListView listView = sender as ListView;
 
-            // Find the selected item
-            Expense item = expenses.SelectById(
-                Convert.ToInt32(listView.SelectedItems[0].SubItems[0].Text));
+            if (listView.SelectedItems[0].SubItems[5].Text.Contains("R$")) {
+                // Find the selected item
+                Expense item = expenses.SelectById(
+                    Convert.ToInt32(listView.SelectedItems[0].SubItems[0].Text));
 
-            // Open the expense editor
-            new EditExpenseForm(item).ShowDialog();
+                // Open the expense editor
+                new EditExpenseForm(item).ShowDialog();
+            } else {
+                // Find the selected item
+                MonthlyFee item = monthlyFees.SelectById(
+                    Convert.ToInt32(listView.SelectedItems[0].SubItems[0].Text));
+
+                // Open the expense editor
+                new EditMonthlyFeeExpenseForm(monthPicker.Value, item).ShowDialog();
+                //new EditMonthlyFeeForm(item).ShowDialog();
+            }
 
             // Update the content
             monthPicker.Value = monthPicker.Value;
@@ -133,37 +144,56 @@ namespace MoneyManeger {
 
             // MonthlyFee
             foreach (MonthlyFee item in monthlyFees.SelectByMonth(month)) {
+                Expense eItem = item.Expense(month);
+
                 ListViewItem row = new ListViewItem(item.Id.ToString());
 
-                DateTime workingDay = MonthDate.GetWorkingDay(month, item.BusinessDay);
-
                 row.SubItems.Add(item.Description.ToString());
-                row.SubItems.Add(workingDay.ToString().Split(' ')[0]);
+                row.SubItems.Add(item.Date(month).ToString().Split(' ')[0]);
                 row.SubItems.Add(String.Format("{0:0.000}", 1));
-                row.SubItems.Add(String.Format("R$ {0:N}", item.MonthlyValue));
+                row.SubItems.Add(String.Format("R$ {0:N}", eItem != null ? eItem.TotalPrice : item.MonthlyValue));
                 //row.SubItems.Add(String.Format("Pendente"));
-
-                if (workingDay < DateTime.Now) {
-                    row.SubItems.Add(String.Format("Atrazado"));
-                    row.BackColor = Color.Red;
-                }
-                else if (true) {
-                    row.SubItems.Add(String.Format("Pendente"));
-                    row.BackColor = Color.Yellow;
-                }
-                else {
-                    row.SubItems.Add(String.Format("Pago"));
-                    row.BackColor = Color.Transparent;
-                }
 
                 row.ForeColor = Color.Black;
 
+                if (eItem != null) {
+                    //row.SubItems.Add("Pago", Color.Lime, row.BackColor, new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, ((byte) (0))));
+                    //row.ForeColor = Color.Lime;
+
+                    row.SubItems.Add("Pago");
+
+                    //row.BackColor = Color.Lime;
+                    //row.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+
+                    totalExpenses++;
+                    totalExpensePrice += eItem.TotalPrice;
+                    totalExpenseUnit ++;
+                }
+                else if (item.Date(month) < DateTime.Now) {
+                    row.SubItems.Add("Atrazado");
+                    row.BackColor = Color.Red;
+
+
+                    //row.SubItems.Add("Atrazado", Color.Red, row.BackColor, new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, ((byte) (0))));
+                    //row.SubItems.Add(String.Format("Atrazado"));
+                    //row.ForeColor = Color.Red;
+                }
+                else {
+                    row.SubItems.Add("Pendente");
+                    //row.BackColor = Color.Orange;
+
+
+                    //row.SubItems.Add("Pendente", Color.Yellow, row.BackColor, new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, ((byte) (0))));
+                    //row.SubItems.Add(String.Format("Pendente"));
+                    //row.ForeColor = Color.Yellow;
+                }
 
                 listviewExpenses.Items.Add(row);
             }
 
             // Expenses
-            foreach (Expense item in expenses.SelectByMonth(month)) {
+            foreach (Expense item in expenses.SelectCommonByMonth(month)) {
+
                 ListViewItem row = new ListViewItem(item.Id.ToString());
 
                 row.SubItems.Add(item.Description.ToString());
@@ -174,11 +204,11 @@ namespace MoneyManeger {
 
                 row.ForeColor = Color.Black;
 
-                listviewExpenses.Items.Add(row);
-
                 totalExpenses++;
                 totalExpensePrice += item.TotalPrice;
                 totalExpenseUnit += item.Count;
+
+                listviewExpenses.Items.Add(row);
             }
 
             // Moneys
@@ -201,6 +231,8 @@ namespace MoneyManeger {
             valueTotalItens.Text = String.Format("{0:0.000}", totalExpenses);
             valueTotalPrice.Text = String.Format("R$ {0:N}", totalExpensePrice);
             valueTotalUnit.Text = String.Format("{0}", totalExpenseUnit);
+            valueRemaining.Text = String.Format("R$ {0:N}", totalIncomes - totalExpensePrice);
+            valueTotalIncomes.Text = String.Format("R$ {0:N}", totalIncomes);
         }
 
         // PROPERTIES ** PROPERTIES ** PROPERTIES ** PROPERTIES ** PROPERTIES ** PROPERTIES ** PROPERTIES

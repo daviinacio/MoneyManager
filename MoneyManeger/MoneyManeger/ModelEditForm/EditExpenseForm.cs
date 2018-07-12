@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MoneyManeger {
+namespace MoneyManeger.ModelEditForm {
     public partial class EditExpenseForm : Form {
         // Variables
         private DataBase.ExpensesDB db = new DataBase.ExpensesDB();
@@ -59,15 +59,16 @@ namespace MoneyManeger {
                 item.Date = dpDate.Value.Date;
 
                 // Case if a new item
-                if (item.Id == -1)  db.Insert(item);
+                if (item.Id == -1)
+                    db.Insert(item);
 
                 // Case is a existent item
-                else                db.Update(item);
+                else db.Update(item);
 
                 // Close the edit form
                 this.Close();
 
-            } catch (System.FormatException ex) {
+            } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Confira os dados inseridos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 // Destroy the temp item
                 if (item.Id == -1) item = null;

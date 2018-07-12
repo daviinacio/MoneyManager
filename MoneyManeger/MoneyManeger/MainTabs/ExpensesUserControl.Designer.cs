@@ -47,10 +47,17 @@
             this.money_date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.money_value = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.monthPicker = new MoneyManeger.Utils.ModernMonthPicker();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelTotalIncomes = new System.Windows.Forms.Label();
+            this.valueTotalIncomes = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelRemaining = new System.Windows.Forms.Label();
+            this.valueRemaining = new System.Windows.Forms.Label();
             this.tableLayoutPanelTop.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableRight.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanelTop
@@ -259,13 +266,15 @@
             this.tableRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableRight.Controls.Add(this.listviewIncomes, 0, 1);
             this.tableRight.Controls.Add(this.monthPicker, 0, 0);
+            this.tableRight.Controls.Add(this.tableLayoutPanel3, 0, 2);
             this.tableRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableRight.Location = new System.Drawing.Point(644, 31);
             this.tableRight.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.tableRight.Name = "tableRight";
-            this.tableRight.RowCount = 2;
+            this.tableRight.RowCount = 3;
             this.tableRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 162F));
             this.tableRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableRight.Size = new System.Drawing.Size(228, 432);
             this.tableRight.TabIndex = 2;
             // 
@@ -284,7 +293,7 @@
             this.listviewIncomes.Location = new System.Drawing.Point(0, 162);
             this.listviewIncomes.Margin = new System.Windows.Forms.Padding(0);
             this.listviewIncomes.Name = "listviewIncomes";
-            this.listviewIncomes.Size = new System.Drawing.Size(228, 270);
+            this.listviewIncomes.Size = new System.Drawing.Size(228, 249);
             this.listviewIncomes.TabIndex = 8;
             this.listviewIncomes.UseCompatibleStateImageBehavior = false;
             this.listviewIncomes.View = System.Windows.Forms.View.Details;
@@ -295,24 +304,25 @@
             // 
             this.money_id.Tag = "0";
             this.money_id.Text = "Id";
+            this.money_id.Width = 0;
             // 
             // money_name
             // 
             this.money_name.Tag = "10";
             this.money_name.Text = "Entrada";
-            this.money_name.Width = 45;
+            this.money_name.Width = 83;
             // 
             // money_date
             // 
             this.money_date.Tag = "8";
             this.money_date.Text = "Data";
-            this.money_date.Width = 33;
+            this.money_date.Width = 66;
             // 
             // money_value
             // 
             this.money_value.Tag = "8";
             this.money_value.Text = "Valor";
-            this.money_value.Width = 74;
+            this.money_value.Width = 76;
             // 
             // monthPicker
             // 
@@ -337,15 +347,58 @@
             this.monthPicker.SelectedMonthForeColor = System.Drawing.Color.DimGray;
             this.monthPicker.Size = new System.Drawing.Size(228, 161);
             this.monthPicker.TabIndex = 9;
+            this.monthPicker.Value = new System.DateTime(2018, 7, 12, 0, 4, 31, 597);
             this.monthPicker.YearForeColor = System.Drawing.Color.Black;
             this.monthPicker.MonthChanged += new MoneyManeger.Utils.ModernMonthPicker.MonthChangedEvent(this.monthPicker_MonthChanged);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.BackColor = System.Drawing.SystemColors.Control;
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.97222F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.02778F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
+            this.tableLayoutPanel3.Controls.Add(this.labelTotalIncomes, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.valueTotalIncomes, 2, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 411);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(228, 21);
+            this.tableLayoutPanel3.TabIndex = 10;
+            // 
+            // labelTotalIncomes
+            // 
+            this.labelTotalIncomes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelTotalIncomes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalIncomes.Location = new System.Drawing.Point(97, 0);
+            this.labelTotalIncomes.Name = "labelTotalIncomes";
+            this.labelTotalIncomes.Size = new System.Drawing.Size(43, 21);
+            this.labelTotalIncomes.TabIndex = 0;
+            this.labelTotalIncomes.Text = "Total:";
+            this.labelTotalIncomes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // valueTotalIncomes
+            // 
+            this.valueTotalIncomes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueTotalIncomes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valueTotalIncomes.Location = new System.Drawing.Point(146, 0);
+            this.valueTotalIncomes.Name = "valueTotalIncomes";
+            this.valueTotalIncomes.Size = new System.Drawing.Size(79, 21);
+            this.valueTotalIncomes.TabIndex = 1;
+            this.valueTotalIncomes.Text = "R$ 0.000,00";
+            this.valueTotalIncomes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.29825F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.70175F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.52632F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.47369F));
+            this.tableLayoutPanel1.Controls.Add(this.labelRemaining, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.valueRemaining, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(644, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(1, 0, 0, 1);
@@ -354,6 +407,28 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(228, 30);
             this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // labelRemaining
+            // 
+            this.labelRemaining.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelRemaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRemaining.Location = new System.Drawing.Point(3, 0);
+            this.labelRemaining.Name = "labelRemaining";
+            this.labelRemaining.Size = new System.Drawing.Size(75, 30);
+            this.labelRemaining.TabIndex = 0;
+            this.labelRemaining.Text = "Restante:";
+            this.labelRemaining.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // valueRemaining
+            // 
+            this.valueRemaining.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.valueRemaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valueRemaining.Location = new System.Drawing.Point(84, 0);
+            this.valueRemaining.Name = "valueRemaining";
+            this.valueRemaining.Size = new System.Drawing.Size(141, 30);
+            this.valueRemaining.TabIndex = 1;
+            this.valueRemaining.Text = "R$ 0,00";
+            this.valueRemaining.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ExpensesUserControl
             // 
@@ -367,6 +442,8 @@
             this.tableLayoutPanelTop.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableRight.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -397,5 +474,10 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ColumnHeader money_id;
+        private System.Windows.Forms.Label labelRemaining;
+        private System.Windows.Forms.Label valueRemaining;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label labelTotalIncomes;
+        private System.Windows.Forms.Label valueTotalIncomes;
     }
 }

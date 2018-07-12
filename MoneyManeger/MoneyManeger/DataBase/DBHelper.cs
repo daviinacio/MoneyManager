@@ -52,11 +52,12 @@ namespace MoneyManeger.DataBase {
         public abstract void Delete(int id);
         public abstract void Update(E item);
     
-        public abstract List<E> Select(String where, String order);
-
-        public List<E> Select(string where) {
-            return this.Select(where, null);
+        public List<E> Select(String where, String order) {
+            return this.Select("WHERE " + where + (order != null ? " ORDER BY " + order : ""));
         }
+
+        public abstract List<E> Select(String query);
+        
 
         public E SelectById(int id) {
             try {
@@ -79,10 +80,12 @@ namespace MoneyManeger.DataBase {
             //return this.Select(String.Format("DATEPART(month, date) = {0} AND DATEPART(year, date) = {1}", month.Month, month.Year), "date ASC, description ASC");
         }
 
-        public virtual bool SimilarYetExists(string description, DateTime date) {
+
+
+        public virtual List<E> GetSimilarItem(string description, DateTime date) {
             return this.Select(String.Format("DATEPART(day, date) = {0} AND DATEPART(month, date) = {1} AND DATEPART(year, date) = {2} AND description = '{3}'",
                 date.Day, date.Month, date.Year, description
-                )).Count > 0;
+                ), null);
         }
     }
 }

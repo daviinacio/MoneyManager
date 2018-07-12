@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MoneyManeger {
+namespace MoneyManeger.ModelEditForm {
     public partial class EditMonthlyFeeForm : Form {
 
         // Variables
@@ -30,8 +30,6 @@ namespace MoneyManeger {
 
         // Form events
         private void EditMonthlyFeeForm_Load(object sender, EventArgs e) {
-            buttonDelete.Visible = item.Id != -1;
-
             mpInit.Value = DateTime.Now;
             cbDayType.SelectedIndex = (int) Models.MonthlyFee.eDayType.WorkingDays;
 
@@ -43,11 +41,14 @@ namespace MoneyManeger {
                 mpEnd.Value = item.MonthEnd;
                 cbDayType.SelectedIndex = (int) item.DayType;
                 textboxDay.Text = item.Day.ToString();
-                valueStatus.Text = "Teste";
 
-            } else {
-                valueStatus.Text = "Inexistente";
             }
+
+            // Set the form title
+            labelTitle.Text = item == null ? "Nova mensalidade" : "Editar mensalidade";
+
+            // Set delete button visibility
+            buttonDelete.Visible = item != null;
         }
 
 
@@ -86,7 +87,7 @@ namespace MoneyManeger {
                 // Close the edit form
                 this.Close();
 
-            } catch (System.FormatException ex) {
+            } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Confira os dados inseridos", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             } finally { }
@@ -103,7 +104,7 @@ namespace MoneyManeger {
                     this.Close();
                 }
 
-            } catch (System.FormatException ex) {
+            } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Erro ao deletar", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             } finally { }

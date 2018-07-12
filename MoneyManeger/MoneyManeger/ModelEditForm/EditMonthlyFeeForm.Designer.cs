@@ -1,4 +1,4 @@
-﻿namespace MoneyManeger {
+﻿namespace MoneyManeger.ModelEditForm {
     partial class EditMonthlyFeeForm {
         /// <summary>
         /// Required designer variable.
@@ -46,8 +46,6 @@
             this.panel_topWindow = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.labelStatus = new System.Windows.Forms.Label();
-            this.valueStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -59,8 +57,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.valueStatus);
-            this.panel1.Controls.Add(this.labelStatus);
             this.panel1.Controls.Add(this.cbDayType);
             this.panel1.Controls.Add(this.labelDay);
             this.panel1.Controls.Add(this.textboxDay);
@@ -348,30 +344,6 @@
             this.panel4.Size = new System.Drawing.Size(311, 25);
             this.panel4.TabIndex = 11;
             // 
-            // labelStatus
-            // 
-            this.labelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelStatus.AutoSize = true;
-            this.labelStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelStatus.Location = new System.Drawing.Point(298, 117);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(51, 16);
-            this.labelStatus.TabIndex = 27;
-            this.labelStatus.Text = "Status";
-            // 
-            // valueStatus
-            // 
-            this.valueStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.valueStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.valueStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valueStatus.Location = new System.Drawing.Point(307, 136);
-            this.valueStatus.Name = "valueStatus";
-            this.valueStatus.Size = new System.Drawing.Size(121, 26);
-            this.valueStatus.TabIndex = 32;
-            this.valueStatus.Text = "Pendente";
-            this.valueStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // EditMonthlyFeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,7 +356,7 @@
             this.Name = "EditMonthlyFeeForm";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EditMonthlyFeeForm";
             this.Load += new System.EventHandler(this.EditMonthlyFeeForm_Load);
             this.panel1.ResumeLayout(false);
@@ -425,7 +397,5 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label valueStatus;
-        private System.Windows.Forms.Label labelStatus;
     }
 }

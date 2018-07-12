@@ -80,6 +80,12 @@
     <Compile Include="ImportForms\ImportExpensesByText.Designer.cs">
       <DependentUpon>ImportExpensesByText.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelEditForm\EditMonthlyFeeExpenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModelEditForm\EditMonthlyFeeExpenseForm.Designer.cs">
+      <DependentUpon>EditMonthlyFeeExpenseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\ComboBoxMonthPicker.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     <Compile Include="Utils\Transform.cs" />
     <EmbeddedResource Include="ImportForms\ImportExpensesByText.resx">
       <DependentUpon>ImportExpensesByText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelEditForm\EditMonthlyFeeExpenseForm.resx">
+      <DependentUpon>EditMonthlyFeeExpenseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utils\ComboBoxMonthPicker.resx">
       <DependentUpon>ComboBoxMonthPicker.cs</DependentUpon>

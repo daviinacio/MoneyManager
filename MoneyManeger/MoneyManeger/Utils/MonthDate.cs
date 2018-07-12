@@ -119,7 +119,7 @@ namespace MoneyManeger.Utils {
                     month.DayOfWeek != DayOfWeek.Saturday)
                     daysCount++;
 
-                // If the working days reach 5, return the current count days
+                // If the working days reach [day], return the current count days
                 if (daysCount >= day) return month;
             }
 

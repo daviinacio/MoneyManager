@@ -36,6 +36,11 @@ namespace MoneyManeger.DataBase {
         }
 
         public override Income Insert(Income item) {
+            // Check if yet exists
+            if (this.GetSimilarItem(item.Description, item.Date).Count > 0)
+                throw new Exception("Já existe uma despesa com dados similares!");
+
+            // Open the database connection
             connection.Open();
 
             try {
@@ -59,11 +64,11 @@ namespace MoneyManeger.DataBase {
             return this.Max;
         }
 
-        public override List<Income> Select(string where, string order) {
+        public override List<Income> Select(string query) {
             List<Income> result = new List<Income>();
 
             DataSet ds = new DataSet();
-            SqlCommand command = new SqlCommand("SELECT * FROM " + DBName + " WHERE " + where + (order != null ? " ORDER BY " + order : ""), connection);
+            SqlCommand command = new SqlCommand("SELECT I.id, I.description, I.value, I.date FROM " + DBName + " as I " + query, connection);
             SqlDataAdapter sda = new SqlDataAdapter(command);
 
             try {
@@ -81,7 +86,7 @@ namespace MoneyManeger.DataBase {
 
 
             } catch (Exception e) {
-                MessageBox.Show(e.Message, "IncomesDB.Select('" + where + "') Exception");
+                MessageBox.Show(e.Message, "IncomesDB.Select('" + query + "') Exception");
 
             } finally { connection.Close(); }
 
@@ -89,6 +94,13 @@ namespace MoneyManeger.DataBase {
         }
 
         public override void Update(Income item) {
+            // Check if yet exists
+            List<Income> similar = this.GetSimilarItem(item.Description, item.Date);
+            if (similar.Count > 0)
+                if (similar[0].Id != item.Id)
+                    throw new Exception("Já existe uma receita com dados similares!");
+
+            // Open the database connection
             connection.Open();
 
             try {

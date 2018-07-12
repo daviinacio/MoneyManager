@@ -1,4 +1,4 @@
-﻿namespace MoneyManeger {
+﻿namespace MoneyManeger.ModelEditForm {
     partial class EditExpenseForm {
         /// <summary>
         /// Required designer variable.

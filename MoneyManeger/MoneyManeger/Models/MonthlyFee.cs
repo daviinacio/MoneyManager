@@ -45,6 +45,11 @@ namespace MoneyManeger.Models {
 
             return currentDate;
         }
+
+        public Expense Expense (DateTime month) {
+            List<Expense> result = new DataBase.ExpensesDB().GetSimilarItem(this.Description, this.Date(month));
+            return result.Count > 0 ? result[0] : null;
+        }
         
         public override String ToString() {
             return String.Format("ID:\t\t{0}\nDescription:\t{1}\nMonthlyValue:\t{2}\nMonthStart:\t{3}\nMonthEnd:\t{4}\nDay:\t{5}\nDayType:\t{6}",

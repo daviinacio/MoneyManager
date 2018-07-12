@@ -36,11 +36,16 @@ namespace MoneyManeger.DataBase {
         }
 
         public override MonthlyFee Insert(MonthlyFee item) {
+            // Check if yet exists
+            if (this.GetSimilarItem(item.Description, DateTime.Now).Count > 0)
+                throw new Exception("Já existe uma mensalidade com dados similares!");
+
+            // Open the database connection
             connection.Open();
 
             try {
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO " + DBName +
-                        " (description, monthlyValue, monthStart, monthEnd, dayType, day, status)" +
+                        " (description, monthlyValue, monthStart, monthEnd, dayType, day)" +
                         " Values(@description, @monthlyValue, @monthStart, @monthEnd, @dayType, @day)", connection)) {
 
                     cmd.Parameters.AddWithValue("@description", item.Description);
@@ -63,11 +68,11 @@ namespace MoneyManeger.DataBase {
             return this.Max;
         }
 
-        public override List<MonthlyFee> Select(string where, string order) {
+        public override List<MonthlyFee> Select(string query) {
             List<MonthlyFee> result = new List<MonthlyFee>();
 
             DataSet ds = new DataSet();
-            SqlCommand command = new SqlCommand("SELECT * FROM " + DBName + " WHERE " + where + (order != null ? " ORDER BY " + order : ""), connection);
+            SqlCommand command = new SqlCommand("SELECT M.id, M.description, M.monthlyValue, M.monthStart, M.monthEnd, M.dayType, M.day FROM " + DBName + " as M " + query, connection);
             SqlDataAdapter sda = new SqlDataAdapter(command);
 
             try {
@@ -88,7 +93,7 @@ namespace MoneyManeger.DataBase {
 
 
             } catch (Exception e) {
-                MessageBox.Show(e.Message, "MonthlyFeesDB.Select('" + where + "') Exception");
+                MessageBox.Show(e.Message, "MonthlyFeesDB.Select('" + query + "') Exception");
 
             } finally { connection.Close(); }
 
@@ -96,6 +101,13 @@ namespace MoneyManeger.DataBase {
         }
 
         public override void Update(MonthlyFee item) {
+            // Check if yet exists
+            List<MonthlyFee> similar = this.GetSimilarItem(item.Description, DateTime.Now);
+            if (similar.Count > 0)
+                if (similar[0].Id != item.Id)
+                    throw new Exception("Já existe uma mensalidade com dados similares!");
+
+            // Open the database connection
             connection.Open();
 
             try {
@@ -130,6 +142,10 @@ namespace MoneyManeger.DataBase {
                 "(DATEPART(year, MonthEnd)   > {1} OR (DATEPART(month, MonthEnd)   >=  {0} AND DATEPART(year, MonthEnd)  >=  {1}))",
                 month.Month, month.Year), "day ASC, description ASC");
             //return this.Select(String.Format("1 = 1"), "description ASC");
+        }
+
+        public override List<MonthlyFee> GetSimilarItem(String description, DateTime date) {
+            return this.Select(String.Format("description = '{0}'", description), null);
         }
     }
 }

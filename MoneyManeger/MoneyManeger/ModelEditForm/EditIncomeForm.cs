@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MoneyManeger {
+namespace MoneyManeger.ModelEditForm {
     public partial class EditIncomeForm : Form {
 
         // Variables

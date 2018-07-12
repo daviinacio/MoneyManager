@@ -1,0 +1,1 @@
+﻿SELECT * FROM Expenses as E LEFT JOIN MonthlyFees as M on (e.Description = m.Description AND (e.Date >= m.MonthStart AND e.Date <= m.MonthEnd) AND (DATEPART(day, e.date) = (CASE WHEN m.DayType = 0 THEN (DATEPART(day, dbo.GetWorkingDay(e.date, m.day))) ELSE m.Day END)))
