@@ -137,6 +137,12 @@ namespace MoneyManeger.DataBase {
 
             // e.Description = m.Description AND (e.Date >= m.MonthStart AND e.Date < m.MonthEnd
 
+            // ISSUES
+            /*
+             * 1: Despesas com o dia compativel com alguma mensalidade, não está sendo selecionado
+             * 2: Itens no mês de desembro também não estão sendo selecionados
+             */
+
             return this.Select(String.Format("LEFT JOIN MonthlyFees as M on (" +
                 "(DATEPART(year, m.MonthStart) < DATEPART(year, e.Date) OR (DATEPART(month, m.MonthStart) <= DATEPART(month, e.Date) AND DATEPART(year, m.MonthStart) <= DATEPART(year, e.Date))) AND (DATEPART(year, m.MonthEnd) > DATEPART(year, e.Date) OR (DATEPART(month, m.MonthEnd) >=  DATEPART(month, e.Date) AND DATEPART(year, m.MonthEnd)  >=  DATEPART(year, e.Date))) AND " +
                 "(DATEPART(day, e.date) = (CASE WHEN m.DayType = 0 THEN (DATEPART(day, dbo.GetWorkingDay(e.date, m.day))) ELSE m.Day END))) " +
